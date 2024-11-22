@@ -41,9 +41,9 @@ def generate_routes():
         for i, arrival_time in enumerate(arrival_times):
             route = random.choices(routes_list)[0]
             # route = random.choices(["ns", "ew", "se", "wn"], weights=[30, 20, 15, 15], k=1)[0]
-            # route = random.choice(["ns","ew","we","sn"])
+            route = random.choice(routes_list)
             vehicle_type = "type1"
-            route = "ne"
+            print(route)
             routes.write(f"<vehicle id=\"{route}_{i}\" type=\"{vehicle_type}\" route=\"{route}\" depart=\"{arrival_time}\" />\n")
 
         routes.write("</routes>")

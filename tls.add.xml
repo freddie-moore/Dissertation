@@ -1,10 +1,74 @@
 <tlLogic id="0" type="static" programID="0" offset="0">
-	<phase duration="100" state="yyyyrrrrrrrrrrrr"/>
-	<phase duration="100" state="ggggrrrrrrrrrrrr"/>
-    <phase duration="100" state="rrrryyyyrrrrrrrr"/>
-	<phase duration="100" state="rrrrggggrrrrrrrr"/>
-	<phase duration="100" state="rrrrrrrryyyyrrrr"/>
-	<phase duration="100" state="rrrrrrrrggggrrrr"/>
-	<phase duration="100" state="rrrrrrrrrrrryyyy"/>
-	<phase duration="100" state="rrrrrrrrrrrrgggg"/>
+<phase duration="100" state="yyyyyrrrrrrrrrrrrrrr"/>
+<phase duration="100" state="gggggrrrrrrrrrrrrrrr"/>
+<phase duration="100" state="ryyyyrrrrrrrrrrrrrry"/>
+<phase duration="100" state="rggggrrrrrrrrrrrrrrg"/>
+<phase duration="100" state="yryyyrrrrrrryrrrrrrr"/>
+<phase duration="100" state="grgggrrrrrrrgrrrrrrr"/>
+<phase duration="100" state="yryyyrrrrrrrrrrrrryr"/>
+<phase duration="100" state="grgggrrrrrrrrrrrrrgr"/>
+<phase duration="100" state="rryyyrrrrryyyrrrrrrr"/>
+<phase duration="100" state="rrgggrrrrrgggrrrrrrr"/>
+<phase duration="100" state="rryyyrrrrrrrrrrrrryy"/>
+<phase duration="100" state="rrgggrrrrrrrrrrrrrgg"/>
+<phase duration="100" state="yyrryrrryrrrrrrrrrrr"/>
+<phase duration="100" state="ggrrgrrrgrrrrrrrrrrr"/>
+<phase duration="100" state="ryrryrrryrrrrrrrrrry"/>
+<phase duration="100" state="rgrrgrrrgrrrrrrrrrrg"/>
+<phase duration="100" state="ryrrrrrryyrrrrrrrrry"/>
+<phase duration="100" state="rgrrrrrrggrrrrrrrrrg"/>
+<phase duration="100" state="ryrrrrrrryrrrrrrryry"/>
+<phase duration="100" state="rgrrrrrrrgrrrrrrrgrg"/>
+<phase duration="100" state="yrrryryyyrrrrrrrrrrr"/>
+<phase duration="100" state="grrrgrgggrrrrrrrrrrr"/>
+<phase duration="100" state="yrrryrrrrrrryyrrrrrr"/>
+<phase duration="100" state="grrrgrrrrrrrggrrrrrr"/>
+<phase duration="100" state="yrrryrrryrrryrrrrrrr"/>
+<phase duration="100" state="grrrgrrrgrrrgrrrrrrr"/>
+<phase duration="100" state="yrrryrrrrrrrryrrrryr"/>
+<phase duration="100" state="grrrgrrrrrrrrgrrrrgr"/>
+<phase duration="100" state="yrrrrryyyrrrrryyrrrr"/>
+<phase duration="100" state="grrrrrgggrrrrrggrrrr"/>
+<phase duration="100" state="yrrrrrrrrrrryyyyrrrr"/>
+<phase duration="100" state="grrrrrrrrrrrggggrrrr"/>
+<phase duration="100" state="yrrrrrrryrrryryyrrrr"/>
+<phase duration="100" state="grrrrrrrgrrrgrggrrrr"/>
+<phase duration="100" state="yrrrrrrrrrrryryyryrr"/>
+<phase duration="100" state="grrrrrrrrrrrgrggrgrr"/>
+<phase duration="100" state="yrrrrrrrrrrrryyyrryr"/>
+<phase duration="100" state="grrrrrrrrrrrrgggrrgr"/>
+<phase duration="100" state="yrrrrrrrrrrrrryyryyr"/>
+<phase duration="100" state="grrrrrrrrrrrrrggrggr"/>
+<phase duration="100" state="rrrryyyyyrrrrrrrrrrr"/>
+<phase duration="100" state="rrrrgggggrrrrrrrrrrr"/>
+<phase duration="100" state="rrrryyrrrrrryyrrrrrr"/>
+<phase duration="100" state="rrrrggrrrrrrggrrrrrr"/>
+<phase duration="100" state="rrrryyrryrrryrrrrrrr"/>
+<phase duration="100" state="rrrrggrrgrrrgrrrrrrr"/>
+<phase duration="100" state="rrrryyrrrrrrryrrrryr"/>
+<phase duration="100" state="rrrrggrrrrrrrgrrrrgr"/>
+<phase duration="100" state="rrrryryyyrrrrrrrrrry"/>
+<phase duration="100" state="rrrrgrgggrrrrrrrrrrg"/>
+<phase duration="100" state="rrrryrrryryyyrrrrrrr"/>
+<phase duration="100" state="rrrrgrrrgrgggrrrrrrr"/>
+<phase duration="100" state="rrrrryyyyrrrrrrryrrr"/>
+<phase duration="100" state="rrrrrggggrrrrrrrgrrr"/>
+<phase duration="100" state="rrrrryrrrrrryyrryrrr"/>
+<phase duration="100" state="rrrrrgrrrrrrggrrgrrr"/>
+<phase duration="100" state="rrrrryrryrrryrrryrrr"/>
+<phase duration="100" state="rrrrrgrrgrrrgrrrgrrr"/>
+<phase duration="100" state="rrrrryrrrrrrryrryryr"/>
+<phase duration="100" state="rrrrrgrrrrrrrgrrgrgr"/>
+<phase duration="100" state="rrrrrryyyrrrrrrryrry"/>
+<phase duration="100" state="rrrrrrgggrrrrrrrgrrg"/>
+<phase duration="100" state="rrrrrrrryyyyyrrrrrrr"/>
+<phase duration="100" state="rrrrrrrrgggggrrrrrrr"/>
+<phase duration="100" state="rrrrrrrrryyyyrrrryrr"/>
+<phase duration="100" state="rrrrrrrrrggggrrrrgrr"/>
+<phase duration="100" state="rrrrrrrryryyyrrryrrr"/>
+<phase duration="100" state="rrrrrrrrgrgggrrrgrrr"/>
+<phase duration="100" state="rrrrrrrrrryyyrrryyrr"/>
+<phase duration="100" state="rrrrrrrrrrgggrrrggrr"/>
+<phase duration="100" state="rrrrrrrrrrrrrrrryyyy"/>
+<phase duration="100" state="rrrrrrrrrrrrrrrrgggg"/>
 </tlLogic>

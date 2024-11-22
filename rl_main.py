@@ -12,7 +12,7 @@ from memory import ReplayMemory, Transition
 from utils import plot_durations
 
 # Set up the environment
-env = TraciEnvironment('sumo', {0, 1, 2, 3})
+env = TraciEnvironment('sumo', {i for i in range (0,36)})
 
 # Set device
 device = torch.device(

@@ -39,7 +39,7 @@ else:
 from sumolib import checkBinary  # noqa
 import traci  # noqa
 
-traci_env = TraciEnvironment("sumo-gui", {i for i in range(0,4)})
+traci_env = TraciEnvironment("sumo-gui", {i for i in range(0,36)})
 state, info = traci_env.reset()
 n_actions = traci_env.get_n_actions()
 n_observations = len(state)
@@ -81,8 +81,8 @@ class RLController():
 
         return action
 
-controller = SimpleController(traci_env.get_action_space())
-# controller = RLController()
+# controller = SimpleController(traci_env.get_action_space())
+controller = RLController()
 
 def run():
     """execute the TraCI control loop"""

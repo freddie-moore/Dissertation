@@ -1,0 +1,65 @@
+<routes>
+            <vType id="type1" accel="0.8" decel="4.5" sigma="0.5" length="5" maxSpeed="70"/>
+            <route id="ne" edges="ni eo"/>
+            <route id="ns" edges="ni so"/>
+            <route id="nw" edges="ni wo"/>
+            <route id="en" edges="ei no"/>
+            <route id="es" edges="ei so"/>
+            <route id="ew" edges="ei wo"/>
+            <route id="sn" edges="si no"/>
+            <route id="se" edges="si eo"/>
+            <route id="sw" edges="si wo"/>
+            <route id="wn" edges="wi no"/>
+            <route id="we" edges="wi eo"/>
+            <route id="ws" edges="wi so"/>
+        <vehicle id="ne_0" type="type1" route="ne" depart="17.371737775896182" />
+<vehicle id="ne_1" type="type1" route="ne" depart="19.50576616402534" />
+<vehicle id="ne_2" type="type1" route="ne" depart="52.803043389324934" />
+<vehicle id="ne_3" type="type1" route="ne" depart="57.08200966502834" />
+<vehicle id="ne_4" type="type1" route="ne" depart="72.78366223769831" />
+<vehicle id="ne_5" type="type1" route="ne" depart="121.99663133273486" />
+<vehicle id="ne_6" type="type1" route="ne" depart="125.210684517337" />
+<vehicle id="ne_7" type="type1" route="ne" depart="156.0674453567795" />
+<vehicle id="ne_8" type="type1" route="ne" depart="163.8517751683855" />
+<vehicle id="ne_9" type="type1" route="ne" depart="185.10346443128972" />
+<vehicle id="ne_10" type="type1" route="ne" depart="196.21907689153073" />
+<vehicle id="ne_11" type="type1" route="ne" depart="249.66415653474957" />
+<vehicle id="ne_12" type="type1" route="ne" depart="251.75864191704747" />
+<vehicle id="ne_13" type="type1" route="ne" depart="268.47346298172954" />
+<vehicle id="ne_14" type="type1" route="ne" depart="307.3079313221519" />
+<vehicle id="ne_15" type="type1" route="ne" depart="323.07940674880035" />
+<vehicle id="ne_16" type="type1" route="ne" depart="324.4837830247122" />
+<vehicle id="ne_17" type="type1" route="ne" depart="366.0908977847471" />
+<vehicle id="ne_18" type="type1" route="ne" depart="371.3064628995632" />
+<vehicle id="ne_19" type="type1" route="ne" depart="377.52080976984195" />
+<vehicle id="ne_20" type="type1" route="ne" depart="386.0811116722228" />
+<vehicle id="ne_21" type="type1" route="ne" depart="429.53621066772894" />
+<vehicle id="ne_22" type="type1" route="ne" depart="472.7732122118888" />
+<vehicle id="ne_23" type="type1" route="ne" depart="524.4734180734687" />
+<vehicle id="ne_24" type="type1" route="ne" depart="525.7260347166065" />
+<vehicle id="ne_25" type="type1" route="ne" depart="534.5820715551995" />
+<vehicle id="ne_26" type="type1" route="ne" depart="608.1337759427573" />
+<vehicle id="ne_27" type="type1" route="ne" depart="609.4515099128844" />
+<vehicle id="ne_28" type="type1" route="ne" depart="644.0624428780702" />
+<vehicle id="ne_29" type="type1" route="ne" depart="710.084555336389" />
+<vehicle id="ne_30" type="type1" route="ne" depart="739.0460662346526" />
+<vehicle id="ne_31" type="type1" route="ne" depart="771.7199042570904" />
+<vehicle id="ne_32" type="type1" route="ne" depart="806.995511392912" />
+<vehicle id="ne_33" type="type1" route="ne" depart="840.3305396886257" />
+<vehicle id="ne_34" type="type1" route="ne" depart="848.2151589381973" />
+<vehicle id="ne_35" type="type1" route="ne" depart="850.8071715236528" />
+<vehicle id="ne_36" type="type1" route="ne" depart="853.9784501308911" />
+<vehicle id="ne_37" type="type1" route="ne" depart="931.8228845948411" />
+<vehicle id="ne_38" type="type1" route="ne" depart="943.3761357436306" />
+<vehicle id="ne_39" type="type1" route="ne" depart="968.4964379426389" />
+<vehicle id="ne_40" type="type1" route="ne" depart="976.7265810925675" />
+<vehicle id="ne_41" type="type1" route="ne" depart="997.3646049493204" />
+<vehicle id="ne_42" type="type1" route="ne" depart="998.6966009357142" />
+<vehicle id="ne_43" type="type1" route="ne" depart="1023.3671327294586" />
+<vehicle id="ne_44" type="type1" route="ne" depart="1037.8093435936003" />
+<vehicle id="ne_45" type="type1" route="ne" depart="1085.010951682606" />
+<vehicle id="ne_46" type="type1" route="ne" depart="1092.8430002162127" />
+<vehicle id="ne_47" type="type1" route="ne" depart="1099.8650924050721" />
+<vehicle id="ne_48" type="type1" route="ne" depart="1114.228115035066" />
+<vehicle id="ne_49" type="type1" route="ne" depart="1149.4957194033086" />
+</routes>

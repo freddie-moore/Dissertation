@@ -27,8 +27,8 @@ class TraciEnvironment:
         traci.start([sumoBinary, *self.params])
 
     def get_queue_lengths_by_edge(self, edge_id):
-        waiting_times = [0] * 4
-        for i in range(0,4):
+        waiting_times = [0] * 3
+        for i in range(0,3):
             waiting_times[i] = traci.lane.getLastStepVehicleNumber(f"{edge_id}_{i}")
         return waiting_times
     
@@ -55,8 +55,8 @@ class TraciEnvironment:
 
     
     def get_waiting_times_by_edge(self, edge_id):
-        waiting_times = [0] * 4
-        for i in range(0,4):
+        waiting_times = [0] * 3
+        for i in range(0,3):
             waiting_times[i] = traci.lane.getWaitingTime(f"{edge_id}_{i}")
         return waiting_times
     
@@ -79,7 +79,7 @@ class TraciEnvironment:
         state = []
         state.extend(self.normalize_array(self.get_queue_lengths()))
         state.extend(self.normalize_array(self.red_timings))
-        # state.extend(self.normalize_array(self.get_waiting_times()))
+        state.extend(self.normalize_array(self.get_waiting_times()))
         # state.extend(self.get_phases_array())
         # print("State", state)
         return state

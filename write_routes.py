@@ -44,6 +44,7 @@ def generate_routes():
             route = random.choice(routes_list)
             vehicle_type = "type1"
             print(route)
+            arrival_time = 0
             routes.write(f"<vehicle id=\"{route}_{i}\" type=\"{vehicle_type}\" route=\"{route}\" depart=\"{arrival_time}\" />\n")
 
         routes.write("</routes>")

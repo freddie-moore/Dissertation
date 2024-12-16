@@ -55,7 +55,7 @@ record = float('+inf')
 random.seed(10)
 
 # Training loop
-num_episodes = 5000
+num_episodes = 7500
 
 def select_action(state):
     global steps_done

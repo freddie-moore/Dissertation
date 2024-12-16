@@ -17,8 +17,8 @@ def generate_routes():
     print(routes_list)
     weights = list(route_ids.values())
 
-    n = 50 # number of vehicles
-    arrival_rate = 0.05
+    n = 600 # number of vehicles
+    arrival_rate = 1.5
     arrival_times = np.cumsum(np.random.exponential(1 / arrival_rate, size=n))
 
     with open("input_routes.rou.xml", "w") as routes:

@@ -34,7 +34,6 @@ valid_sets = {
     4: []
 }
 
-# Generate all possible subsets of routes
 for r in range(1, len(all_routes) + 1):
     for subset in combinations(all_routes, r):
         if is_valid_set(subset):

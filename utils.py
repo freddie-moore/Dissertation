@@ -26,4 +26,5 @@ def plot_durations(episode_durations, show_result=False):
         fontsize=10,
         color='red'
     )
+    plt.savefig("training_graph")
     plt.pause(0.001)

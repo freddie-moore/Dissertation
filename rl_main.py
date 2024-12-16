@@ -55,7 +55,7 @@ record = float('+inf')
 random.seed(10)
 
 # Training loop
-num_episodes = 600 if torch.cuda.is_available() or torch.backends.mps.is_available() else 1000
+num_episodes = 5000
 
 def select_action(state):
     global steps_done
@@ -154,11 +154,10 @@ for i_episode in range(num_episodes):
             if env_time < record:
                 policy_net.save()
             episode_durations.append(env_time)
-            plot_durations(episode_durations)
+            # plot_durations(episode_durations)
             print("Steps after this run :", env_time)
             break
 
-print('Complete')
-plot_durations(show_result=True)
+plot_durations(episode_durations)
 plt.ioff()
 plt.show()

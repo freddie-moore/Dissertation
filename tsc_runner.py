@@ -81,8 +81,8 @@ class RLController():
 
         return action
 
-# controller = SimpleController(traci_env.get_action_space())
-controller = RLController()
+controller = SimpleController(traci_env.get_action_space())
+# controller = RLController()
 
 def run():
     """execute the TraCI control loop"""

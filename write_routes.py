@@ -8,9 +8,10 @@ def generate_routes():
 
     route_ids = {
         "ne": 0.4 / 3, "ns": 0.4 / 3, "nw": 0.4 / 3,  # 40% for 'n' routes
-        "en": 0.3 / 3, "es": 0.3 / 3, "ew": 0.3 / 3,  # 30% for 'e' routes
+        "en": 0.25 / 3, "es": 0.25 / 3, "ew": 0.25 / 3,  # 30% for 'e' routes
         "se": 0.15 / 3, "sn": 0.15 / 3, "sw": 0.15 / 3,  # 15% for 's' routes
-        "wn": 0.15 / 3, "we": 0.15 / 3, "ws": 0.15 / 3   # 15% for 'w' routes
+        "wn": 0.15 / 3, "we": 0.15 / 3, "ws": 0.15 / 3 ,  # 15% for 'w' routes
+        "nn": 0.05 / 4, "ss": 0.05 / 4, "ee": 0.05 / 4, "ww": 0.05 / 4
     }
 
     routes_list = list(route_ids.keys())
@@ -36,6 +37,10 @@ def generate_routes():
             <route id="wn" edges="wi no"/>
             <route id="we" edges="wi eo"/>
             <route id="ws" edges="wi so"/>
+            <route id="nn" edges="ni no"/>
+            <route id="ss" edges="si so"/>
+            <route id="ee" edges="ei eo"/>
+            <route id="ww" edges="wi wo"/>
         """)
 
         for i, arrival_time in enumerate(arrival_times):

@@ -28,7 +28,7 @@ class TraciEnvironment:
 
     def get_queue_lengths_by_edge(self, edge_id):
         waiting_times = []
-        for i in range(1,4):
+        for i in range(0,4):
             waiting_times.append(traci.lane.getLastStepVehicleNumber(f"{edge_id}_{i}"))
         return waiting_times
     
@@ -57,7 +57,7 @@ class TraciEnvironment:
     def get_waiting_times_by_edge(self, edge_id):
         waiting_times = []
         # start from 1 to exclude u-turn lane
-        for i in range(1,4):
+        for i in range(0,4):
             waiting_times.append(traci.lane.getWaitingTime(f"{edge_id}_{i}"))
         return waiting_times
     

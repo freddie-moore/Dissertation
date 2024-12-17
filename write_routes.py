@@ -11,7 +11,6 @@ def generate_routes():
         "en": 0.25 / 3, "es": 0.25 / 3, "ew": 0.25 / 3,  # 30% for 'e' routes
         "se": 0.15 / 3, "sn": 0.15 / 3, "sw": 0.15 / 3,  # 15% for 's' routes
         "wn": 0.15 / 3, "we": 0.15 / 3, "ws": 0.15 / 3 ,  # 15% for 'w' routes
-        "nn": 0.05 / 4, "ss": 0.05 / 4, "ee": 0.05 / 4, "ww": 0.05 / 4
     }
 
     routes_list = list(route_ids.keys())
@@ -48,7 +47,7 @@ def generate_routes():
             # route = random.choices(["ns", "ew", "se", "wn"], weights=[30, 20, 15, 15], k=1)[0]
             route = random.choice(routes_list)
             vehicle_type = "type1"
-
+            route = "nn"
             routes.write(f"<vehicle id=\"{route}_{i}\" type=\"{vehicle_type}\" route=\"{route}\" depart=\"{arrival_time}\" />\n")
 
         routes.write("</routes>")

@@ -125,7 +125,7 @@ class TraciEnvironment:
         reward = -(remaining_wait - initial_wait)
 
     
-        return self.get_state(), reward, done, (self.step_count > 10000), self.step_count
+        return self.get_state(), reward, done, (self.step_count > 20000), self.step_count
 
     def get_total_waiting_time(self, vehicles):
         wait  = 0

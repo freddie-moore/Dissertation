@@ -6,16 +6,14 @@ random.seed(10)
 def generate_routes():
     
 
-    route_ids = {
+    routes = {
         "ne": 0.4 / 3, "ns": 0.4 / 3, "nw": 0.4 / 3,  # 40% for 'n' routes
         "en": 0.3 / 3, "es": 0.3 / 3, "ew": 0.3 / 3,  # 30% for 'e' routes
         "se": 0.15 / 3, "sn": 0.15 / 3, "sw": 0.15 / 3,  # 15% for 's' routes
         "wn": 0.15 / 3, "we": 0.15 / 3, "ws": 0.15 / 3   # 15% for 'w' routes
     }
 
-    routes_list = list(route_ids.keys())
-    print(routes_list)
-    weights = list(route_ids.values())
+    route_ids = list(routes.keys())
 
     n = 600 # number of vehicles
     arrival_rate = 1.5
@@ -37,11 +35,15 @@ def generate_routes():
             <route id="we" edges="wi eo"/>
             <route id="ws" edges="wi so"/>
         """)
-
+        
+        for id in route_ids:
+            routes.write(f"""
+            <personFlow id="p_{id}" begin="0" end="{n}" period="50">
+                <walk route="{id}"/>
+            </personFlow>
+                         """)
         for i, arrival_time in enumerate(arrival_times):
-            route = random.choices(routes_list)[0]
-            # route = random.choices(["ns", "ew", "se", "wn"], weights=[30, 20, 15, 15], k=1)[0]
-            route = random.choice(routes_list)
+            route = random.choice(route_ids)
             vehicle_type = "type1"
 
             routes.write(f"<vehicle id=\"{route}_{i}\" type=\"{vehicle_type}\" route=\"{route}\" depart=\"{arrival_time}\" />\n")

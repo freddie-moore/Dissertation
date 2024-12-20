@@ -13,6 +13,7 @@ class TraciEnvironment:
         self.step_count = 0
         self.prev_action = 0
         self.red_timings = [0] * self.get_n_actions()
+        self.all_pedestrian_wait_times = dict()
         sumoBinary = checkBinary(binary)
 
         self.user_defined_edges = ["ni", "ei", "si", "wi"]
@@ -81,9 +82,32 @@ class TraciEnvironment:
         state.extend(self.normalize_array(self.get_queue_lengths()))
         state.extend(self.normalize_array(self.red_timings))
         state.extend(self.normalize_array(self.get_waiting_times()))
+        state.extend(self.get_pedestrian_wait_times())
         # state.extend(self.get_phases_array())
 
         return state
+    
+    # def get_pedestrian_wait_times(self):
+    #     waiting_times = []
+    #     for i in range(0,4):
+    #         waiting_times.append(traci.lane.getWaitingTime(f":0_w{i}_0"))
+       
+    #     print("ret :", waiting_times)
+    #     return waiting_times
+
+    def get_pedestrian_wait_times(self):
+        crossings = {':0_c0', ':0_c1', ':0_c2', ':0_c3'}
+        pedestrian_flags = []
+        pedestrians = traci.person.getIDList()
+        for crossing in crossings:
+            pedestrian_flag = False
+            for ped_id in pedestrians:
+                if (traci.person.getWaitingTime(ped_id) > 0) and (traci.person.getNextEdge(ped_id) == crossing):
+                     pedestrian_flag = True
+                     break
+            pedestrian_flags.append(pedestrian_flag)
+
+        return pedestrian_flags
     
     def get_phases_array(self):
         phases_array = [0] * self.get_n_actions()
@@ -93,7 +117,10 @@ class TraciEnvironment:
     def run_phase(self, phase):
         yellow_phase = phase * 2
         init_vehicles = set(traci.vehicle.getIDList())
+        init_ped = set(traci.person.getIDList())
+
         initial_wait = self.get_total_waiting_time(init_vehicles)
+        initial_ped_wait = self.get_total_pedestrian_waiting_time(init_ped)
         
         if phase != self.prev_action:
             # End previous phase
@@ -119,11 +146,15 @@ class TraciEnvironment:
         
         done = len(traci.simulation.getCollisions()) > 0 or traci.simulation.getMinExpectedNumber() == 0
         rem_vehicles = set(traci.vehicle.getIDList()).intersection(init_vehicles)
+        rem_ped = set(traci.person.getIDList()).intersection(init_ped)
+
         remaining_wait = self.get_total_waiting_time(rem_vehicles)
-        reward = -(remaining_wait - initial_wait)
+        remaining_ped_wait = self.get_total_pedestrian_waiting_time(rem_ped)
+
+        reward = -((remaining_wait - initial_wait) + (remaining_ped_wait - initial_ped_wait))
 
     
-        return self.get_state(), reward, done, (self.step_count > 10000), self.step_count
+        return self.get_state(), reward, done, (self.step_count > 12500), self.step_count
 
     def get_total_waiting_time(self, vehicles):
         wait  = 0
@@ -135,7 +166,25 @@ class TraciEnvironment:
             wait = 0
         
         return wait
-        
+    
+    def get_total_pedestrian_waiting_time(self, pedestrians):
+        wait = 0
+        for pedestrian_id in pedestrians:
+            wait += traci.person.getWaitingTime(pedestrian_id)
+        if len(pedestrians) > 90:
+            wait = wait / len(pedestrians)
+        else:
+            wait = 0
+
+        return wait
+
+    def update_pedestrian_wait_times(self):
+        for pedestrian_id in traci.person.getIDList():
+            if pedestrian_id in self.all_pedestrian_wait_times:
+                self.all_pedestrian_wait_times[pedestrian_id] = max(self.all_pedestrian_wait_times[pedestrian_id], traci.person.getWaitingTime(pedestrian_id))
+            else:
+                self.all_pedestrian_wait_times[pedestrian_id] = traci.person.getWaitingTime(pedestrian_id)
+
     def reset(self):
         self.step_count = 0
         self.prev_action = 0

@@ -1,5 +1,5 @@
-import libsumo as traci
-# import traci
+# import libsumo as traci
+import traci
 from sumolib import checkBinary
 import random
 
@@ -83,18 +83,20 @@ class TraciEnvironment:
         state.extend(self.normalize_array(self.red_timings))
         state.extend(self.normalize_array(self.get_waiting_times()))
         state.extend(self.get_pedestrian_wait_times())
-        # state.extend(self.get_phases_array())
 
         return state
     
-    # def get_pedestrian_wait_times(self):
-    #     waiting_times = []
-    #     for i in range(0,4):
-    #         waiting_times.append(traci.lane.getWaitingTime(f":0_w{i}_0"))
-       
-    #     print("ret :", waiting_times)
-    #     return waiting_times
-
+    def update_pedestrian_wait_times(self):
+        for ped_id in traci.person.getIDList():
+            if ped_id in self.all_pedestrian_wait_times.keys():
+                self.all_pedestrian_wait_times[ped_id] = max(
+                    traci.person.getWaitingTime(ped_id),
+                    self.all_pedestrian_wait_times[ped_id]
+                )
+            else:
+                self.all_pedestrian_wait_times[ped_id] = traci.person.getWaitingTime(ped_id)
+        
+        self.all_pedestrian_wait_times
     def get_pedestrian_wait_times(self):
         crossings = {':0_c0', ':0_c1', ':0_c2', ':0_c3'}
         pedestrian_flags = []
@@ -143,8 +145,10 @@ class TraciEnvironment:
 
         self.prev_action = phase
         self.set_red_timings((YELLOW_TIME * 2) + GREEN_TIME)
-        
+        self.update_pedestrian_wait_times()
+
         done = len(traci.simulation.getCollisions()) > 0 or traci.simulation.getMinExpectedNumber() == 0
+
         rem_vehicles = set(traci.vehicle.getIDList()).intersection(init_vehicles)
         rem_ped = set(traci.person.getIDList()).intersection(init_ped)
 
@@ -154,8 +158,11 @@ class TraciEnvironment:
         reward = -((remaining_wait - initial_wait) + (remaining_ped_wait - initial_ped_wait))
 
     
-        return self.get_state(), reward, done, (self.step_count > 12500), self.step_count
+        return self.get_state(), reward, done, (self.step_count > 12500), (self.step_count, self.get_avg_ped_wait())
 
+    def get_avg_ped_wait(self):
+        return sum(self.all_pedestrian_wait_times.values()) / len(self.all_pedestrian_wait_times)
+    
     def get_total_waiting_time(self, vehicles):
         wait  = 0
         for vehicle_id in vehicles:
@@ -189,5 +196,6 @@ class TraciEnvironment:
         self.step_count = 0
         self.prev_action = 0
         self.red_timings = [0] * self.get_n_actions()
+        self.all_pedestrian_wait_times = dict()
         traci.load(self.params)
         return self.get_state(), None

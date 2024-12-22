@@ -13,7 +13,7 @@ class TraciEnvironment:
         self.step_count = 0
         self.prev_action = 0
         self.red_timings = [0] * self.get_n_actions()
-        # self.crossing_active_timings = [0] * 4
+        self.crossing_active_timings = [0] * 4
         self.all_pedestrian_wait_times = dict()
         sumoBinary = checkBinary(binary)
 
@@ -44,9 +44,9 @@ class TraciEnvironment:
     def normalize_array(self, arr):
         total = sum(arr)
         if total != 0:
-            for i, val in enumerate(arr):
-                arr[i] = val / total
-        return arr
+            return [val / total for val in arr]
+        return arr[:]
+
     
     def set_red_timings(self, step_count):
         for i in range(0, len(self.red_timings)):
@@ -83,7 +83,7 @@ class TraciEnvironment:
         state.extend(self.normalize_array(self.get_queue_lengths()))
         state.extend(self.normalize_array(self.red_timings))
         state.extend(self.normalize_array(self.get_waiting_times()))
-        state.extend(self.get_pedestrian_wait_times())
+        state.extend(self.normalize_array(self.get_pedestrian_wait_times()))
 
         return state
     
@@ -99,17 +99,20 @@ class TraciEnvironment:
         
     def get_pedestrian_wait_times(self):
         crossings = [':0_c0', ':0_c1', ':0_c2', ':0_c3']
-        pedestrian_flags = []
         pedestrians = traci.person.getIDList()
-        for crossing in crossings:
+        for idx, crossing in enumerate(crossings):
             pedestrian_flag = False
             for ped_id in pedestrians:
                 if (traci.person.getWaitingTime(ped_id) > 0) and (traci.person.getNextEdge(ped_id) == crossing):
                      pedestrian_flag = True
                      break
-            pedestrian_flags.append(pedestrian_flag)
+                
+            if pedestrian_flag:
+                self.crossing_active_timings[idx] += 1
+            else:
+                self.crossing_active_timings[idx] = 0
 
-        return pedestrian_flags
+        return self.crossing_active_timings
     
     def get_phases_array(self):
         phases_array = [0] * self.get_n_actions()
@@ -197,6 +200,6 @@ class TraciEnvironment:
         self.prev_action = 0
         self.red_timings = [0] * self.get_n_actions()
         self.all_pedestrian_wait_times = dict()
-        # self.crossing_active_timings = [0] * 4
+        self.crossing_active_timings = [0] * 4
         traci.load(self.params)
         return self.get_state(), None

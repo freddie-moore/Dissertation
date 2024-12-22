@@ -13,6 +13,7 @@ class TraciEnvironment:
         self.step_count = 0
         self.prev_action = 0
         self.red_timings = [0] * self.get_n_actions()
+        # self.crossing_active_timings = [0] * 4
         self.all_pedestrian_wait_times = dict()
         sumoBinary = checkBinary(binary)
 
@@ -96,9 +97,8 @@ class TraciEnvironment:
             else:
                 self.all_pedestrian_wait_times[ped_id] = traci.person.getWaitingTime(ped_id)
         
-        self.all_pedestrian_wait_times
     def get_pedestrian_wait_times(self):
-        crossings = {':0_c0', ':0_c1', ':0_c2', ':0_c3'}
+        crossings = [':0_c0', ':0_c1', ':0_c2', ':0_c3']
         pedestrian_flags = []
         pedestrians = traci.person.getIDList()
         for crossing in crossings:
@@ -197,5 +197,6 @@ class TraciEnvironment:
         self.prev_action = 0
         self.red_timings = [0] * self.get_n_actions()
         self.all_pedestrian_wait_times = dict()
+        # self.crossing_active_timings = [0] * 4
         traci.load(self.params)
         return self.get_state(), None

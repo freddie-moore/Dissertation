@@ -14,6 +14,7 @@ def generate_routes():
     }
 
     route_ids = list(routes.keys())
+    pedestrian_routes = {"ns", "sn", "ew", "we"}
 
     n = 600 # number of vehicles
     arrival_rate = 1.5
@@ -36,12 +37,13 @@ def generate_routes():
             <route id="ws" edges="wi so"/>
         """)
         
-        for id in route_ids:
+        for id in pedestrian_routes:
             routes.write(f"""
             <personFlow id="p_{id}" begin="0" end="{n}" period="50">
                 <walk route="{id}"/>
             </personFlow>
                          """)
+            
         for i, arrival_time in enumerate(arrival_times):
             route = random.choice(route_ids)
             vehicle_type = "type1"

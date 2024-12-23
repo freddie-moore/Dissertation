@@ -16,6 +16,10 @@ class TraciEnvironment:
         self.crossing_active_timings = [0] * 4
         self.all_pedestrian_wait_times = dict()
         sumoBinary = checkBinary(binary)
+        self.max_veh = float('-inf')
+        self.max_ped = float('-inf')
+        self.min_veh = float('+inf')
+        self.min_ped = float('+inf')
 
         self.user_defined_edges = ["ni", "ei", "si", "wi"]
         self.params = [ 
@@ -151,12 +155,18 @@ class TraciEnvironment:
         self.update_pedestrian_wait_times()
 
         done = len(traci.simulation.getCollisions()) > 0 or traci.simulation.getMinExpectedNumber() == 0
-
+ 
         rem_vehicles = set(traci.vehicle.getIDList()).intersection(init_vehicles)
         rem_ped = set(traci.person.getIDList()).intersection(init_ped)
 
         remaining_wait = self.get_total_waiting_time(rem_vehicles)
         remaining_ped_wait = self.get_total_pedestrian_waiting_time(rem_ped)
+
+        self.max_veh = max(self.max_veh, remaining_wait - initial_wait)
+        self.max_ped = max(self.max_ped, remaining_ped_wait - initial_ped_wait)
+
+        self.min_veh = min(self.min_veh, remaining_wait - initial_wait)
+        self.min_ped = min(self.min_ped, remaining_ped_wait - initial_ped_wait)
 
         reward = -((remaining_wait - initial_wait) + (remaining_ped_wait - initial_ped_wait))
 
@@ -181,7 +191,7 @@ class TraciEnvironment:
         wait = 0
         for pedestrian_id in pedestrians:
             wait += traci.person.getWaitingTime(pedestrian_id)
-        if len(pedestrians) > 90:
+        if len(pedestrians) > 0:
             wait = wait / len(pedestrians)
         else:
             wait = 0
@@ -203,3 +213,15 @@ class TraciEnvironment:
         self.crossing_active_timings = [0] * 4
         traci.load(self.params)
         return self.get_state(), None
+    
+    def get_max_veh(self):
+        return self.max_veh
+    
+    def get_max_ped(self):
+        return self.max_ped
+
+    def get_min_veh(self):
+        return self.min_veh
+
+    def get_min_ped(self):
+        return self.min_ped  

@@ -162,6 +162,10 @@ for i_episode in range(num_episodes):
             print("Steps after this run :", env_time)
             break
 
+print("Max Vehicular Wait :", env.get_max_veh())
+print("Max Ped Wait :", env.get_max_ped())
+print("Min Vehicular Wait :", env.get_min_veh())
+print("Min Ped Wait :", env.get_min_ped())
 plot_durations(episode_durations, ped_waits)
 plt.ioff()
 plt.show()

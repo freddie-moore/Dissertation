@@ -6,6 +6,11 @@ import random
 GREEN_TIME = 30
 YELLOW_TIME = 6
 
+MAX_VEH_WAIT = 2000
+MAX_PED_WAIT = 905
+MIN_VEH_WAIT = -10000
+MIN_PED_WAIT = -2750
+
 class TraciEnvironment:
     def __init__(self, binary, actions):
         self.actions = actions
@@ -168,7 +173,10 @@ class TraciEnvironment:
         self.min_veh = min(self.min_veh, remaining_wait - initial_wait)
         self.min_ped = min(self.min_ped, remaining_ped_wait - initial_ped_wait)
 
-        reward = -((remaining_wait - initial_wait) + (remaining_ped_wait - initial_ped_wait))
+        vehicle_reward = self.normalize_value(remaining_wait - initial_wait, MIN_VEH_WAIT, MAX_VEH_WAIT)
+        ped_reward = self.normalize_value(remaining_wait - initial_wait, MIN_PED_WAIT, MAX_PED_WAIT)
+
+        reward = -(vehicle_reward + ped_reward)
 
     
         return self.get_state(), reward, done, (self.step_count > 12500), (self.step_count, self.get_avg_ped_wait())
@@ -214,6 +222,12 @@ class TraciEnvironment:
         traci.load(self.params)
         return self.get_state(), None
     
+    def normalize_value(self, value, lower_bound, upper_bound):
+        if not (lower_bound < value < upper_bound):
+            print(f"Normalization Error | {lower_bound} | {value} | {upper_bound}")
+
+        return (value - lower_bound) / (upper_bound - lower_bound)
+
     def get_max_veh(self):
         return self.max_veh
     

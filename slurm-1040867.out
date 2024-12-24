@@ -1,0 +1,12 @@
+ Retrying in 1 seconds
+Normalization Error | -2750 | -4641.2 | 905
+Normalization Error | -2750 | 1628.6666666666665 | 905
+Normalization Error | -2750 | -3668.6666666666665 | 905
+Normalization Error | -2750 | -3699.3611111111113 | 905
+Unexpected message received for job 1040867
+Unexpected message received for job 1040867
+Unexpected message received for job 1040867
+Unexpected message received for job 1040867
+Record :  inf
+Error: tcpip::Socket::recvAndCheck @ recv: peer shutdown
+Quitting (on error).

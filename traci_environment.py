@@ -84,7 +84,7 @@ class TraciEnvironment:
     
     def get_state(self):
         state = []
-        state.extend(self.normalize_array(self.get_queue_lengths()))
+        # state.extend(self.normalize_array(self.get_queue_lengths()))
         state.extend(self.normalize_array(self.red_timings))
         state.extend(self.normalize_array(self.get_waiting_times()))
         state.extend(self.normalize_array(self.get_pedestrian_wait_times()))

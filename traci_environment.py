@@ -6,6 +6,11 @@ import random
 GREEN_TIME = 30
 YELLOW_TIME = 6
 
+MAX_VEH_WAIT = 2000
+MAX_PED_WAIT = 905
+MIN_VEH_WAIT = -10000
+MIN_PED_WAIT = -2750
+
 class TraciEnvironment:
     def __init__(self, binary, actions):
         self.actions = actions
@@ -84,9 +89,9 @@ class TraciEnvironment:
     
     def get_state(self):
         state = []
-        state.extend(self.normalize_array(self.get_queue_lengths()))
+        # state.extend(self.normalize_array(self.get_queue_lengths()))
         state.extend(self.normalize_array(self.red_timings))
-        # state.extend(self.normalize_array(self.get_waiting_times()))
+        state.extend(self.normalize_array(self.get_waiting_times()))
         state.extend(self.normalize_array(self.get_pedestrian_wait_times()))
 
         return state
@@ -162,7 +167,16 @@ class TraciEnvironment:
         remaining_wait = self.get_total_waiting_time(rem_vehicles)
         remaining_ped_wait = self.get_total_pedestrian_waiting_time(rem_ped)
 
-        reward = -((remaining_wait - initial_wait) + (remaining_ped_wait - initial_ped_wait))
+        self.max_veh = max(self.max_veh, remaining_wait - initial_wait)
+        self.max_ped = max(self.max_ped, remaining_ped_wait - initial_ped_wait)
+
+        self.min_veh = min(self.min_veh, remaining_wait - initial_wait)
+        self.min_ped = min(self.min_ped, remaining_ped_wait - initial_ped_wait)
+
+        vehicle_reward = remaining_wait - initial_wait
+        ped_reward = remaining_wait - initial_wait
+
+        reward = -(vehicle_reward + ped_reward)
 
     
         return self.get_state(), reward, done, (self.step_count > 12500), (self.step_count, self.get_avg_ped_wait())
@@ -208,6 +222,12 @@ class TraciEnvironment:
         traci.load(self.params)
         return self.get_state(), None
     
+    def normalize_value(self, value, lower_bound, upper_bound):
+        if not (lower_bound < value < upper_bound):
+            print(f"Normalization Error | {lower_bound} | {value} | {upper_bound}")
+
+        return (value - lower_bound) / (upper_bound - lower_bound)
+
     def get_max_veh(self):
         return self.max_veh
     

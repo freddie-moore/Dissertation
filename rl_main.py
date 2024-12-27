@@ -56,7 +56,7 @@ record = float('+inf')
 random.seed(10)
 
 # Training loop
-num_episodes = 10000
+num_episodes = 7500
 
 def select_action(state):
     global steps_done
@@ -159,10 +159,9 @@ for i_episode in range(num_episodes):
             episode_durations.append(env_time)
             ped_waits.append(ped_wait)
             # plot_durations(episode_durations)
-            print("Steps after this run :", env_time)
             break
 
-print("Record :", record)
+print("Record : ", record)
 plot_durations(episode_durations, ped_waits)
 plt.ioff()
 plt.show()

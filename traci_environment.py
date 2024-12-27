@@ -89,7 +89,7 @@ class TraciEnvironment:
     
     def get_state(self):
         state = []
-        # state.extend(self.normalize_array(self.get_queue_lengths()))
+        state.extend(self.normalize_array(self.get_queue_lengths()))
         state.extend(self.normalize_array(self.red_timings))
         state.extend(self.normalize_array(self.get_waiting_times()))
         state.extend(self.normalize_array(self.get_pedestrian_wait_times()))
@@ -167,14 +167,8 @@ class TraciEnvironment:
         remaining_wait = self.get_total_waiting_time(rem_vehicles)
         remaining_ped_wait = self.get_total_pedestrian_waiting_time(rem_ped)
 
-        self.max_veh = max(self.max_veh, remaining_wait - initial_wait)
-        self.max_ped = max(self.max_ped, remaining_ped_wait - initial_ped_wait)
-
-        self.min_veh = min(self.min_veh, remaining_wait - initial_wait)
-        self.min_ped = min(self.min_ped, remaining_ped_wait - initial_ped_wait)
-
         vehicle_reward = remaining_wait - initial_wait
-        ped_reward = remaining_wait - initial_wait
+        ped_reward = remaining_ped_wait - initial_ped_wait
 
         reward = -(vehicle_reward + ped_reward)
 
@@ -187,7 +181,7 @@ class TraciEnvironment:
     def get_total_waiting_time(self, vehicles):
         wait  = 0
         for vehicle_id in vehicles:
-            wait += traci.vehicle.getWaitingTime(vehicle_id)
+            wait += traci.vehicle.getWaitingTime(vehicle_id)**2
         if len(vehicles) > 0:
             wait = wait / len(vehicles)
         else:
@@ -198,7 +192,7 @@ class TraciEnvironment:
     def get_total_pedestrian_waiting_time(self, pedestrians):
         wait = 0
         for pedestrian_id in pedestrians:
-            wait += traci.person.getWaitingTime(pedestrian_id)
+            wait += traci.person.getWaitingTime(pedestrian_id)**2
         if len(pedestrians) > 0:
             wait = wait / len(pedestrians)
         else:

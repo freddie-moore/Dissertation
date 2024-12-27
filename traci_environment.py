@@ -84,9 +84,9 @@ class TraciEnvironment:
     
     def get_state(self):
         state = []
-        # state.extend(self.normalize_array(self.get_queue_lengths()))
+        state.extend(self.normalize_array(self.get_queue_lengths()))
         state.extend(self.normalize_array(self.red_timings))
-        state.extend(self.normalize_array(self.get_waiting_times()))
+        # state.extend(self.normalize_array(self.get_waiting_times()))
         state.extend(self.normalize_array(self.get_pedestrian_wait_times()))
 
         return state
@@ -161,12 +161,6 @@ class TraciEnvironment:
 
         remaining_wait = self.get_total_waiting_time(rem_vehicles)
         remaining_ped_wait = self.get_total_pedestrian_waiting_time(rem_ped)
-
-        self.max_veh = max(self.max_veh, remaining_wait - initial_wait)
-        self.max_ped = max(self.max_ped, remaining_ped_wait - initial_ped_wait)
-
-        self.min_veh = min(self.min_veh, remaining_wait - initial_wait)
-        self.min_ped = min(self.min_ped, remaining_ped_wait - initial_ped_wait)
 
         reward = -((remaining_wait - initial_wait) + (remaining_ped_wait - initial_ped_wait))
 

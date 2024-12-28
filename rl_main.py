@@ -120,6 +120,7 @@ def optimize_model():
     optimizer.step()
 
 for i_episode in range(num_episodes):
+    print(i_episode)
     # Initialize the environment and get its state
     state, info = env.reset()
     state = torch.tensor(state, dtype=torch.float32, device=device).unsqueeze(0)

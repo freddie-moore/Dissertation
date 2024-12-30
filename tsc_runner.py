@@ -90,7 +90,8 @@ def run():
     while traci.simulation.getMinExpectedNumber() > 0:
         state = traci_env.get_state()
         phase = controller.get_phase(state)
-        traci_env.get_pedestrian_wait_times()
+        # traci_env.get_stuck_vehicles()
+        # traci_env.no_lane_change()
         _, _, _, _, step_count = traci_env.run_phase(phase)
 
     print(f"Execution finished, total time : {step_count}")

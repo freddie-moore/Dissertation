@@ -1,7 +1,8 @@
-# import libsumo as traci
-import traci
+import libsumo as traci
+# import traci
 from sumolib import checkBinary
 import random
+from write_routes import generate_routes
 
 GREEN_TIME = 30
 YELLOW_TIME = 6
@@ -29,13 +30,15 @@ class TraciEnvironment:
         self.user_defined_edges = ["ni", "ei", "si", "wi"]
         self.params = [ 
              "-c", "test.sumocfg", 
-             "-W", "true"
+             "-W", "true",
+             "--lateral-resolution", "1.8"
         ]
         
         if sumoBinary == 'sumo-gui':
             self.params.append("--start")
 
         traci.start([sumoBinary, *self.params])
+        generate_routes()
 
     def get_queue_lengths_by_edge(self, edge_id):
         waiting_times = []
@@ -96,6 +99,14 @@ class TraciEnvironment:
 
         return state
     
+    def get_stuck_vehicles(self):
+        for vehicle_id in traci.vehicle.getIDList():
+            if traci.vehicle.getSpeed(vehicle_id) == 0 and (traci.vehicle.getLaneChangeState(vehicle_id, -1)[1] == 32769 or traci.vehicle.getLaneChangeState(vehicle_id, 1)[1] == 32769):
+                # r = traci.vehicle.getLaneChangeState(vehicle_id, -1)
+                # l = traci.vehicle.getLaneChangeState(vehicle_id, 1)
+                # print(f"Vehicle {vehicle_id} L state : {l} , R state : {r}")
+                print(f"Vehicle {vehicle_id} is stuck!")
+
     def update_pedestrian_wait_times(self):
         for ped_id in traci.person.getIDList():
             if ped_id in self.all_pedestrian_wait_times.keys():
@@ -178,6 +189,9 @@ class TraciEnvironment:
     def get_avg_ped_wait(self):
         return sum(self.all_pedestrian_wait_times.values()) / len(self.all_pedestrian_wait_times)
     
+    def no_lane_change(self):
+        for vid in traci.vehicle.getIDList():
+            traci.vehicle.setLaneChangeMode(vid, 0b000000000000)
     def get_total_waiting_time(self, vehicles):
         wait  = 0
         for vehicle_id in vehicles:

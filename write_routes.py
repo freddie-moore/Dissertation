@@ -1,7 +1,7 @@
 import random
 import numpy as np
 
-random.seed(10)
+# random.seed(10)
 
 def generate_routes():
     
@@ -23,6 +23,9 @@ def generate_routes():
     with open("input_routes.rou.xml", "w") as routes:
         routes.write("""<routes>
             <vType id="type1" accel="0.8" decel="4.5" sigma="0.5" length="5" maxSpeed="70"/>
+            <vType id="rescue" vClass="emergency" speedFactor="1.5" guiShape="emergency">
+                <param key="has.bluelight.device" value="true"/>
+            </vType>
             <route id="ne" edges="ni eo"/>
             <route id="ns" edges="ni so"/>
             <route id="nw" edges="ni wo"/>
@@ -46,7 +49,10 @@ def generate_routes():
             
         for i, arrival_time in enumerate(arrival_times):
             route = random.choice(route_ids)
-            vehicle_type = "type1"
+            if random.random() > 0.98:
+                vehicle_type = "rescue"
+            else:
+                vehicle_type = "type1"
 
             routes.write(f"<vehicle id=\"{route}_{i}\" type=\"{vehicle_type}\" route=\"{route}\" depart=\"{arrival_time}\" />\n")
 

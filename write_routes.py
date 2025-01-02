@@ -47,16 +47,20 @@ def generate_routes():
             </personFlow>
                          """)
             
+        type1_id = 0
+        emv_id = 0
         for i, arrival_time in enumerate(arrival_times):
             route = random.choice(route_ids)
-            if random.random() > 0.98:
-                vehicle_type = "rescue"
+            if random.random() > 0.95:
+                emv_id += 1
+                routes.write(f"<vehicle id=\"emv_{emv_id}\" type=\"rescue\" route=\"{route}\" depart=\"{arrival_time}\" />\n")
             else:
-                vehicle_type = "type1"
-
-            routes.write(f"<vehicle id=\"{route}_{i}\" type=\"{vehicle_type}\" route=\"{route}\" depart=\"{arrival_time}\" />\n")
+                type1_id += 1
+                routes.write(f"<vehicle id=\"type1_{type1_id}\" type=\"type1\" route=\"{route}\" depart=\"{arrival_time}\" />\n")
 
         routes.write("</routes>")
+
+        return type1_id, emv_id
 
 
 if __name__ == "__main__":

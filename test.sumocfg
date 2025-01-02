@@ -25,7 +25,7 @@ SPDX-License-Identifier: EPL-2.0 OR GPL-2.0-or-later
     </output>
 
     <processing>
-        <time-to-teleport value="-1"/>
+        <!-- <time-to-teleport value="-1"/> -->
         <default.speeddev value="0"/>
     </processing>
 

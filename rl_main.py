@@ -52,11 +52,12 @@ memory = ReplayMemory(10000)
 steps_done = 0
 episode_durations = []
 ped_waits = []
+emv_waits = []
 record = float('+inf')
 random.seed(10)
 
 # Training loop
-num_episodes = 7500
+num_episodes = 4000
 
 def select_action(state):
     global steps_done
@@ -129,6 +130,7 @@ for i_episode in range(num_episodes):
         observation, reward, terminated, truncated, metrics = env.run_phase(action.item())
         env_time = metrics[0]
         ped_wait = metrics[1]
+        emv_wait = metrics[2]
         reward = torch.tensor([reward], device=device)
         done = terminated or truncated
 
@@ -157,12 +159,15 @@ for i_episode in range(num_episodes):
         if done:
             if env_time < record:
                 policy_net.save()
+                record = env_time
             episode_durations.append(env_time)
             ped_waits.append(ped_wait)
-            # plot_durations(episode_durations)
+            emv_waits.append(emv_wait)
             break
 
 print("Record : ", record)
-plot_durations(episode_durations, ped_waits)
+plot_durations(episode_durations, "Environment Duration")
+plot_durations(ped_waits, "Pedestrian Wait Times")
+plot_durations(emv_waits, "EMV Wait Times")
 plt.ioff()
 plt.show()

@@ -120,8 +120,9 @@ def optimize_model():
     torch.nn.utils.clip_grad_value_(policy_net.parameters(), 100)
     optimizer.step()
 
+env_time = 0
 for i_episode in range(num_episodes):
-    print(i_episode)
+    print(i_episode, env_time)
     # Initialize the environment and get its state
     state, info = env.reset()
     state = torch.tensor(state, dtype=torch.float32, device=device).unsqueeze(0)

@@ -5,7 +5,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from itertools import count
-
+import time
 from traci_environment import TraciEnvironment
 from model import DQN
 from memory import ReplayMemory, Transition
@@ -57,7 +57,7 @@ record = float('+inf')
 random.seed(10)
 
 # Training loop
-num_episodes = 3
+num_episodes = 10
 
 def select_action(state):
     global steps_done
@@ -121,14 +121,18 @@ def optimize_model():
     optimizer.step()
 
 env_time = 0
+
 for i_episode in range(num_episodes):
-    print(i_episode, env_time)
+    avg = []
+    start = time.time() * 1000
     # Initialize the environment and get its state
     state, info = env.reset()
     state = torch.tensor(state, dtype=torch.float32, device=device).unsqueeze(0)
     for t in count():
         action = select_action(state)
         observation, reward, terminated, truncated, metrics = env.run_phase(action.item())
+        
+        
         env_time = metrics[0]
         ped_wait = metrics[1]
         emv_wait = metrics[2]
@@ -165,10 +169,11 @@ for i_episode in range(num_episodes):
             ped_waits.append(ped_wait)
             emv_waits.append(emv_wait)
             break
+    end = time.time() * 1000
+    avg.append((end-start))
+    print("This iter took :", end-start)
+avg = sum(avg) / len(avg)   
+print(f"Avg time per iter : {avg:.2f} ms")
 
-print("Record : ", record)
-plot_durations(episode_durations, "Environment Duration")
-plot_durations(ped_waits, "Pedestrian Wait Times")
-plot_durations(emv_waits, "EMV Wait Times")
 plt.ioff()
 plt.show()

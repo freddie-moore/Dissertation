@@ -3,7 +3,7 @@ import libsumo as traci
 from sumolib import checkBinary
 import random
 from write_routes import generate_routes
-
+from copy import copy
 GREEN_TIME = 30
 YELLOW_TIME = 6
 
@@ -85,8 +85,8 @@ class TraciEnvironment:
             waiting_times.extend(self.get_waiting_times_by_edge(edge_id))
         return waiting_times
 
-    def get_emv_flags(self):
-        cur_emvs = self.get_emvs_in_sim()
+    def get_emv_flags(self, current_vehicles_in_sim):
+        cur_emvs = self.get_emvs_in_sim(current_vehicles_in_sim)
         emv_flags = []
         for edge_id in self.user_defined_edges:
             for i in range(1, 4):
@@ -104,13 +104,13 @@ class TraciEnvironment:
     def sample_action_space(self):
         return random.randint(0,self.get_n_actions() - 1)
     
-    def get_state(self):
+    def get_state(self, current_persons_in_sim, current_vehicles_in_sim):
         state = []
         state.extend(self.normalize_array(self.get_queue_lengths()))
         state.extend(self.normalize_array(self.red_timings))
         state.extend(self.normalize_array(self.get_waiting_times()))
-        state.extend(self.normalize_array(self.get_pedestrian_wait_times()))
-        state.extend(self.normalize_array(self.get_emv_flags()))
+        state.extend(self.normalize_array(self.get_pedestrian_wait_times(current_persons_in_sim)))
+        state.extend(self.normalize_array(self.get_emv_flags(current_vehicles_in_sim)))
 
         return state
 
@@ -124,17 +124,17 @@ class TraciEnvironment:
             else:
                 self.all_pedestrian_wait_times[ped_id] = traci.person.getWaitingTime(ped_id)
         
-    def update_emv_wait_times(self):
-        cur_emvs = self.get_emvs_in_sim()
+    def update_emv_wait_times(self, current_vehicles_in_sim):
+        cur_emvs = self.get_emvs_in_sim(current_vehicles_in_sim)
         for vid in cur_emvs:
             if vid in self.emv_wait_times.keys():
                 self.emv_wait_times[vid] = max(self.emv_wait_times[vid], traci.vehicle.getWaitingTime(vid))
             else:
                 self.emv_wait_times[vid] = traci.vehicle.getWaitingTime(vid)
 
-    def get_pedestrian_wait_times(self):
+    def get_pedestrian_wait_times(self, current_persons_in_sim):
         crossings = [':0_c0', ':0_c1', ':0_c2', ':0_c3']
-        pedestrians = traci.person.getIDList()
+        pedestrians = current_persons_in_sim
         for idx, crossing in enumerate(crossings):
             pedestrian_flag = False
             for ped_id in pedestrians:
@@ -156,11 +156,15 @@ class TraciEnvironment:
         return phases_array
     
     
+
     def run_phase(self, phase):
         yellow_phase = phase * 2
-        init_vehicles = set(traci.vehicle.getIDList())
+
+        current_vehicles_in_sim = set(traci.vehicle.getIDList())
+
+        init_vehicles = current_vehicles_in_sim
         init_ped = set(traci.person.getIDList())
-        init_emvs = self.get_emvs_in_sim()
+        init_emvs = self.get_emvs_in_sim(current_vehicles_in_sim)
 
         initial_wait = self.get_total_waiting_time(init_vehicles)
         initial_ped_wait = self.get_total_pedestrian_waiting_time(init_ped)
@@ -169,31 +173,38 @@ class TraciEnvironment:
         if phase != self.prev_action:
             # End previous phase
             traci.trafficlight.setPhase("0", self.prev_action*2)
-            for _ in range(YELLOW_TIME):
-                self.step_count += 1
-                traci.simulationStep()
+            self.step_count += YELLOW_TIME
+            traci.simulationStep(self.step_count)
 
             # Initial yellow phase
             traci.trafficlight.setPhase("0", yellow_phase)
-            for _ in range(YELLOW_TIME):
-                self.step_count += 1
-                traci.simulationStep()
+            self.step_count += YELLOW_TIME
+            traci.simulationStep(self.step_count)
 
         # Green phase
         traci.trafficlight.setPhase("0", yellow_phase+1)
-        for _ in range(GREEN_TIME):
-            self.step_count += 1
-            traci.simulationStep()
+        self.step_count += GREEN_TIME
+        traci.simulationStep(self.step_count)
 
         self.prev_action = phase
         self.set_red_timings((YELLOW_TIME * 2) + GREEN_TIME)
         self.update_pedestrian_wait_times()
 
-        done = len(traci.simulation.getCollisions()) > 0 or traci.simulation.getMinExpectedNumber() == 0
- 
-        rem_vehicles = set(traci.vehicle.getIDList()).intersection(init_vehicles)
-        rem_ped = set(traci.person.getIDList()).intersection(init_ped)
-        rem_emvs = set(self.get_emvs_in_sim()).intersection(init_emvs)
+        current_vehicles_in_sim = set(traci.vehicle.getIDList())
+        current_persons_in_sim = set(traci.person.getIDList())
+        self.update_emv_wait_times(current_vehicles_in_sim)
+
+        collisions = len(traci.simulation.getCollisions()) > 0
+        if collisions:
+            collisions_bonus = -500
+        else:
+            collisions_bonus = 0
+
+        done = collisions or traci.simulation.getMinExpectedNumber() == 0
+        
+        rem_vehicles = set(current_vehicles_in_sim).intersection(init_vehicles)
+        rem_ped = set(current_persons_in_sim).intersection(init_ped)
+        rem_emvs = self.get_emvs_in_sim(current_vehicles_in_sim).intersection(init_emvs)
 
         remaining_wait = self.get_total_waiting_time(rem_vehicles)
         remaining_ped_wait = self.get_total_pedestrian_waiting_time(rem_ped)
@@ -203,10 +214,9 @@ class TraciEnvironment:
         ped_reward = remaining_ped_wait - initial_ped_wait
         emv_reward = remaining_emv_wait - initial_emv_wait
 
-        reward = -(vehicle_reward + ped_reward + emv_reward)
+        reward = -(vehicle_reward + ped_reward + emv_reward + collisions_bonus)
 
-    
-        return self.get_state(), reward, done, (self.step_count > 12500), (self.step_count, self.get_avg_ped_wait(), self.get_avg_emv_wait())
+        return self.get_state(current_persons_in_sim, current_vehicles_in_sim), reward, done, (self.step_count > 12500), (self.step_count, self.get_avg_ped_wait(), self.get_avg_emv_wait())
 
     def get_avg_ped_wait(self):
         if self.all_pedestrian_wait_times:
@@ -220,8 +230,8 @@ class TraciEnvironment:
         else:
             return 0
     
-    def get_emvs_in_sim(self):
-        return set(traci.vehicle.getIDList()).intersection(self.emv_ids)
+    def get_emvs_in_sim(self, current_vehicles_in_sim):
+        return current_vehicles_in_sim.intersection(self.emv_ids)
 
 
     def get_total_waiting_time(self, vehicles):
@@ -261,7 +271,7 @@ class TraciEnvironment:
         self.emv_wait_times = dict()
         self.crossing_active_timings = [0] * 4
         traci.load(self.params)
-        return self.get_state(), None
+        return self.get_state(set(), set()), None
     
     def normalize_value(self, value, lower_bound, upper_bound):
         if not (lower_bound < value < upper_bound):

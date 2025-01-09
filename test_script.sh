@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH -c6 --mem=64g
+#SBATCH -c6 --mem=32g
 #SBATCH --gpus 2
 #SBATCH -p csug -q csug
 

@@ -98,7 +98,7 @@ class TraciEnvironment:
                 # dist = traci.vehicle.getLanePosition(vid)
                 incoming_edge = traci.vehicle.getRouteID(vid)[:1:]
                 route = f"{incoming_edge}i_{lane}"
-                dist = traci.vehicle.getLanePosition(vid)
+                dist = traci.vehicle.getLanePosition(vid) / 500
                 distances[route] = max(distances[route],dist)
         
         return list(distances.values())
@@ -120,7 +120,7 @@ class TraciEnvironment:
         # state.extend(self.normalize_array(self.red_timings))
         state.extend(self.normalize_array(self.get_waiting_times()))
         # state.extend(self.normalize_array(self.get_pedestrian_wait_times(current_persons_in_sim)))
-        state.extend(self.normalize_array(self.get_emv_flags(current_vehicles_in_sim)))
+        state.extend(self.get_emv_flags(current_vehicles_in_sim))
         # self.get_emv_flags(current_vehicles_in_sim)
 
         return state

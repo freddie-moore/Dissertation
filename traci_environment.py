@@ -1,5 +1,5 @@
-import libsumo as traci
-# import traci
+# import libsumo as traci
+import traci
 from sumolib import checkBinary
 import random
 from write_routes import generate_routes
@@ -86,14 +86,24 @@ class TraciEnvironment:
         return waiting_times
 
     def get_emv_flags(self, current_vehicles_in_sim):
+        # current_vehicles_in_sim = set(traci.vehicle.getIDList())
         cur_emvs = self.get_emvs_in_sim(current_vehicles_in_sim)
-        emv_flags = []
-        for edge_id in self.user_defined_edges:
-            for i in range(1, 4):
-                emvs_in_lane = set(traci.lane.getLastStepVehicleIDs(f"{edge_id}_{i}")).intersection(cur_emvs)
-                emv_flags.append(len(emvs_in_lane))
+        routes = [f"{d}i_{i}" for d in ['n', 'e', 's', 'w'] for i in range(3)]
 
-        return emv_flags
+        # Create the dictionary with all values set to -1
+        distances = {key: 0 for key in routes}
+        for vid in cur_emvs:
+            lane = traci.vehicle.getLaneIndex(vid)
+            if lane != 3:
+                # dist = traci.vehicle.getLanePosition(vid)
+                incoming_edge = traci.vehicle.getRouteID(vid)[:1:]
+                route = f"{incoming_edge}i_{lane}"
+                dist = traci.vehicle.getLanePosition(vid)
+                distances[route] = max(distances[route],dist)
+        
+        return list(distances.values())
+        
+
             
     def get_n_actions(self):
         return len(self.actions)
@@ -107,10 +117,11 @@ class TraciEnvironment:
     def get_state(self, current_persons_in_sim, current_vehicles_in_sim):
         state = []
         state.extend(self.normalize_array(self.get_queue_lengths()))
-        state.extend(self.normalize_array(self.red_timings))
+        # state.extend(self.normalize_array(self.red_timings))
         state.extend(self.normalize_array(self.get_waiting_times()))
-        state.extend(self.normalize_array(self.get_pedestrian_wait_times(current_persons_in_sim)))
+        # state.extend(self.normalize_array(self.get_pedestrian_wait_times(current_persons_in_sim)))
         state.extend(self.normalize_array(self.get_emv_flags(current_vehicles_in_sim)))
+        # self.get_emv_flags(current_vehicles_in_sim)
 
         return state
 
@@ -163,11 +174,11 @@ class TraciEnvironment:
         current_vehicles_in_sim = set(traci.vehicle.getIDList())
 
         init_vehicles = current_vehicles_in_sim
-        init_ped = set(traci.person.getIDList())
+        # init_ped = set(traci.person.getIDList())
         init_emvs = self.get_emvs_in_sim(current_vehicles_in_sim)
 
         initial_wait = self.get_total_waiting_time(init_vehicles)
-        initial_ped_wait = self.get_total_pedestrian_waiting_time(init_ped)
+        # initial_ped_wait = self.get_total_pedestrian_waiting_time(init_ped)
         initial_emv_wait = self.get_total_waiting_time(init_emvs)
         
         if phase != self.prev_action:
@@ -188,10 +199,10 @@ class TraciEnvironment:
 
         self.prev_action = phase
         self.set_red_timings((YELLOW_TIME * 2) + GREEN_TIME)
-        self.update_pedestrian_wait_times()
+        # self.update_pedestrian_wait_times()
 
         current_vehicles_in_sim = set(traci.vehicle.getIDList())
-        current_persons_in_sim = set(traci.person.getIDList())
+        # current_persons_in_sim = set(traci.person.getIDList())
         self.update_emv_wait_times(current_vehicles_in_sim)
 
         collisions = len(traci.simulation.getCollisions()) > 0
@@ -203,21 +214,23 @@ class TraciEnvironment:
         done = collisions or traci.simulation.getMinExpectedNumber() == 0
         
         rem_vehicles = set(current_vehicles_in_sim).intersection(init_vehicles)
-        rem_ped = set(current_persons_in_sim).intersection(init_ped)
+        # rem_ped = set(current_persons_in_sim).intersection(init_ped)
         rem_emvs = self.get_emvs_in_sim(current_vehicles_in_sim).intersection(init_emvs)
 
         remaining_wait = self.get_total_waiting_time(rem_vehicles)
-        remaining_ped_wait = self.get_total_pedestrian_waiting_time(rem_ped)
+        # remaining_ped_wait = self.get_total_pedestrian_waiting_time(rem_ped)
         remaining_emv_wait = self.get_total_waiting_time(rem_emvs)
 
         vehicle_reward = remaining_wait - initial_wait
-        ped_reward = remaining_ped_wait - initial_ped_wait
+        # ped_reward = remaining_ped_wait - initial_ped_wait
+        ped_reward = 0
         emv_reward = remaining_emv_wait - initial_emv_wait
 
         reward = -(vehicle_reward + ped_reward + emv_reward + collisions_bonus)
 
-        return self.get_state(current_persons_in_sim, current_vehicles_in_sim), reward, done, (self.step_count > 12500), (self.step_count, self.get_avg_ped_wait(), self.get_avg_emv_wait())
-
+        # return self.get_state(current_persons_in_sim, current_vehicles_in_sim), reward, done, (self.step_count > 12500), (self.step_count, self.get_avg_ped_wait(), self.get_avg_emv_wait())
+        return self.get_state(set(), current_vehicles_in_sim), reward, done, (self.step_count > 12500), (self.step_count, self.get_avg_ped_wait(), self.get_avg_emv_wait())
+    
     def get_avg_ped_wait(self):
         if self.all_pedestrian_wait_times:
             return sum(self.all_pedestrian_wait_times.values()) / len(self.all_pedestrian_wait_times)

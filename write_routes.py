@@ -1,7 +1,7 @@
 import random
 import numpy as np
 
-# random.seed(10)
+random.seed(10)
 
 def generate_routes():
     
@@ -16,8 +16,8 @@ def generate_routes():
     route_ids = list(routes.keys())
     pedestrian_routes = {"ns", "sn", "ew", "we"}
 
-    n = 600 # number of vehicles
-    arrival_rate = 1.5
+    n = 300 # number of vehicles
+    arrival_rate = 0.75
     arrival_times = np.cumsum(np.random.exponential(1 / arrival_rate, size=n))
 
     with open("input_routes.rou.xml", "w") as routes:
@@ -40,12 +40,12 @@ def generate_routes():
             <route id="ws" edges="wi so"/>
         """)
         
-        for id in pedestrian_routes:
-            routes.write(f"""
-            <personFlow id="p_{id}" begin="0" end="{n}" period="50">
-                <walk route="{id}"/>
-            </personFlow>
-                         """)
+        # for id in pedestrian_routes:
+        #     routes.write(f"""
+        #     <personFlow id="p_{id}" begin="0" end="{n}" period="50">
+        #         <walk route="{id}"/>
+        #     </personFlow>
+        #                  """)
             
         type1_id = 0
         emv_id = 0

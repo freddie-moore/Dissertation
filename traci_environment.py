@@ -1,5 +1,5 @@
-# import libsumo as traci
-import traci
+import libsumo as traci
+# import traci
 from sumolib import checkBinary
 import random
 from write_routes import generate_routes

@@ -161,9 +161,16 @@ for i_episode in range(num_episodes):
             if env_time < record:
                 policy_net.save()
                 record = env_time
-            episode_durations.append(env_time)
-            ped_waits.append(ped_wait)
-            emv_waits.append(emv_wait)
+
+            if truncated:
+                episode_durations.append(12500)
+                ped_waits.append(500)
+                emv_waits.append(500)
+            elif terminated:
+                episode_durations.append(env_time)
+                ped_waits.append(ped_wait)
+                emv_waits.append(emv_wait)
+
             break
 
 print("Record : ", record)

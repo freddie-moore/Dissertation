@@ -228,7 +228,7 @@ class TraciEnvironment:
 
         
         reward = -(vehicle_reward + ped_reward + emv_reward + collisions_bonus)
-        print(f"Vehicle Reward {vehicle_reward} | EMV Reward {emv_reward} | Total Reward {reward} | DIff between two {abs(vehicle_reward-emv_reward)} ")
+
         # return self.get_state(current_persons_in_sim, current_vehicles_in_sim), reward, done, (self.step_count > 12500), (self.step_count, self.get_avg_ped_wait(), self.get_avg_emv_wait())
         return self.get_state(set(), current_vehicles_in_sim), reward, done, (self.step_count > 12500 or collisions), (self.step_count, self.get_avg_ped_wait(), self.get_avg_emv_wait())
     

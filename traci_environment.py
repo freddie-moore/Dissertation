@@ -211,7 +211,7 @@ class TraciEnvironment:
         else:
             collisions_bonus = 0
 
-        done = collisions or traci.simulation.getMinExpectedNumber() == 0
+        done = traci.simulation.getMinExpectedNumber() == 0
         
         rem_vehicles = set(current_vehicles_in_sim).intersection(init_vehicles)
         # rem_ped = set(current_persons_in_sim).intersection(init_ped)
@@ -226,10 +226,11 @@ class TraciEnvironment:
         ped_reward = 0
         emv_reward = remaining_emv_wait - initial_emv_wait
 
+        
         reward = -(vehicle_reward + ped_reward + emv_reward + collisions_bonus)
-
+        print(f"Vehicle Reward {vehicle_reward} | EMV Reward {emv_reward} | Total Reward {reward} | DIff between two {abs(vehicle_reward-emv_reward)} ")
         # return self.get_state(current_persons_in_sim, current_vehicles_in_sim), reward, done, (self.step_count > 12500), (self.step_count, self.get_avg_ped_wait(), self.get_avg_emv_wait())
-        return self.get_state(set(), current_vehicles_in_sim), reward, done, (self.step_count > 12500), (self.step_count, self.get_avg_ped_wait(), self.get_avg_emv_wait())
+        return self.get_state(set(), current_vehicles_in_sim), reward, done, (self.step_count > 12500 or collisions), (self.step_count, self.get_avg_ped_wait(), self.get_avg_emv_wait())
     
     def get_avg_ped_wait(self):
         if self.all_pedestrian_wait_times:

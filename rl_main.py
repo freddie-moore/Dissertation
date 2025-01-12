@@ -57,7 +57,7 @@ record = float('+inf')
 random.seed(10)
 
 # Training loop
-num_episodes = 15000
+num_episodes = 20000
 
 def select_action(state):
     global steps_done
@@ -158,18 +158,14 @@ for i_episode in range(num_episodes):
         target_net.load_state_dict(target_net_state_dict)
 
         if done:
-            if env_time < record:
-                policy_net.save()
-                record = env_time
-
-            if truncated:
-                episode_durations.append(12500)
-                ped_waits.append(500)
-                emv_waits.append(500)
-            elif terminated:
+            if terminated:
                 episode_durations.append(env_time)
                 ped_waits.append(ped_wait)
                 emv_waits.append(emv_wait)
+
+                if env_time < record:
+                    policy_net.save()
+                    record = env_time
 
             break
 

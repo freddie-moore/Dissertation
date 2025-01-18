@@ -119,8 +119,8 @@ class TraciEnvironment:
         state.extend(self.normalize_array(self.get_queue_lengths()))
         # state.extend(self.normalize_array(self.red_timings))
         # state.extend(self.normalize_array(self.get_waiting_times()))
-        # state.extend(self.normalize_array(self.get_pedestrian_wait_times(current_persons_in_sim)))
-        # state.extend(self.get_emv_flags(current_vehicles_in_sim))
+        state.extend(self.normalize_array(self.get_pedestrian_wait_times(current_persons_in_sim)))
+        state.extend(self.get_emv_flags(current_vehicles_in_sim))
 
         # self.get_emv_flags(current_vehicles_in_sim)
 
@@ -226,11 +226,9 @@ class TraciEnvironment:
         ped_reward = remaining_ped_wait - initial_ped_wait
         emv_reward = remaining_emv_wait - initial_emv_wait
 
-        reward = -(vehicle_reward)
-        # reward = -(vehicle_reward + ped_reward + emv_reward + collisions_bonus)
+        reward = -(vehicle_reward + ped_reward + emv_reward + collisions_bonus)
 
         return self.get_state(current_persons_in_sim, current_vehicles_in_sim), reward, done, (self.step_count > 12500), (self.step_count, self.get_avg_ped_wait(), self.get_avg_emv_wait())
-        # return self.get_state(set(), current_vehicles_in_sim), reward, done, (self.step_count > 12500 or collisions), (self.step_count, self.get_avg_ped_wait(), self.get_avg_emv_wait())
     
     def get_avg_ped_wait(self):
         if self.all_pedestrian_wait_times:

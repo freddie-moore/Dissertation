@@ -92,7 +92,7 @@ def run():
         phase = controller.get_phase(state)
         # traci_env.get_stuck_vehicles()
         # traci_env.no_lane_change()
-        print("received :", traci_env.get_emv_flags())
+        # print("received :", traci_env.get_emv_flags())
         _, _, _, _, step_count = traci_env.run_phase(phase)
 
     print(f"Execution finished, total time : {step_count}")

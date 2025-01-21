@@ -217,15 +217,16 @@ class TraciEnvironment:
         rem_vehicles = set(current_vehicles_in_sim).intersection(init_vehicles)
         rem_ped = set(current_persons_in_sim).intersection(init_ped)
         rem_emvs = self.get_emvs_in_sim(current_vehicles_in_sim).intersection(init_emvs)
-
+        
         remaining_wait = self.get_total_waiting_time(rem_vehicles)
         remaining_ped_wait = self.get_total_pedestrian_waiting_time(rem_ped)
         remaining_emv_wait = self.get_total_waiting_time(rem_emvs)
 
-        vehicle_reward = remaining_wait - initial_wait
-        ped_reward = remaining_ped_wait - initial_ped_wait
-        emv_reward = remaining_emv_wait - initial_emv_wait
+        vehicle_reward = max(2 * (remaining_wait - initial_wait), 0)
+        ped_reward = max(2 * (remaining_ped_wait - initial_ped_wait), 0)
+        emv_reward = max(remaining_emv_wait - initial_emv_wait, 0)
 
+        # print(f"Vehicle Reward: {vehicle_reward} | Ped Reward: {ped_reward} | EMV reward: {emv_reward}")
         reward = -(vehicle_reward + ped_reward + emv_reward + collisions_bonus)
 
         return self.get_state(current_persons_in_sim, current_vehicles_in_sim), reward, done, (self.step_count > 12500), (self.step_count, self.get_avg_ped_wait(), self.get_avg_emv_wait())

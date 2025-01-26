@@ -40,12 +40,12 @@ def generate_routes():
             <route id="ws" edges="wi so"/>
         """)
         
-        for id in pedestrian_routes:
-            routes.write(f"""
-            <personFlow id="p_{id}" begin="0" end="{n}" period="50">
-                <walk route="{id}"/>
-            </personFlow>
-                         """)
+        # for id in pedestrian_routes:
+        #     routes.write(f"""
+        #     <personFlow id="p_{id}" begin="0" end="{n}" period="50">
+        #         <walk route="{id}"/>
+        #     </personFlow>
+        #                  """)
             
         type1_id = 0
         emv_id = 0

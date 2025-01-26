@@ -85,21 +85,39 @@ class TraciEnvironment:
             waiting_times.extend(self.get_waiting_times_by_edge(edge_id))
         return waiting_times
 
-    def get_emv_flags(self, current_vehicles_in_sim):
+    def get_emv_waiting_times_by_lane(self, current_vehicles_in_sim):
+        cur_emvs = self.get_emvs_in_sim(current_vehicles_in_sim)
+        routes = [f"{d}i_{i}" for d in ['n', 'e', 's', 'w'] for i in range(1,4)]
+
+        # Create the dictionary with all values set to -1
+        waiting_times = {key: 0 for key in routes}
+        for vid in cur_emvs:
+            lane = traci.vehicle.getLaneIndex(vid)
+            if lane != 0: #todo: TYPICALLY LANE 0 INDICATES VEHICLE IS STUCK ON JUNCTION, HOW WOULD WE RESOLVE THIS
+                # dist = traci.vehicle.getLanePosition(vid)
+                incoming_edge = traci.vehicle.getRouteID(vid)[:1:]
+                route = f"{incoming_edge}i_{lane}"
+                wait = traci.vehicle.getWaitingTime(vid)
+                waiting_times[route] += wait
+
+        return list(waiting_times.values())
+    
+    def get_emv_distances(self, current_vehicles_in_sim):
         # current_vehicles_in_sim = set(traci.vehicle.getIDList())
         cur_emvs = self.get_emvs_in_sim(current_vehicles_in_sim)
-        routes = [f"{d}i_{i}" for d in ['n', 'e', 's', 'w'] for i in range(3)]
+        routes = [f"{d}i_{i}" for d in ['n', 'e', 's', 'w'] for i in range(1,4)]
 
         # Create the dictionary with all values set to -1
         distances = {key: 0 for key in routes}
         for vid in cur_emvs:
             lane = traci.vehicle.getLaneIndex(vid)
-            if lane != 3:
+            if lane != 0: #todo: TYPICALLY LANE 0 INDICATES VEHICLE IS STUCK ON JUNCTION, HOW WOULD WE RESOLVE THIS
                 # dist = traci.vehicle.getLanePosition(vid)
                 incoming_edge = traci.vehicle.getRouteID(vid)[:1:]
                 route = f"{incoming_edge}i_{lane}"
                 dist = traci.vehicle.getLanePosition(vid) / 500
                 distances[route] = max(distances[route],dist)
+                
         
         return list(distances.values())
         
@@ -119,12 +137,32 @@ class TraciEnvironment:
         state.extend(self.normalize_array(self.get_queue_lengths()))
         # state.extend(self.normalize_array(self.red_timings))
         # state.extend(self.normalize_array(self.get_waiting_times()))
-        state.extend(self.normalize_array(self.get_pedestrian_wait_times(current_persons_in_sim)))
-        state.extend(self.get_emv_flags(current_vehicles_in_sim))
-
+        # state.extend(self.normalize_array(self.get_pedestrian_wait_times(current_persons_in_sim)))
+        # state.extend(self.get_emv_distances(current_vehicles_in_sim))
+        state.extend(self.normalize_array(self.get_emv_waiting_times_by_lane(current_vehicles_in_sim)))
         # self.get_emv_flags(current_vehicles_in_sim)
 
         return state
+
+    def print_non_intersection_elements(self, set1, set2):
+        """
+        Prints all elements that are not in the intersection of two sets.
+
+        Parameters:
+        - set1: The first set.
+        - set2: The second set.
+        """
+        # Calculate the intersection of the two sets
+        intersection = set1 & set2
+        
+        # Calculate elements that aren't in the intersection
+        non_intersection_elements = (set1 | set2) - intersection
+        
+        # Print the result
+        if(non_intersection_elements):
+            print("Elements not in the intersection:", non_intersection_elements)
+        else:
+            print("All present and okay")
 
     def update_pedestrian_wait_times(self):
         for ped_id in traci.person.getIDList():
@@ -217,15 +255,16 @@ class TraciEnvironment:
         rem_vehicles = set(current_vehicles_in_sim).intersection(init_vehicles)
         rem_ped = set(current_persons_in_sim).intersection(init_ped)
         rem_emvs = self.get_emvs_in_sim(current_vehicles_in_sim).intersection(init_emvs)
-        
+
         remaining_wait = self.get_total_waiting_time(rem_vehicles)
         remaining_ped_wait = self.get_total_pedestrian_waiting_time(rem_ped)
-        remaining_emv_wait = self.get_total_waiting_time(rem_emvs)
+        remaining_emv_wait = self.get_total_waiting_time(rem_emvs, True)
 
         vehicle_reward = max(2 * (remaining_wait - initial_wait), 0)
         ped_reward = max(2 * (remaining_ped_wait - initial_ped_wait), 0)
         emv_reward = max(remaining_emv_wait - initial_emv_wait, 0)
-
+        # print(f"EMV Reward : {emv_reward}")
+        # print(f"EMVs in SIM : {rem_emvs}")
         # print(f"Vehicle Reward: {vehicle_reward} | Ped Reward: {ped_reward} | EMV reward: {emv_reward}")
         reward = -(vehicle_reward + ped_reward + emv_reward + collisions_bonus)
 
@@ -247,7 +286,7 @@ class TraciEnvironment:
         return current_vehicles_in_sim.intersection(self.emv_ids)
 
 
-    def get_total_waiting_time(self, vehicles):
+    def get_total_waiting_time(self, vehicles, emv_flag=False):
         wait  = 0
         for vehicle_id in vehicles:
             wait += traci.vehicle.getWaitingTime(vehicle_id)

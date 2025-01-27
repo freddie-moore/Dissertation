@@ -138,7 +138,7 @@ class TraciEnvironment:
         # state.extend(self.normalize_array(self.red_timings))
         # state.extend(self.normalize_array(self.get_waiting_times()))
         # state.extend(self.normalize_array(self.get_pedestrian_wait_times(current_persons_in_sim)))
-        # state.extend(self.get_emv_distances(current_vehicles_in_sim))
+        state.extend(self.get_emv_distances(current_vehicles_in_sim))
         state.extend(self.normalize_array(self.get_emv_waiting_times_by_lane(current_vehicles_in_sim)))
         # self.get_emv_flags(current_vehicles_in_sim)
 
@@ -245,10 +245,10 @@ class TraciEnvironment:
         self.update_emv_wait_times(current_vehicles_in_sim)
 
         collisions = len(traci.simulation.getCollisions()) > 0
-        if collisions:
-            collisions_bonus = -500
-        else:
-            collisions_bonus = 0
+        # if collisions:
+        #     collisions_bonus = -500
+        # else:
+        #     collisions_bonus = 0
 
         done = traci.simulation.getMinExpectedNumber() == 0
         
@@ -260,15 +260,15 @@ class TraciEnvironment:
         remaining_ped_wait = self.get_total_pedestrian_waiting_time(rem_ped)
         remaining_emv_wait = self.get_total_waiting_time(rem_emvs, True)
 
-        vehicle_reward = max(2 * (remaining_wait - initial_wait), 0)
-        ped_reward = max(2 * (remaining_ped_wait - initial_ped_wait), 0)
+        vehicle_reward = max(remaining_wait - initial_wait, 0)
+        ped_reward = max(remaining_ped_wait - initial_ped_wait, 0)
         emv_reward = max(remaining_emv_wait - initial_emv_wait, 0)
         # print(f"EMV Reward : {emv_reward}")
         # print(f"EMVs in SIM : {rem_emvs}")
         # print(f"Vehicle Reward: {vehicle_reward} | Ped Reward: {ped_reward} | EMV reward: {emv_reward}")
-        reward = -(vehicle_reward + ped_reward + emv_reward + collisions_bonus)
+        reward = -(vehicle_reward + ped_reward + emv_reward)
 
-        return self.get_state(current_persons_in_sim, current_vehicles_in_sim), reward, done, (self.step_count > 12500), (self.step_count, self.get_avg_ped_wait(), self.get_avg_emv_wait())
+        return self.get_state(current_persons_in_sim, current_vehicles_in_sim), reward, done, (self.step_count > 12500 or collisions), (self.step_count, self.get_avg_ped_wait(), self.get_avg_emv_wait())
     
     def get_avg_ped_wait(self):
         if self.all_pedestrian_wait_times:

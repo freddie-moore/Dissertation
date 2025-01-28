@@ -290,10 +290,10 @@ class TraciEnvironment:
         wait  = 0
         for vehicle_id in vehicles:
             wait += traci.vehicle.getWaitingTime(vehicle_id)
-        if len(vehicles) > 0:
-            wait = wait / len(vehicles)
-        else:
-            wait = 0
+        # if len(vehicles) > 0:
+        #     wait = wait / len(vehicles)
+        # else:
+        #     wait = 0
         
         return wait
     

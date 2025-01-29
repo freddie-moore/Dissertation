@@ -210,15 +210,15 @@ class TraciEnvironment:
     def run_phase(self, phase):
         yellow_phase = phase * 2
 
-        current_vehicles_in_sim = set(traci.vehicle.getIDList())
+        current_vehicles_in_sim = {vid for vid in traci.vehicle.getIDList() if "emv" not in vid}
 
         init_vehicles = current_vehicles_in_sim
-        init_ped = set(traci.person.getIDList())
-        init_emvs = self.get_emvs_in_sim(current_vehicles_in_sim)
+        # init_ped = set(traci.person.getIDList())
+        # init_emvs = self.get_emvs_in_sim(current_vehicles_in_sim)
 
         initial_wait = self.get_total_waiting_time(init_vehicles)
-        initial_ped_wait = self.get_total_pedestrian_waiting_time(init_ped)
-        initial_emv_wait = self.get_total_waiting_time(init_emvs)
+        # initial_ped_wait = self.get_total_pedestrian_waiting_time(init_ped)
+        # initial_emv_wait = self.get_total_waiting_time(init_emvs)
         
         if phase != self.prev_action:
             # End previous phase
@@ -240,33 +240,34 @@ class TraciEnvironment:
         self.set_red_timings((YELLOW_TIME * 2) + GREEN_TIME)
         self.update_pedestrian_wait_times()
 
-        current_vehicles_in_sim = set(traci.vehicle.getIDList())
+        current_vehicles_in_sim = {vid for vid in traci.vehicle.getIDList() if "emv" not in vid}
         current_persons_in_sim = set(traci.person.getIDList())
         self.update_emv_wait_times(current_vehicles_in_sim)
 
         collisions = len(traci.simulation.getCollisions()) > 0
-        # if collisions:
-        #     collisions_bonus = -500
-        # else:
-        #     collisions_bonus = 0
+        if collisions:
+            collisions_bonus = 300
+        else:
+            collisions_bonus = 0
 
         done = traci.simulation.getMinExpectedNumber() == 0
         
         rem_vehicles = set(current_vehicles_in_sim).intersection(init_vehicles)
-        rem_ped = set(current_persons_in_sim).intersection(init_ped)
-        rem_emvs = self.get_emvs_in_sim(current_vehicles_in_sim).intersection(init_emvs)
+        # rem_ped = set(current_persons_in_sim).intersection(init_ped)
+        # rem_emvs = self.get_emvs_in_sim(current_vehicles_in_sim).intersection(init_emvs)
 
         remaining_wait = self.get_total_waiting_time(rem_vehicles)
-        remaining_ped_wait = self.get_total_pedestrian_waiting_time(rem_ped)
-        remaining_emv_wait = self.get_total_waiting_time(rem_emvs, True)
+        # remaining_ped_wait = self.get_total_pedestrian_waiting_time(rem_ped)
+        # remaining_emv_wait = self.get_total_waiting_time(rem_emvs, True)
 
-        vehicle_reward = max(remaining_wait - initial_wait, 0)
-        ped_reward = max(remaining_ped_wait - initial_ped_wait, 0)
-        emv_reward = max(remaining_emv_wait - initial_emv_wait, 0)
+        vehicle_reward = remaining_wait - initial_wait
+        # ped_reward = remaining_ped_wait - initial_ped_wait
+        # emv_reward = max(remaining_emv_wait - initial_emv_wait, 0)
         # print(f"EMV Reward : {emv_reward}")
         # print(f"EMVs in SIM : {rem_emvs}")
-        # print(f"Vehicle Reward: {vehicle_reward} | Ped Reward: {ped_reward} | EMV reward: {emv_reward}")
-        reward = -(vehicle_reward + ped_reward + emv_reward)
+        # if collisions_bonus > 0:
+        #     print(f"Vehicle Reward: {vehicle_reward} | Ped Reward: {ped_reward} | Collision Bonus: {collisions_bonus}")
+        reward = -(vehicle_reward) - collisions_bonus #+ emv_reward)
 
         return self.get_state(current_persons_in_sim, current_vehicles_in_sim), reward, done, (self.step_count > 12500 or collisions), (self.step_count, self.get_avg_ped_wait(), self.get_avg_emv_wait())
     
@@ -290,10 +291,10 @@ class TraciEnvironment:
         wait  = 0
         for vehicle_id in vehicles:
             wait += traci.vehicle.getWaitingTime(vehicle_id)
-        # if len(vehicles) > 0:
-        #     wait = wait / len(vehicles)
-        # else:
-        #     wait = 0
+        if len(vehicles) > 0:
+            wait = wait / len(vehicles)
+        else:
+            wait = 0
         
         return wait
     

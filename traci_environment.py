@@ -242,7 +242,7 @@ class TraciEnvironment:
 
         current_vehicles_in_sim = {vid for vid in traci.vehicle.getIDList() if "emv" not in vid}
         current_persons_in_sim = set(traci.person.getIDList())
-        self.update_emv_wait_times(current_vehicles_in_sim)
+        self.update_emv_wait_times(traci.vehicle.getIDList())
 
         collisions = len(traci.simulation.getCollisions()) > 0
         if collisions:

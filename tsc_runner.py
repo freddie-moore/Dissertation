@@ -88,7 +88,7 @@ def run():
     """execute the TraCI control loop"""
     step_count = 0
     while traci.simulation.getMinExpectedNumber() > 0:
-        state = traci_env.get_state(set(traci.person.getIDList()), set(traci.vehicle.getIDList()))
+        state = traci_env.get_state(set(traci.vehicle.getIDList()))
         phase = controller.get_phase(state)
         # traci_env.get_stuck_vehicles()
         # traci_env.no_lane_change()

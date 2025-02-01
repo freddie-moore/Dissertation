@@ -9,7 +9,7 @@ from itertools import count
 from traci_environment import TraciEnvironment
 from model import DQN
 from memory import ReplayMemory, Transition
-from utils import plot_durations
+from utils import plot_durations, plot_density
 
 # Set up the environment
 env = TraciEnvironment('sumo', {i for i in range (0,36)})
@@ -53,11 +53,12 @@ steps_done = 0
 episode_durations = []
 ped_waits = []
 emv_waits = []
+collisions = []
 record = float('+inf')
 random.seed(10)
 
 # Training loop
-num_episodes = 15000
+num_episodes = 10
 
 def select_action(state):
     global steps_done
@@ -132,6 +133,7 @@ for i_episode in range(num_episodes):
         env_time = metrics[0]
         ped_wait = metrics[1]
         emv_wait = metrics[2]
+        collision = metrics[3]
         reward = torch.tensor([reward], device=device)
         done = terminated or truncated
 
@@ -158,6 +160,7 @@ for i_episode in range(num_episodes):
         target_net.load_state_dict(target_net_state_dict)
 
         if done:
+            collisions.append(collision)
             if terminated:
                 episode_durations.append(env_time)
                 ped_waits.append(ped_wait)
@@ -173,5 +176,6 @@ print("Record : ", record)
 plot_durations(episode_durations, "Environment Duration")
 plot_durations(ped_waits, "Pedestrian Wait Times")
 plot_durations(emv_waits, "EMV Wait Times")
+plot_density(collisions)
 plt.ioff()
 plt.show()

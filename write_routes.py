@@ -51,7 +51,7 @@ def generate_routes():
         emv_id = 0
         for i, arrival_time in enumerate(arrival_times):
             route = random.choice(route_ids)
-            if random.random() > 0.98:
+            if random.random() > 0.95:
                 emv_id += 1
                 routes.write(f"<vehicle id=\"emv_{emv_id}\" type=\"rescue\" route=\"{route}\" depart=\"{arrival_time}\" />\n")
             else:

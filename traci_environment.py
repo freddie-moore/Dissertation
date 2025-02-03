@@ -211,12 +211,8 @@ class TraciEnvironment:
 
         # extract regular vehicles and calculate total waiting time
         reg_vehicles_in_sim = {vid for vid in all_vehicles_in_sim if "emv" not in vid}
-        emv_vehicles_in_sim = {vid for vid in all_vehicles_in_sim if "emv" in vid}
-
         init_vehicles = reg_vehicles_in_sim
-        init_emv_vehicles = emv_vehicles_in_sim
         initial_wait = self.get_total_waiting_time(init_vehicles)
-        init_emv_wait = self.get_total_waiting_time(init_emv_vehicles)
         
         if phase != self.prev_action:
             # End previous phase
@@ -240,7 +236,7 @@ class TraciEnvironment:
         # calculate collisions bonus and stop flags
         collisions = len(traci.simulation.getCollisions()) > 0
         if collisions:
-            collisions_bonus = 2000
+            collisions_bonus = 300
         else:
             collisions_bonus = 0
         done = traci.simulation.getMinExpectedNumber() == 0
@@ -248,23 +244,17 @@ class TraciEnvironment:
         # get updated simulation state
         all_vehicles_in_sim = set(traci.vehicle.getIDList())
         reg_vehicles_in_sim = {vid for vid in all_vehicles_in_sim if "emv" not in vid}
-        emv_vehicles_in_sim = {vid for vid in all_vehicles_in_sim if "emv" in vid}
-
+        
         # plot emv metrics
         self.update_emv_wait_times(all_vehicles_in_sim)
 
         # calculate waiting time for vehicles left in simulation after running phase
         rem_vehicles = set(reg_vehicles_in_sim).intersection(init_vehicles)
-        rem_emv_vehicles = set(emv_vehicles_in_sim).intersection(init_emv_vehicles)
 
         # calculate reward
         remaining_wait = self.get_total_waiting_time(rem_vehicles)
-        remaining_emv_wait = self.get_total_waiting_time(rem_emv_vehicles)
-
         vehicle_reward = remaining_wait - initial_wait
-        emv_reward = remaining_emv_wait - init_emv_wait
-        
-        reward = -((10 * vehicle_reward) + emv_reward) - collisions_bonus
+        reward = -(vehicle_reward) - collisions_bonus
 
         return self.get_state(all_vehicles_in_sim), reward, done, (self.step_count > 12500 or collisions), (self.step_count, self.get_avg_ped_wait(), self.get_avg_emv_wait(), collisions)
     

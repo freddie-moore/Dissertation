@@ -85,8 +85,8 @@ class TraciEnvironment:
             waiting_times.extend(self.get_waiting_times_by_edge(edge_id))
         return waiting_times
 
-    def get_emv_waiting_times_by_lane(self, current_vehicles_in_sim):
-        cur_emvs = self.get_emvs_in_sim(current_vehicles_in_sim)
+    def get_emv_waiting_times_by_lane(self):
+        cur_emvs = self.get_emvs_in_sim(set(traci.vehicle.getIDList()))
         routes = [f"{d}i_{i}" for d in ['n', 'e', 's', 'w'] for i in range(1,4)]
 
         # Create the dictionary with all values set to -1
@@ -100,11 +100,11 @@ class TraciEnvironment:
                 wait = traci.vehicle.getWaitingTime(vid)
                 waiting_times[route] += wait
 
-        return list(waiting_times.values())
+        return [waiting_times[key] for key in routes]
     
-    def get_emv_distances(self, current_vehicles_in_sim):
+    def get_emv_distances(self):
         # current_vehicles_in_sim = set(traci.vehicle.getIDList())
-        cur_emvs = self.get_emvs_in_sim(current_vehicles_in_sim)
+        cur_emvs = self.get_emvs_in_sim(set(traci.vehicle.getIDList()))
         routes = [f"{d}i_{i}" for d in ['n', 'e', 's', 'w'] for i in range(1,4)]
 
         # Create the dictionary with all values set to -1
@@ -119,7 +119,7 @@ class TraciEnvironment:
                 distances[route] = max(distances[route],dist)
                 
         
-        return list(distances.values())
+        return [distances[key] for key in routes]
         
 
             
@@ -132,11 +132,11 @@ class TraciEnvironment:
     def sample_action_space(self):
         return random.randint(0,self.get_n_actions() - 1)
     
-    def get_state(self, current_vehicles_in_sim):
+    def get_state(self):
         state = []
         state.extend(self.normalize_array(self.get_queue_lengths()))
-        state.extend(self.get_emv_distances(current_vehicles_in_sim))
-        state.extend(self.normalize_array(self.get_emv_waiting_times_by_lane(current_vehicles_in_sim)))
+        state.extend(self.get_emv_distances())
+        state.extend(self.normalize_array(self.get_emv_waiting_times_by_lane()))
 
         return state
 
@@ -256,7 +256,7 @@ class TraciEnvironment:
         vehicle_reward = remaining_wait - initial_wait
         reward = -(vehicle_reward) - collisions_bonus
 
-        return self.get_state(all_vehicles_in_sim), reward, done, (self.step_count > 12500 or collisions), (self.step_count, self.get_avg_ped_wait(), self.get_avg_emv_wait(), collisions)
+        return self.get_state(), reward, done, (self.step_count > 12500 or collisions), (self.step_count, self.get_avg_ped_wait(), self.get_avg_emv_wait(), collisions)
     
     def get_avg_ped_wait(self):
         if self.all_pedestrian_wait_times:
@@ -311,7 +311,7 @@ class TraciEnvironment:
         self.emv_wait_times = dict()
         self.crossing_active_timings = [0] * 4
         traci.load(self.params)
-        return self.get_state(set()), None
+        return self.get_state(), None
     
     def normalize_value(self, value, lower_bound, upper_bound):
         if not (lower_bound < value < upper_bound):

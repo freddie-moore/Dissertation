@@ -135,8 +135,8 @@ class TraciEnvironment:
     def get_state(self):
         state = []
         state.extend(self.normalize_array(self.get_queue_lengths()))
-        state.extend(self.get_emv_distances())
-        state.extend(self.normalize_array(self.get_emv_waiting_times_by_lane()))
+        # state.extend(self.get_emv_distances())
+        # state.extend(self.normalize_array(self.get_emv_waiting_times_by_lane()))
 
         return state
 

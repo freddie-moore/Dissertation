@@ -12,6 +12,12 @@ MAX_PED_WAIT = 905
 MIN_VEH_WAIT = -10000
 MIN_PED_WAIT = -2750
 
+
+## TODO:
+# check lateral resolution levels, might be wrong
+# emvs aren't showing as having a blue light??
+# watch the simulation to check car behaviour is as expected
+
 class TraciEnvironment:
     def __init__(self, binary, actions):
         self.actions = actions
@@ -120,7 +126,21 @@ class TraciEnvironment:
                 
         
         return [distances[key] for key in routes]
+
+    def get_emv_numbers(self):
+        cur_emvs = self.get_emvs_in_sim(set(traci.vehicle.getIDList()))
+        routes = [f"{d}i_{i}" for d in ['n', 'e', 's', 'w'] for i in range(1,4)]
+
+        # Create the dictionary with all values set to -1
+        distances = {key: 0 for key in routes}
+        for vid in cur_emvs:
+            lane = traci.vehicle.getLaneIndex(vid)
+            if lane != 0: #todo: TYPICALLY LANE 0 INDICATES VEHICLE IS STUCK ON JUNCTION, HOW WOULD WE RESOLVE THIS
+                incoming_edge = traci.vehicle.getRouteID(vid)[:1:]
+                route = f"{incoming_edge}i_{lane}"
+                distances[route] += 1
         
+        return [distances[key] for key in routes]
 
             
     def get_n_actions(self):
@@ -135,6 +155,7 @@ class TraciEnvironment:
     def get_state(self):
         state = []
         state.extend(self.normalize_array(self.get_queue_lengths()))
+        state.extend(self.normalize_array(self.get_emv_numbers()))
         # state.extend(self.get_emv_distances())
         # state.extend(self.normalize_array(self.get_emv_waiting_times_by_lane()))
 

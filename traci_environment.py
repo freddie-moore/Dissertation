@@ -129,7 +129,7 @@ class TraciEnvironment:
 
     def get_emv_numbers(self):
         cur_emvs = self.get_emvs_in_sim(set(traci.vehicle.getIDList()))
-        routes = [f"{d}i_{i}" for d in ['n', 'e', 's', 'w'] for i in range(1,4)]
+        routes = ['n', 'e', 's', 'w']
 
         # Create the dictionary with all values set to -1
         distances = {key: 0 for key in routes}
@@ -137,9 +137,10 @@ class TraciEnvironment:
             lane = traci.vehicle.getLaneIndex(vid)
             if lane != 0: #todo: TYPICALLY LANE 0 INDICATES VEHICLE IS STUCK ON JUNCTION, HOW WOULD WE RESOLVE THIS
                 incoming_edge = traci.vehicle.getRouteID(vid)[:1:]
-                route = f"{incoming_edge}i_{lane}"
-                distances[route] += 1
+                # route = f"{incoming_edge}i_{lane}"
+                distances[incoming_edge] += 1
         
+        # print("ret : ", distances)
         return [distances[key] for key in routes]
 
             

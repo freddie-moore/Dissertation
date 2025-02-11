@@ -57,10 +57,8 @@ class SimpleController():
         self.i = 0
 
     def get_phase(self, state):
-        phase = self.phases[self.i]
         self.i += 1
-        self.i = self.i % len(self.phases)
-        return phase
+        return self.i % 3
         
 
 class RLController():

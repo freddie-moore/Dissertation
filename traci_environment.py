@@ -1,9 +1,10 @@
-import libsumo as traci
-# import traci
+# import libsumo as traci
+import traci
 from sumolib import checkBinary
 import random
 from write_routes import generate_routes
 from copy import copy
+from base3experimentaiton import get_idx_to_end_phase, get_idx_to_start_phase, get_idx_of_green_phase, get_array_of_green_lights
 GREEN_TIME = 30
 YELLOW_TIME = 6
 
@@ -12,18 +13,12 @@ MAX_PED_WAIT = 905
 MIN_VEH_WAIT = -10000
 MIN_PED_WAIT = -2750
 
-
-## TODO:
-# check lateral resolution levels, might be wrong
-# emvs aren't showing as having a blue light??
-# watch the simulation to check car behaviour is as expected
-
 class TraciEnvironment:
     def __init__(self, binary, actions):
         self.actions = actions
 
         self.step_count = 0
-        self.prev_action = 0
+        self.current_phase = 0
         self.red_timings = [0] * self.get_n_actions()
         self.crossing_active_timings = [0] * 4
 
@@ -47,6 +42,7 @@ class TraciEnvironment:
             self.params.append("--start")
 
         traci.start([sumoBinary, *self.params])
+        traci.trafficlight.setPhase("0", 11)
         type1_count, emv_count = generate_routes()
         self.emv_ids = {f"emv_{i}" for i in range(0,emv_count)}
 
@@ -70,12 +66,12 @@ class TraciEnvironment:
         return arr[:]
 
     
-    def set_red_timings(self, step_count):
-        for i in range(0, len(self.red_timings)):
-            if i != self.prev_action:
-                self.red_timings[i] += step_count
-            else:
-                self.red_timings[i] = 0
+    # def set_red_timings(self, step_count):
+    #     for i in range(0, len(self.red_timings)):
+    #         if i != self.prev_action:
+    #             self.red_timings[i] += step_count
+    #         else:
+    #             self.red_timings[i] = 0
 
     
     def get_waiting_times_by_edge(self, edge_id):
@@ -157,8 +153,10 @@ class TraciEnvironment:
     def get_state(self):
         state = []
         state.extend(self.normalize_array(self.get_queue_lengths()))
+        state.extend(self.get_phases_array())
         # state.extend(self.normalize_array(self.get_emv_numbers()))
-        state.extend(self.get_emv_distances())
+        # state.extend(self.get_emv_distances())
+        # state.extend(self.get_pedestrian_wait_times(traci.person.getIDList()))
         # state.extend(self.normalize_array(self.get_emv_waiting_times_by_lane()))
 
         return state
@@ -220,15 +218,11 @@ class TraciEnvironment:
     
 
     def get_phases_array(self):
-        phases_array = [0] * self.get_n_actions()
-        phases_array[self.prev_action] = 1
-        return phases_array
+        return get_array_of_green_lights(self.current_phase)
     
     
 
-    def run_phase(self, phase):
-        yellow_phase = phase * 2
-
+    def run_phase(self, new_phase):
         # store all vehicles currently in simulation
         all_vehicles_in_sim = set(traci.vehicle.getIDList())
 
@@ -242,24 +236,28 @@ class TraciEnvironment:
         initial_wait = self.get_total_waiting_time(init_vehicles)
         initial_emv_wait = self.get_total_waiting_time(init_emvs)
         
-        if phase != self.prev_action:
-            # End previous phase
-            traci.trafficlight.setPhase("0", self.prev_action*2)
-            self.step_count += YELLOW_TIME
-            traci.simulationStep(self.step_count)
+        # End previous phase
+        end_phase_idx = get_idx_to_end_phase(self.current_phase, new_phase)
+        traci.trafficlight.setPhase("0", end_phase_idx)
+        self.step_count += YELLOW_TIME
+        traci.simulationStep(self.step_count)
 
-            # Initial yellow phase
-            traci.trafficlight.setPhase("0", yellow_phase)
-            self.step_count += YELLOW_TIME
-            traci.simulationStep(self.step_count)
+    
+        # Start next phase
+        start_phase_idx = get_idx_to_start_phase(self.current_phase, new_phase)
+        traci.trafficlight.setPhase("0", start_phase_idx)
+        self.step_count += YELLOW_TIME
+        traci.simulationStep(self.step_count)
 
         # Green phase
-        traci.trafficlight.setPhase("0", yellow_phase+1)
+        green_phase_idx = get_idx_of_green_phase(new_phase)
+        traci.trafficlight.setPhase("0", green_phase_idx)
         self.step_count += GREEN_TIME
         traci.simulationStep(self.step_count)
 
-        self.prev_action = phase
-        self.set_red_timings((YELLOW_TIME * 2) + GREEN_TIME)
+        self.current_phase = new_phase
+        # get_array_of_green_lights(self.current_phase, True)
+        # self.set_red_timings((YELLOW_TIME * 2) + GREEN_TIME)
 
         # calculate collisions bonus and stop flags
         collisions = len(traci.simulation.getCollisions()) > 0
@@ -339,12 +337,13 @@ class TraciEnvironment:
 
     def reset(self):
         self.step_count = 0
-        self.prev_action = 0
+        self.current_phase = 0
         self.red_timings = [0] * self.get_n_actions()
         self.all_pedestrian_wait_times = dict()
         self.emv_wait_times = dict()
         self.crossing_active_timings = [0] * 4
         traci.load(self.params)
+        traci.trafficlight.setPhase("0", 11)
         return self.get_state(), None
     
     def normalize_value(self, value, lower_bound, upper_bound):

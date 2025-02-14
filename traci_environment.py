@@ -342,6 +342,7 @@ class TraciEnvironment:
         self.all_pedestrian_wait_times = dict()
         self.emv_wait_times = dict()
         self.crossing_active_timings = [0] * 4
+        type1_count, emv_count = generate_routes()
         traci.load(self.params)
         traci.trafficlight.setPhase("0", 11)
         return self.get_state(), None

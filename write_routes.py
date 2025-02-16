@@ -17,7 +17,7 @@ def generate_routes():
     pedestrian_routes = {"ns", "sn", "ew", "we"}
 
     n = 300 # number of vehicles
-    arrival_rate = 0.75
+    arrival_rate = random.randrange(1,5)
     arrival_times = np.cumsum(np.random.exponential(1 / arrival_rate, size=n))
 
     with open("input_routes.rou.xml", "w") as routes:

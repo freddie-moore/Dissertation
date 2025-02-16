@@ -1,5 +1,5 @@
-# import libsumo as traci
-import traci
+import libsumo as traci
+# import traci
 from sumolib import checkBinary
 import random
 from write_routes import generate_routes
@@ -343,6 +343,7 @@ class TraciEnvironment:
         self.emv_wait_times = dict()
         self.crossing_active_timings = [0] * 4
         type1_count, emv_count = generate_routes()
+        self.emv_ids = {f"emv_{i}" for i in range(0,emv_count)} 
         traci.load(self.params)
         traci.trafficlight.setPhase("0", 11)
         return self.get_state(), None

@@ -3,7 +3,7 @@ import numpy as np
 
 random.seed(10)
 
-def generate_routes():
+def generate_routes(num_cars):
     
 
     routes = {
@@ -16,7 +16,7 @@ def generate_routes():
     route_ids = list(routes.keys())
     pedestrian_routes = {"ns", "sn", "ew", "we"}
 
-    n = 300 # number of vehicles
+    n = num_cars
     arrival_rate = random.randrange(1,5)
     arrival_times = np.cumsum(np.random.exponential(1 / arrival_rate, size=n))
 
@@ -40,23 +40,19 @@ def generate_routes():
             <route id="ws" edges="wi so"/>
         """)
         
-        for id in pedestrian_routes:
-            routes.write(f"""
-            <personFlow id="p_{id}" begin="0" end="{n}" period="50">
-                <walk route="{id}"/>
-            </personFlow>
-                         """)
+        # for id in pedestrian_routes:
+        #     routes.write(f"""
+        #     <personFlow id="p_{id}" begin="0" end="{n}" period="50">
+        #         <walk route="{id}"/>
+        #     </personFlow>
+        #                  """)
             
         type1_id = 0
         emv_id = 0
         for i, arrival_time in enumerate(arrival_times):
-            route = random.choice(route_ids)
-            if random.random() > 0.98:
-                emv_id += 1
-                routes.write(f"<vehicle id=\"emv_{emv_id}\" type=\"rescue\" route=\"{route}\" depart=\"{arrival_time}\" />\n")
-            else:
-                type1_id += 1
-                routes.write(f"<vehicle id=\"type1_{type1_id}\" type=\"type1\" route=\"{route}\" depart=\"{arrival_time}\" />\n")
+            route = "ns"
+            type1_id += 1
+            routes.write(f"<vehicle id=\"type1_{type1_id}\" type=\"type1\" route=\"{route}\" depart=\"0\" />\n")
 
         routes.write("</routes>")
 

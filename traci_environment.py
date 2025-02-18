@@ -1,5 +1,5 @@
-# import libsumo as traci
-import traci
+import libsumo as traci
+# import traci
 from sumolib import checkBinary
 import random
 from write_routes import generate_routes
@@ -41,9 +41,9 @@ class TraciEnvironment:
         if sumoBinary == 'sumo-gui':
             self.params.append("--start")
 
+        self.arrivals, emv_count, self.arrival_rate = generate_routes()
         traci.start([sumoBinary, *self.params])
         traci.trafficlight.setPhase("0", 11)
-        type1_count, emv_count = generate_routes()
         self.emv_ids = {f"emv_{i}" for i in range(0,emv_count)}
 
     def get_queue_lengths_by_edge(self, edge_id):
@@ -52,6 +52,28 @@ class TraciEnvironment:
             waiting_times.append(traci.lane.getLastStepVehicleNumber(f"{edge_id}_{i}"))
         return waiting_times
     
+    def get_future_arrivals(self):
+        n = 50
+        routes = ['ne', 'ns', 'nw', 'en', 'es', 'ew', 'se', 'sn', 'sw', 'wn', 'we', 'ws']
+        future_arrivals = dict()
+        for route in routes:
+            future_arrivals[route] = 0
+        for arrival_time, route in self.arrivals:
+            if arrival_time < self.step_count:
+                pass
+            elif arrival_time > self.step_count and arrival_time < (self.step_count + n):
+                future_arrivals[route] += 1
+            else:
+                break
+
+        return [future_arrivals[key] for key in routes]
+
+        
+
+
+
+
+
     def get_queue_lengths(self):
         queues_length = []
         for edge_id in self.user_defined_edges:
@@ -155,8 +177,9 @@ class TraciEnvironment:
         state.extend(self.normalize_array(self.get_queue_lengths()))
         state.extend(self.get_phases_array())
         # state.extend(self.normalize_array(self.get_emv_numbers()))
-        state.extend(self.get_emv_distances())
-        state.extend(self.get_pedestrian_wait_times(traci.person.getIDList()))
+        state.extend(self.normalize_array(self.get_emv_distances()))
+        state.extend(self.normalize_array(self.get_pedestrian_wait_times(traci.person.getIDList())))
+        # state.extend(self.normalize_array(self.get_future_arrivals()))
         # state.extend(self.normalize_array(self.get_emv_waiting_times_by_lane()))
 
         return state
@@ -294,7 +317,7 @@ class TraciEnvironment:
 
         reward = -(vehicle_reward + emv_reward + remaining_ped_wait) - collisions_bonus
 
-        return self.get_state(), reward, done, (self.step_count > 12500 or collisions), (self.step_count, self.get_avg_ped_wait(), self.get_avg_emv_wait(), collisions)
+        return self.get_state(), reward, done, (self.step_count > 12500 or collisions), (self.step_count, self.get_avg_ped_wait(), self.get_avg_emv_wait(), collisions, self.arrival_rate)
     
     def get_avg_ped_wait(self):
         if self.all_pedestrian_wait_times:
@@ -348,7 +371,7 @@ class TraciEnvironment:
         self.all_pedestrian_wait_times = dict()
         self.emv_wait_times = dict()
         self.crossing_active_timings = [0] * 4
-        type1_count, emv_count = generate_routes()
+        self.arrivals, emv_count, self.arrival_rate = generate_routes()
         self.emv_ids = {f"emv_{i}" for i in range(0,emv_count)} 
         traci.load(self.params)
         traci.trafficlight.setPhase("0", 11)

@@ -1,11 +1,9 @@
 import random
 import numpy as np
 
-random.seed(10)
+# random.seed(10)
 
 def generate_routes():
-    
-
     routes = {
         "ne": 0.4 / 3, "ns": 0.4 / 3, "nw": 0.4 / 3,  # 40% for 'n' routes
         "en": 0.3 / 3, "es": 0.3 / 3, "ew": 0.3 / 3,  # 30% for 'e' routes
@@ -16,10 +14,13 @@ def generate_routes():
     route_ids = list(routes.keys())
     pedestrian_routes = {"ns", "sn", "ew", "we"}
 
-    n = 300 # number of vehicles
-    arrival_rate = random.randrange(1,5)
+    n = 400
+    arrival_rate = random.randrange(20, 100, 20)
+    arrival_rate /= 100
+
     arrival_times = np.cumsum(np.random.exponential(1 / arrival_rate, size=n))
 
+    routes_taken = []
     with open("input_routes.rou.xml", "w") as routes:
         routes.write("""<routes>
             <vType id="type1" accel="0.8" decel="4.5" sigma="0.5" length="5" maxSpeed="70"/>
@@ -51,16 +52,17 @@ def generate_routes():
         emv_id = 0
         for i, arrival_time in enumerate(arrival_times):
             route = random.choice(route_ids)
+            routes_taken.append(route)
             if random.random() > 0.98:
                 emv_id += 1
                 routes.write(f"<vehicle id=\"emv_{emv_id}\" type=\"rescue\" route=\"{route}\" depart=\"{arrival_time}\" />\n")
             else:
                 type1_id += 1
                 routes.write(f"<vehicle id=\"type1_{type1_id}\" type=\"type1\" route=\"{route}\" depart=\"{arrival_time}\" />\n")
-
+            
         routes.write("</routes>")
 
-        return type1_id, emv_id
+        return zip(arrival_times, routes_taken), emv_id, arrival_rate
 
 
 if __name__ == "__main__":

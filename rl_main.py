@@ -57,7 +57,7 @@ collisions = []
 record = float('+inf')
 
 # Training loop
-num_episodes = 15000
+num_episodes = 15
 
 def select_action(state):
     global steps_done
@@ -121,6 +121,8 @@ def optimize_model():
     optimizer.step()
 
 env_time = 0
+
+densities_by_arrival = dict()
 for i_episode in range(num_episodes):
     print(i_episode, env_time)
     # Initialize the environment and get its state
@@ -133,6 +135,7 @@ for i_episode in range(num_episodes):
         ped_wait = metrics[1]
         emv_wait = metrics[2]
         collision = metrics[3]
+        arrival_rate = metrics[4]
         reward = torch.tensor([reward], device=device)
         done = terminated or truncated
 
@@ -169,6 +172,11 @@ for i_episode in range(num_episodes):
                     policy_net.save()
                     record = env_time
 
+                if arrival_rate in densities_by_arrival.keys():
+                    densities_by_arrival[arrival_rate].append(env_time)
+                else:
+                    densities_by_arrival[arrival_rate] = [env_time]
+
             break
 
 print("Record : ", record)
@@ -178,3 +186,4 @@ plot_durations(emv_waits, "EMV Wait Times")
 plot_density(collisions)
 plt.ioff()
 plt.show()
+print(densities_by_arrival)

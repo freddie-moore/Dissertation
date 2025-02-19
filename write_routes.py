@@ -15,7 +15,8 @@ def generate_routes():
     pedestrian_routes = {"ns", "sn", "ew", "we"}
 
     n = 400
-    arrival_rate = random.randrange(20, 100, 20)
+    # arrival_rate = random.randrange(20, 100, 20)
+    arrival_rate = 0.5
     arrival_rate /= 100
 
     arrival_times = np.cumsum(np.random.exponential(1 / arrival_rate, size=n))

@@ -1,9 +1,26 @@
-my_dict = {'ne': 4, 'ns': 3, 'nw': 2, 'en': 4, 'es': 8, 'ew': 1, 'se': 3, 'sn': 9, 'sw': 5, 'wn': 4, 'we': 4, 'ws': 6}
+import random
 
-# should get 52
+T = 100
+A = []
+EMV_A = []
+for i in range(0,4):
+    lane_arrivals = []
+    for i in range(0,T):
+        if random.random() > 0.5:
+            lane_arrivals.append(0)
+        else:
+            lane_arrivals.append(1)
+    A.append(lane_arrivals)
 
-total = 0
-for key, value in my_dict.items():
-    total += value
+print(A)
 
-print(total)
+for i in range(0,4):
+    lane_arrivals = []
+    for i in range(0,T):
+        if random.random() > 0.02:
+            lane_arrivals.append(0)
+        else:
+            lane_arrivals.append(1)
+    EMV_A.append(lane_arrivals)
+
+print(EMV_A)

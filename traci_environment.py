@@ -18,6 +18,7 @@ class TraciEnvironment:
         self.actions = actions
 
         self.step_count = 0
+        self.iteration_count = 0
         self.current_phase = 0
         self.red_timings = [0] * self.get_n_actions()
         self.crossing_active_timings = [0] * 4
@@ -41,7 +42,7 @@ class TraciEnvironment:
         if sumoBinary == 'sumo-gui':
             self.params.append("--start")
 
-        self.arrivals, emv_count, self.arrival_rate = generate_routes()
+        self.arrivals, emv_count, self.arrival_rate = generate_routes(iteration_count=self.iteration_count)
         traci.start([sumoBinary, *self.params])
         traci.trafficlight.setPhase("0", 11)
         self.emv_ids = {f"emv_{i}" for i in range(0,emv_count)}
@@ -367,11 +368,12 @@ class TraciEnvironment:
     def reset(self):
         self.step_count = 0
         self.current_phase = 0
+        self.iteration_count += 1
         self.red_timings = [0] * self.get_n_actions()
         self.all_pedestrian_wait_times = dict()
         self.emv_wait_times = dict()
         self.crossing_active_timings = [0] * 4
-        self.arrivals, emv_count, self.arrival_rate = generate_routes()
+        self.arrivals, emv_count, self.arrival_rate = generate_routes(self.iteration_count)
         self.emv_ids = {f"emv_{i}" for i in range(0,emv_count)} 
         traci.load(self.params)
         traci.trafficlight.setPhase("0", 11)

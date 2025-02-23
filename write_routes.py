@@ -4,7 +4,7 @@ import numpy as np
 # random.seed(10)
 
 def generate_routes(iteration_count):
-    random.seed(iteration_count % 20)
+    random.seed(iteration_count % 5)
     routes = {
         "ne": 0.4 / 3, "ns": 0.4 / 3, "nw": 0.4 / 3,  # 40% for 'n' routes
         "en": 0.3 / 3, "es": 0.3 / 3, "ew": 0.3 / 3,  # 30% for 'e' routes

@@ -300,8 +300,9 @@ class TraciEnvironment:
         emv_vehicles_in_sim = {vid for vid in all_vehicles_in_sim if "emv" in vid}
         peds_in_sim = traci.person.getIDList()
         
-        # plot emv metrics
+        # plot metrics
         self.update_emv_wait_times(all_vehicles_in_sim)
+        self.update_pedestrian_wait_times()
 
         # calculate waiting time for vehicles left in simulation after running phase
         rem_vehicles = set(reg_vehicles_in_sim).intersection(init_vehicles)
@@ -357,13 +358,6 @@ class TraciEnvironment:
             wait = 0
 
         return wait
-
-    def update_pedestrian_wait_times(self):
-        for pedestrian_id in traci.person.getIDList():
-            if pedestrian_id in self.all_pedestrian_wait_times:
-                self.all_pedestrian_wait_times[pedestrian_id] = max(self.all_pedestrian_wait_times[pedestrian_id], traci.person.getWaitingTime(pedestrian_id))
-            else:
-                self.all_pedestrian_wait_times[pedestrian_id] = traci.person.getWaitingTime(pedestrian_id)
 
     def reset(self):
         self.step_count = 0

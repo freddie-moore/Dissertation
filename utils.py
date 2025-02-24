@@ -45,7 +45,7 @@ def plot_density(binary_array):
     
     plt.plot(density, label='Density of 1s', color='blue')
     
-    plt.ylim(0, 1)  # Since density is between 0 and 1
+    plt.ylim(0, 0.05)  # Since density is between 0 and 1
     plt.legend()
     plt.grid()
     plt.savefig('density_plot.png')

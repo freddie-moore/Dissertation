@@ -15,7 +15,7 @@ lane_array_indices = {
     "wn": 11
 }
 
-time_steps = 800
+time_steps = 120
 num_lanes = 12
 regular_actor_arrivals = []
 
@@ -37,7 +37,7 @@ def extract_vehicle_data(file_path):
                 depart_time = round(float(match.group(3)))
                 lane = lane_array_indices[route]
 
-                if depart_time < 800:
+                if depart_time < 100:
                     if vehicle_type == "rescue":
                         emv_arrivals[lane][depart_time] = 1
                     else:
@@ -52,7 +52,7 @@ extract_vehicle_data('input_routes.rou.xml')
 
 ## writing pedestrian data
 interval = 50
-stop = 400
+stop = 120
 ped_arrivals = [0] * time_steps
 # Need to write based on interval and stop
 for i in range(0, stop, interval):

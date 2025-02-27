@@ -340,7 +340,7 @@ class TraciEnvironment:
     def get_total_waiting_time(self, vehicles, emv_flag=False):
         wait  = 0
         for vehicle_id in vehicles:
-            wait += traci.vehicle.getWaitingTime(vehicle_id)**1.2
+            wait += traci.vehicle.getWaitingTime(vehicle_id)
         if len(vehicles) > 0:
             wait = wait / len(vehicles)
         else:
@@ -351,7 +351,7 @@ class TraciEnvironment:
     def get_total_pedestrian_waiting_time(self, pedestrians):
         wait = 0
         for pedestrian_id in pedestrians:
-            wait += traci.person.getWaitingTime(pedestrian_id)**1.2
+            wait += traci.person.getWaitingTime(pedestrian_id)
         if len(pedestrians) > 0:
             wait = wait / len(pedestrians)
         else:

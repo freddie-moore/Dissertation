@@ -178,8 +178,8 @@ class TraciEnvironment:
         state.extend(self.normalize_array(self.get_queue_lengths()))
         state.extend(self.get_phases_array())
         # state.extend(self.normalize_array(self.get_emv_numbers()))
-        state.extend(self.normalize_array(self.get_emv_distances()))
-        state.extend(self.normalize_array(self.get_pedestrian_wait_times(traci.person.getIDList())))
+        # state.extend(self.normalize_array(self.get_emv_distances()))
+        # state.extend(self.normalize_array(self.get_pedestrian_wait_times(traci.person.getIDList())))
         # state.extend(self.normalize_array(self.get_future_arrivals()))
         # state.extend(self.normalize_array(self.get_emv_waiting_times_by_lane()))
 
@@ -302,6 +302,7 @@ class TraciEnvironment:
         
         # plot emv metrics
         self.update_emv_wait_times(all_vehicles_in_sim)
+        self.update_pedestrian_wait_times()
 
         # calculate waiting time for vehicles left in simulation after running phase
         rem_vehicles = set(reg_vehicles_in_sim).intersection(init_vehicles)
@@ -357,13 +358,6 @@ class TraciEnvironment:
             wait = 0
 
         return wait
-
-    def update_pedestrian_wait_times(self):
-        for pedestrian_id in traci.person.getIDList():
-            if pedestrian_id in self.all_pedestrian_wait_times:
-                self.all_pedestrian_wait_times[pedestrian_id] = max(self.all_pedestrian_wait_times[pedestrian_id], traci.person.getWaitingTime(pedestrian_id))
-            else:
-                self.all_pedestrian_wait_times[pedestrian_id] = traci.person.getWaitingTime(pedestrian_id)
 
     def reset(self):
         self.step_count = 0

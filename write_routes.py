@@ -4,7 +4,7 @@ import numpy as np
 # random.seed(10)
 
 def generate_routes(iteration_count):
-    random.seed(iteration_count % 5)
+    random.seed(iteration_count % 10)
     routes = {
         "ne": 0.4 / 3, "ns": 0.4 / 3, "nw": 0.4 / 3,  # 40% for 'n' routes
         "en": 0.3 / 3, "es": 0.3 / 3, "ew": 0.3 / 3,  # 30% for 'e' routes
@@ -43,19 +43,19 @@ def generate_routes(iteration_count):
             <route id="ws" edges="wi so"/>
         """)
         
-        for id in pedestrian_routes:
-            routes.write(f"""
-            <personFlow id="p_{id}" begin="0" end="{n}" period="50">
-                <walk route="{id}"/>
-            </personFlow>
-                         """)
+        # for id in pedestrian_routes:
+        #     routes.write(f"""
+        #     <personFlow id="p_{id}" begin="0" end="{n}" period="50">
+        #         <walk route="{id}"/>
+        #     </personFlow>
+        #                  """)
             
         type1_id = 0
         emv_id = 0
         for i, arrival_time in enumerate(arrival_times):
             route = random.choice(route_ids)
             routes_taken.append(route)
-            if random.random() > 0.98:
+            if random.random() > 1:
                 emv_id += 1
                 routes.write(f"<vehicle id=\"emv_{emv_id}\" type=\"rescue\" route=\"{route}\" depart=\"{arrival_time}\" />\n")
             else:

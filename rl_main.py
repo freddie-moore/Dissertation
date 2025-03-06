@@ -57,7 +57,7 @@ collisions = []
 record = float('+inf')
 
 # Training loop
-num_episodes = 15000
+num_episodes = 10000
 
 def select_action(state):
     global steps_done

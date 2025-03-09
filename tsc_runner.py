@@ -39,7 +39,7 @@ else:
 from sumolib import checkBinary  # noqa
 import traci  # noqa
 
-traci_env = TraciEnvironment("sumo-gui", {i for i in range(0,36)})
+traci_env = TraciEnvironment("sumo-gui", {i for i in range(0,36)}, True)
 state, info = traci_env.reset()
 n_actions = traci_env.get_n_actions()
 n_observations = len(state)
@@ -64,7 +64,7 @@ class SimpleController():
 class RLController():
     def __init__(self):
         self.model = DQN(n_observations, n_actions).to(device)
-        self.model.load_state_dict(torch.load("./model/model.pth", map_location=device))
+        self.model.load_state_dict(torch.load(r"final_models\basic_cipher\model.pth", map_location=device))
         self.model.eval()
 
 
@@ -79,8 +79,8 @@ class RLController():
 
         return action
 
-controller = SimpleController(traci_env.get_action_space())
-# controller = RLController()
+# controller = SimpleController(traci_env.get_action_space())
+controller = RLController()
 
 def run():
     """execute the TraCI control loop"""
@@ -94,6 +94,7 @@ def run():
         _, _, _, _, step_count = traci_env.run_phase(phase)
 
     print(f"Execution finished, total time : {step_count}")
+    print(traci_env.get_metrics())
     traci.close()
     sys.stdout.flush()
 

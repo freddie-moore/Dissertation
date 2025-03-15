@@ -5,6 +5,7 @@ import random
 from write_routes import generate_routes
 from copy import copy
 from base3experimentaiton import get_idx_to_end_phase, get_idx_to_start_phase, get_idx_of_green_phase, get_array_of_green_lights
+from hardcoded_arrivals import hc_arrivals
 GREEN_TIME = 30
 YELLOW_TIME = 6
 
@@ -49,6 +50,7 @@ class TraciEnvironment:
         else:
             self.emv_ids = {0}
             self.arrival_rate = 0
+            self.arrivals = hc_arrivals
         traci.start([sumoBinary, *self.params])
         traci.trafficlight.setPhase("0", 11)
         
@@ -406,6 +408,7 @@ class TraciEnvironment:
             self.arrivals, emv_count, self.arrival_rate = generate_routes(self.iteration_count)
             self.emv_ids = {f"emv_{i}" for i in range(0,emv_count)} 
         else:
+            self.arrivals = hc_arrivals
             self.emv_ids = {0}
             self.arrival_rate = 0
         traci.load(self.params)

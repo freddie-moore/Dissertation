@@ -1,7 +1,7 @@
 import random
 
 a = []
-num_lanes = 16
+num_lanes = 12
 
 for i in range(0,num_lanes):
     arrivals = []

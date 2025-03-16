@@ -1,0 +1,2249 @@
+!SESSION 2025-02-15 18:23:58.288 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-15 18:23:58.310
+!MESSAGE Run Configuration2 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-15 18:53:07.039 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-15 18:53:07.069
+!MESSAGE Run Configuration2 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-15 18:53:09.033
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing failed.
+	at ilog.opl.opl_lang_wrapJNI.IloOplModel_solveAlgorithm(Native Method)
+	at ilog.opl.IloOplModel.solveAlgorithm(IloOplModel.java:486)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:234)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-15 18:54:08.643 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-15 18:54:08.665
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-15 18:54:08.985
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing failed.
+	at ilog.opl.opl_lang_wrapJNI.IloOplModel_solveAlgorithm(Native Method)
+	at ilog.opl.IloOplModel.solveAlgorithm(IloOplModel.java:486)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:234)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-16 10:44:33.259 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 10:44:33.295
+!MESSAGE Run Configuration2 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-16 12:10:57.880 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 12:10:57.904
+!MESSAGE Run Configuration2 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-16 12:16:19.223 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 12:16:19.242
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-16 12:18:24.306 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 12:18:24.330
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-16 12:18:24.557
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing failed.
+	at ilog.opl.opl_lang_wrapJNI.IloOplModel_getModel(Native Method)
+	at ilog.opl.IloOplModel.getModel(IloOplModel.java:633)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell.loadModel(IloAbstractRunShell.java:1215)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:156)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-16 12:18:36.373 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 12:18:36.396
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-16 12:18:36.571
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing failed.
+	at ilog.opl.opl_lang_wrapJNI.IloOplModel_getModel(Native Method)
+	at ilog.opl.IloOplModel.getModel(IloOplModel.java:633)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell.loadModel(IloAbstractRunShell.java:1215)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:156)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-16 12:20:30.313 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 12:20:30.330
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-16 12:20:30.512
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing failed.
+	at ilog.opl.opl_lang_wrapJNI.IloOplModel_getModel(Native Method)
+	at ilog.opl.IloOplModel.getModel(IloOplModel.java:633)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell.loadModel(IloAbstractRunShell.java:1215)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:156)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-16 12:20:44.788 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 12:20:44.813
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-16 12:20:44.970
+!MESSAGE load failed
+!STACK 1
+org.eclipse.core.runtime.CoreException: load failed
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doSetUpModel(IloOplRunConfigRunner.java:146)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:374)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: ilog.concert.IloException: Impossible to load model.
+	at ilog.opl.opl_lang_wrapJNI.IloOplRunConfiguration_getCppOplModel(Native Method)
+	at ilog.opl.IloOplRunConfiguration.getCppOplModel(IloOplRunConfiguration.java:240)
+	at ilog.opl.IloOplRunConfiguration.getOplModel(IloOplRunConfiguration.java:139)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doSetUpModel(IloOplRunConfigRunner.java:140)
+	... 3 more
+!SUBENTRY 1 ilog.odms.ide.opllang.remote 4 0 2025-02-16 12:20:44.970
+!MESSAGE load failed
+!STACK 0
+ilog.concert.IloException: Impossible to load model.
+	at ilog.opl.opl_lang_wrapJNI.IloOplRunConfiguration_getCppOplModel(Native Method)
+	at ilog.opl.IloOplRunConfiguration.getCppOplModel(IloOplRunConfiguration.java:240)
+	at ilog.opl.IloOplRunConfiguration.getOplModel(IloOplRunConfiguration.java:139)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doSetUpModel(IloOplRunConfigRunner.java:140)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:374)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-16 12:21:14.832 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 12:21:14.846
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-16 12:21:14.973
+!MESSAGE load failed
+!STACK 1
+org.eclipse.core.runtime.CoreException: load failed
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doSetUpModel(IloOplRunConfigRunner.java:146)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:374)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: ilog.concert.IloException: Impossible to load model.
+	at ilog.opl.opl_lang_wrapJNI.IloOplRunConfiguration_getCppOplModel(Native Method)
+	at ilog.opl.IloOplRunConfiguration.getCppOplModel(IloOplRunConfiguration.java:240)
+	at ilog.opl.IloOplRunConfiguration.getOplModel(IloOplRunConfiguration.java:139)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doSetUpModel(IloOplRunConfigRunner.java:140)
+	... 3 more
+!SUBENTRY 1 ilog.odms.ide.opllang.remote 4 0 2025-02-16 12:21:14.973
+!MESSAGE load failed
+!STACK 0
+ilog.concert.IloException: Impossible to load model.
+	at ilog.opl.opl_lang_wrapJNI.IloOplRunConfiguration_getCppOplModel(Native Method)
+	at ilog.opl.IloOplRunConfiguration.getCppOplModel(IloOplRunConfiguration.java:240)
+	at ilog.opl.IloOplRunConfiguration.getOplModel(IloOplRunConfiguration.java:139)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doSetUpModel(IloOplRunConfigRunner.java:140)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:374)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-16 12:22:16.514 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 12:22:16.528
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-16 12:22:16.716
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing failed.
+	at ilog.opl.opl_lang_wrapJNI.IloOplModel_getModel(Native Method)
+	at ilog.opl.IloOplModel.getModel(IloOplModel.java:633)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell.loadModel(IloAbstractRunShell.java:1215)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:156)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-16 12:24:13.102 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 12:24:13.119
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-16 12:24:13.292
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing failed.
+	at ilog.opl.opl_lang_wrapJNI.IloOplModel_getModel(Native Method)
+	at ilog.opl.IloOplModel.getModel(IloOplModel.java:633)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell.loadModel(IloAbstractRunShell.java:1215)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:156)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-16 12:24:27.248 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 12:24:27.264
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-16 12:24:51.063 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 12:24:51.079
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-16 13:53:40.333 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 13:53:40.347
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-16 13:54:30.384 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 13:54:30.401
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-16 13:54:55.605 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 13:54:55.630
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-16 13:55:58.280 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 13:55:58.298
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-16 13:56:08.410 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 13:56:08.427
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-16 13:56:17.828 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 13:56:17.844
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-16 13:57:16.515 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 13:57:16.532
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-16 13:57:25.992 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 13:57:26.007
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-16 14:32:33.829 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 14:32:33.848
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-16 14:38:39.288 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 14:38:39.305
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-16 15:02:47.146 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 15:02:47.161
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-16 15:03:26.982 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 15:03:27.000
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-16 15:06:09.681 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 15:06:09.714
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-16 17:52:30.429 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 17:52:30.451
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-16 17:52:30.876
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing failed.
+	at ilog.opl.opl_lang_wrapJNI.IloOplModel_solveAlgorithm(Native Method)
+	at ilog.opl.IloOplModel.solveAlgorithm(IloOplModel.java:486)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:234)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-16 18:10:48.802 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 18:10:48.829
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-16 18:11:13.034 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-16 18:11:13.068
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-17 15:16:50.864 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-17 15:16:50.879
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-17 15:16:52.540
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing failed.
+	at ilog.opl.opl_lang_wrapJNI.IloOplModel_getModel(Native Method)
+	at ilog.opl.IloOplModel.getModel(IloOplModel.java:633)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell.loadModel(IloAbstractRunShell.java:1215)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:156)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-17 15:17:07.041 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-17 15:17:07.056
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-17 15:20:20.052 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-17 15:20:20.077
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-17 15:22:29.647 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-17 15:22:29.661
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-17 15:22:29.860
+!MESSAGE load failed
+!STACK 1
+org.eclipse.core.runtime.CoreException: load failed
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doSetUpModel(IloOplRunConfigRunner.java:146)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:374)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: ilog.concert.IloException: Impossible to load model.
+	at ilog.opl.opl_lang_wrapJNI.IloOplRunConfiguration_getCppOplModel(Native Method)
+	at ilog.opl.IloOplRunConfiguration.getCppOplModel(IloOplRunConfiguration.java:240)
+	at ilog.opl.IloOplRunConfiguration.getOplModel(IloOplRunConfiguration.java:139)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doSetUpModel(IloOplRunConfigRunner.java:140)
+	... 3 more
+!SUBENTRY 1 ilog.odms.ide.opllang.remote 4 0 2025-02-17 15:22:29.862
+!MESSAGE load failed
+!STACK 0
+ilog.concert.IloException: Impossible to load model.
+	at ilog.opl.opl_lang_wrapJNI.IloOplRunConfiguration_getCppOplModel(Native Method)
+	at ilog.opl.IloOplRunConfiguration.getCppOplModel(IloOplRunConfiguration.java:240)
+	at ilog.opl.IloOplRunConfiguration.getOplModel(IloOplRunConfiguration.java:139)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doSetUpModel(IloOplRunConfigRunner.java:140)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:374)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-17 15:24:09.020 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-17 15:24:09.034
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-17 15:24:35.964 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-17 15:24:35.977
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-17 15:29:08.770 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-17 15:29:08.785
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-17 15:30:41.180 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-17 15:30:41.195
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-17 15:32:36.520 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-17 15:32:36.534
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-18 09:04:25.776 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-18 09:04:25.776
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-18 09:11:15.121 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-18 09:11:15.146
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-18 15:24:46.772 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-18 15:24:46.783
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-18 15:27:43.555 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-18 15:27:43.583
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-19 16:55:22.608 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-19 16:55:22.615
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-19 17:00:37.125 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-19 17:00:37.143
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-19 17:00:54.656 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-19 17:00:54.675
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-19 17:01:05.356 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-19 17:01:05.372
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-19 17:01:05.547
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing failed.
+	at ilog.opl.opl_lang_wrapJNI.IloOplModel_getModel(Native Method)
+	at ilog.opl.IloOplModel.getModel(IloOplModel.java:633)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell.loadModel(IloAbstractRunShell.java:1215)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:156)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-19 17:02:06.203 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-19 17:02:06.220
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-19 17:02:30.427 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-19 17:02:30.451
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-19 17:23:05.691 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-19 17:23:05.699
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-20 03:40:42.566
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing failed.
+	at ilog.opl.opl_lang_wrapJNI.IloOplModel_solveAlgorithm(Native Method)
+	at ilog.opl.IloOplModel.solveAlgorithm(IloOplModel.java:486)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:234)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-20 16:22:21.435 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-20 16:22:21.461
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-20 16:22:21.808
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing failed.
+	at ilog.opl.opl_lang_wrapJNI.IloOplModel_getModel(Native Method)
+	at ilog.opl.IloOplModel.getModel(IloOplModel.java:633)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell.loadModel(IloAbstractRunShell.java:1215)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:156)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-20 16:24:38.288 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-20 16:24:38.318
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-20 16:32:30.308 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-20 16:32:30.328
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-20 16:33:26.863 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-20 16:33:26.879
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-20 16:33:33.998
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-20 16:33:38.741 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-20 16:33:38.757
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-21 13:01:44.203 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 13:01:44.217
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-21 13:01:47.196
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing failed.
+	at ilog.opl.opl_lang_wrapJNI.IloOplModel_solveAlgorithm(Native Method)
+	at ilog.opl.IloOplModel.solveAlgorithm(IloOplModel.java:486)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:234)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-21 13:05:53.671 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 13:05:53.687
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-21 13:06:04.916
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-21 13:06:55.360 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 13:06:55.375
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-21 13:07:05.411
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-21 13:07:21.409 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 13:07:21.423
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-21 13:10:07.773 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 13:10:07.787
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-21 13:10:08.001
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing failed.
+	at ilog.opl.opl_lang_wrapJNI.IloOplModel_getModel(Native Method)
+	at ilog.opl.IloOplModel.getModel(IloOplModel.java:633)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell.loadModel(IloAbstractRunShell.java:1215)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:156)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-21 13:10:21.347 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 13:10:21.359
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-21 13:13:22.764 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 13:13:22.779
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-21 13:17:51.057 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 13:17:51.069
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-21 13:21:20.094 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 13:21:20.111
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-21 13:48:40.586 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 13:48:40.601
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-21 16:06:17.414
+!MESSAGE No OPL IDE for this oplrun
+
+!ENTRY ilog.odms.ide.opllang 1 0 2025-02-21 16:06:24.894
+!MESSAGE concert_wrap.IloEndMT
+
+!ENTRY org.eclipse.core.jobs 2 2 2025-02-21 16:06:30.586
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: ilog.odms.ide.opllang.remote.IloOplRunConfigRunner RUNNING
+	 at java.base/java.lang.Object.waitImpl(Native Method)
+	 at java.base/java.lang.Object.wait(Unknown Source)
+	 at java.base/java.lang.Object.wait(Unknown Source)
+	 at org.eclipse.core.internal.jobs.Semaphore.acquire(Semaphore.java:45)
+	 at org.eclipse.core.internal.jobs.JobManager.join(JobManager.java:999)
+	 at org.eclipse.core.internal.jobs.InternalJob.join(InternalJob.java:355)
+	 at org.eclipse.core.runtime.jobs.Job.join(Job.java:531)
+	 at ilog.odms.ide.opllang.run.IloAbstractRunShell.performRun(IloAbstractRunShell.java:1625)
+	 at ilog.odms.ide.opllang.run.IloAbstractRunShell.run(IloAbstractRunShell.java:1580)
+	 at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 2 2 2025-02-21 16:06:30.591
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: ilog.odms.ide.opllang.remote.mbean.IloOplrunRemote$HeartBeatListenerJob RUNNING
+	 at java.base/java.lang.Object.waitImpl(Native Method)
+	 at java.base/java.lang.Object.wait(Unknown Source)
+	 at java.base/java.lang.Object.wait(Unknown Source)
+	 at org.eclipse.osgi.container.SystemModule.waitForStop(SystemModule.java:178)
+	 at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle.waitForStop(EquinoxBundle.java:328)
+	 at org.eclipse.osgi.launch.Equinox.waitForStop(Equinox.java:217)
+	 at org.eclipse.core.runtime.adaptor.EclipseStarter.shutdown(EclipseStarter.java:498)
+	 at ilog.odms.ide.opllang.remote.mbean.IloOplrunRemote$HeartBeatListenerJob.run(IloOplrunRemote.java:130)
+	 at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 2 2 2025-02-21 16:06:30.602
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: ilog.odms.ide.opllang.run.IloAbstractRunShell$2 RUNNING
+	 at ilog.opl.opl_lang_wrapJNI.IloOplModel_solveAlgorithm(Native Method)
+	 at ilog.opl.IloOplModel.solveAlgorithm(IloOplModel.java:486)
+	 at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:234)
+	 at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	 at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	 at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	 at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	 at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-21 18:26:18.837 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 18:26:18.853
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-21 18:26:38.496 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 18:26:38.509
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-21 18:26:56.757 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 18:26:56.772
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-21 18:28:15.016 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 18:28:15.029
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-21 18:28:31.054 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 18:28:31.073
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-21 18:30:35.575 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 18:30:35.586
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-21 18:30:35.775
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing failed.
+	at ilog.opl.opl_lang_wrapJNI.IloOplModel_getModel(Native Method)
+	at ilog.opl.IloOplModel.getModel(IloOplModel.java:633)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell.loadModel(IloAbstractRunShell.java:1215)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:156)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-21 18:30:47.971 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 18:30:48.006
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-21 18:31:13.547 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 18:31:13.570
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-21 18:33:00.080 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 18:33:00.098
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-21 18:33:00.332
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing failed.
+	at ilog.opl.opl_lang_wrapJNI.IloOplModel_getModel(Native Method)
+	at ilog.opl.IloOplModel.getModel(IloOplModel.java:633)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell.loadModel(IloAbstractRunShell.java:1215)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:156)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-21 18:33:11.046 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 18:33:11.061
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-21 18:34:09.850 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 18:34:09.862
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-21 18:35:33.063 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 18:35:33.080
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-21 18:35:33.278
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing failed.
+	at ilog.opl.opl_lang_wrapJNI.IloOplModel_getModel(Native Method)
+	at ilog.opl.IloOplModel.getModel(IloOplModel.java:633)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell.loadModel(IloAbstractRunShell.java:1215)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:156)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-21 18:35:47.457 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 18:35:47.472
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-21 18:41:19.147 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 18:41:19.161
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-21 18:43:27.449 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 18:43:27.463
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-21 18:43:47.576 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 18:43:47.588
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-21 18:44:37.187 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 18:44:37.199
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-21 18:44:56.781
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell.processNoSolution(IloAbstractRunShell.java:1886)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:167)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-21 18:45:02.374 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 18:45:02.388
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-21 18:46:47.912 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 18:46:47.925
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-21 18:47:11.262
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-21 18:49:59.888 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 18:49:59.908
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-21 18:50:07.429
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-21 18:50:12.853 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 18:50:12.867
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-21 18:52:09.524
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-21 18:53:06.410 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-21 18:53:06.424
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-22 13:21:08.379 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-22 13:21:08.397
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-22 13:29:33.569
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-22 13:30:55.213 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-22 13:30:55.229
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-22 13:35:09.133 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-22 13:35:09.149
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-22 13:39:40.035 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-22 13:39:40.051
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-22 13:40:29.286 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-22 13:40:29.300
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-25 11:10:51.152 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-25 11:10:51.183
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-25 11:15:12.336
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-02-25 11:15:21.290 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-25 11:15:21.314
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-02-28 14:37:24.837 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-02-28 14:37:24.854
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-02-28 14:37:31.088
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-03-15 12:45:06.356 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-03-15 12:45:06.373
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-03-15 12:45:17.213
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-03-15 12:45:26.275 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-03-15 12:45:26.287
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-03-15 12:45:30.714
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-03-15 12:46:05.194 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-03-15 12:46:05.209
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-03-15 12:53:24.269
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-03-15 12:53:53.882 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-03-15 12:53:53.898
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-03-15 13:03:19.047
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-03-15 13:04:05.902 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-03-15 13:04:05.931
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-03-15 13:10:43.158
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-03-15 13:11:51.240 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-03-15 13:11:51.254
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-03-15 13:44:15.696 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-03-15 13:44:15.711
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-03-15 13:58:09.506
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing failed.
+	at ilog.opl.opl_lang_wrapJNI.IloOplModel_solveAlgorithm(Native Method)
+	at ilog.opl.IloOplModel.solveAlgorithm(IloOplModel.java:486)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:234)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-03-15 14:47:26.459 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-03-15 14:47:26.477
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+!SESSION 2025-03-16 09:39:14.217 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-03-16 09:39:14.232
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-03-16 09:39:44.754
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-03-16 09:40:50.161 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-03-16 09:40:50.177
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-03-16 09:41:22.113
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-03-16 09:41:46.205 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-03-16 09:41:46.223
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-03-16 09:42:08.260
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-03-16 09:42:28.518 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-03-16 09:42:28.536
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-03-16 09:42:46.546
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-03-16 09:42:57.710 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-03-16 09:42:57.721
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-03-16 09:44:32.736
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-03-16 09:45:23.960 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-03-16 09:45:23.970
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-03-16 09:46:29.166
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-03-16 09:46:35.171 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-03-16 09:46:35.187
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-03-16 09:46:54.121
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-03-16 09:52:59.675 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-03-16 09:52:59.694
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-03-16 09:56:47.787
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-03-16 09:56:59.488 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-03-16 09:56:59.507
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-03-16 09:57:16.989
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-03-16 09:57:23.811 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-03-16 09:57:23.820
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-03-16 09:57:26.452
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-03-16 10:18:52.537 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-03-16 10:18:52.550
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-03-16 10:19:01.135
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-03-16 10:19:11.518 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-03-16 10:19:11.527
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-03-16 10:19:13.712
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-03-16 10:20:00.808 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=17.0.9+9
+JRE 17 Windows 11 amd64-64-Bit Compressed References 20231017_542 (JIT enabled, AOT enabled)
+OpenJ9   - 461bf3c70
+OMR      - 5eee6ad9d
+JCL      - 356287fbde7 based on jdk-17.0.9+9
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_GB
+Command-line arguments:  -clean -nl en_GB -configuration C:\Users\fredd\AppData\Roaming\IBM\ILOG\CPLEX_Studio2212\workspace\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2025-03-16 10:20:00.839
+!MESSAGE Run Configuration1 in C:/Users/fredd/opl/TSC Dissertation
+
+!ENTRY ilog.odms.ide.opllang.remote 4 0 2025-03-16 10:20:08.017
+!MESSAGE run failed
+!STACK 0
+ilog.concert.IloException: Processing aborted.
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandlerWrapper_superOk(Native Method)
+	at ilog.opl.IloOplErrorHandlerWrapper.superOk(IloOplErrorHandlerWrapper.java:86)
+	at ilog.opl.IloCustomOplErrorHandler.customOk(IloCustomOplErrorHandler.java:78)
+	at ilog.opl.IloCustomOplErrorHandler$MyEH.ok(IloCustomOplErrorHandler.java:35)
+	at ilog.opl.opl_lang_wrapJNI.SwigDirector_IloOplErrorHandlerWrapper_ok(opl_lang_wrapJNI.java:1149)
+	at ilog.opl.opl_lang_wrapJNI.IloOplErrorHandler_ok(Native Method)
+	at ilog.opl.IloOplErrorHandler.ok(IloOplErrorHandler.java:131)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimpleCplex(IloOplRunConfigRunner.java:279)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessSimple(IloOplRunConfigRunner.java:177)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doProcessModel(IloOplRunConfigRunner.java:163)
+	at ilog.odms.ide.opllang.remote.IloOplRunConfigRunner.doRun(IloOplRunConfigRunner.java:377)
+	at ilog.odms.ide.opllang.run.IloAbstractRunShell$2.run(IloAbstractRunShell.java:1605)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)

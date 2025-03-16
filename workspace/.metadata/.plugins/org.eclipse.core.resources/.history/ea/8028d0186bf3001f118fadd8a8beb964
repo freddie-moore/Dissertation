@@ -1,0 +1,64 @@
+/*********************************************
+ * OPL 22.1.2.0 Model
+ * Author: fredd
+ * Creation Date: 25 Feb 2025 at 10:50:01
+ *********************************************/
+// Traffic Signal Control Optimization in OPL
+int T = ...; // Total simulation time
+int I = ...; // Number of approaches (typically 12 for 4-way intersection with 3 lanes each)
+int K = ...; // Maximum number of activations per phase
+
+range Time = 1..T;
+range Approach = 1..I;
+range Activation = 1..K;
+
+// Given Parameters
+float lambda[Approach][Time];  // Vehicle arrival rate at each approach
+float s = 0.38;             // Saturation flow rate per approach
+
+// Conflict Pairs: Matrix indicating if two approaches conflict (1 = conflict, 0 = no conflict)
+int conflict[Approach][Approach];
+
+// Decision Variables
+dvar int+ t_on[Approach][Activation];  // Start time of green phase for each approach
+dvar int+ t_off[Approach][Activation]; // End time of green phase for each approach
+dvar int+ d[Approach][Activation];     // Duration of green phase
+dvar float+ q[Approach][Time];             // Queue length at each approach over time
+dvar float+ mu[Approach][Time];            // Departures from each approach at time t
+dvar boolean isGreen[Approach][Time][Activation]; // 1 if approach a is green at time t during activation k
+
+
+// Objective: Minimize total queue length over time
+minimize sum(a in Approach, t in Time) q[a][t];
+
+// Constraints
+
+// Ensure phase durations are valid
+subject to {
+  forall(a in Approach, k in Activation) {
+    d[a][k] == t_off[a][k] - t_on[a][k];   // Duration constraint
+  }
+  
+  // Ensure phases can reactivate but in sequence
+  forall(a in Approach, k in 1..K-1) {
+    t_off[a][k] <= t_on[a][k+1];
+  }
+
+  // Conflict constraints: no overlapping conflicting phases
+  forall(a in Approach, b in Approach: conflict[a][b] == 1, k in Activation, m in Activation) {
+    t_on[a][k] >= t_off[b][m] || t_on[b][m] >= t_off[a][k];
+  }
+
+  
+  // Queue evolution constraints
+  forall(a in Approach, t in 1..T-1) {
+    q[a][t+1] == q[a][t] + lambda[a][t] - mu[a][t];  // Queue update equation
+
+    // Departure constraint: Vehicles can only leave when signal is green
+    mu[a][t] <= s * (sum(k in Activation) (t >= t_on[a][k] && t < t_off[a][k] ? 1 : 0));
+    
+    // Departures cannot exceed queue size
+    mu[a][t] <= q[a][t];
+  }
+}
+ 

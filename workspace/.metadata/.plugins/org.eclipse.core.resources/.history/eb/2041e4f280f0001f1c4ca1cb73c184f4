@@ -1,0 +1,106 @@
+/*********************************************
+ * OPL 22.1.2.0 Model
+ * Author: fredd
+ * Creation Date: 15 Feb 2025 at 18:09:32
+ *********************************************/
+int T = 800;  // Number of timesteps
+int E = 16;    // Number of lanes
+float green_y = 0.38;    // Fraction of a vehicle that can leave per time step when a light is green
+float green_emv_y = 0.76; // Fraction of an EMV that can leave per time step when a light is green
+float yellow_y = 0.19;    // Fraction of a vehicle that can leave per time step when a light is yellow
+float yellow_emv_y = 0.38; // Fraction of an EMV that can leave per time step when a light is yellow
+
+// Define ranges for indexing
+range Time = 0..T-1; // Time steps range
+range Lanes = 0..E-1; // Lanes range
+range CarLanes = 0..E-5; // 12 car lanes
+range PedLanes = E-5..E-1; // 4 pedestrian crossing
+
+int A[Lanes][Time] = ...;
+int emv_A[CarLanes][Time] = ...;
+
+// Conflict matrix: C[i][j] = 1 means signals i and j conflict
+int C[Lanes][Lanes] = ...;
+
+// Decision Variables
+dvar boolean x[Lanes][Time]; // x(e,t) = 1 if lane e is green at time t
+dvar boolean k[CarLanes][Time];  // k[e][t] = 1 if lane e has a yellow signal at time t
+dvar float+ q[Lanes][Time]; // Queue length at lane e, time t
+dvar float+ d[Lanes][Time]; // Vehicles that depart from lane e at time t
+dvar float+ emv_q[CarLanes][Time]; // EMV Queue length at lane e, time t
+dvar float+ emv_d[CarLanes][Time]; // EMVs that depart from lane e at time t
+
+// Objective Function: Minimizing cumulative queue length
+minimize sum(t in Time, e in Lanes) q[e][t] + sum(t in Time, e in CarLanes) emv_q[e][t];
+
+// Constraints
+subject to {
+    // Green phase must be preceeded by yellow for 6 time steps
+  	forall(e in CarLanes, t in 6..T-1)
+    	x[e][t] => (x[e][t-1] + k[e][t-1] + k[e][t-2] + k[e][t-3] + k[e][t-4] + k[e][t-5] + k[e][t-6] >= 1);
+  	
+  	// Light cannot be green and yellow at same time
+  	forall(e in Lanes, t in Time)
+    	x[e][t] + k[e][t] <= 1;
+  	
+    // Queue evolution equation
+    forall(e in Lanes, t in 0..T-2)
+    	q[e][t+1] >= q[e][t] - d[e][t] + A[e][t];
+    
+    // EMV queue evolution equation
+    forall(e in CarLanes, t in 0..T-2)
+    	emv_q[e][t+1] >= emv_q[e][t] - emv_d[e][t] + emv_A[e][t];
+
+    // Max actors that leave a queue must be <= queue length
+    forall(e in Lanes, t in Time)
+        d[e][t] <= q[e][t];
+        
+   // EMVs that leave a queue must be <= queue length
+    forall(e in CarLanes, t in Time)
+        emv_d[e][t] <= emv_q[e][t];
+        
+   // Cars cannot leave a lane if there is an EMV in the queue (to simulate priority)
+   forall(e in CarLanes, t in Time)
+     d[e][t] <= emv_q[e][t];
+    
+    // Cars can only leave a queue if the respective signal is green, at a rate of y
+    forall(e in CarLanes, t in Time)
+        d[e][t] <= (yellow_y * k[e][t]) + (green_y * x[e][t]);
+        
+   
+   // EMVs can only leave a queue if the respective signal is green, at a rate of y
+    forall(e in CarLanes, t in Time)
+        emv_d[e][t] <= (yellow_emv_y * k[e][t]) + (green_emv_y * x[e][t]);
+         
+   // All peds can only leave a queue if the respective signal is green
+    forall(e in PedLanes, t in Time)
+        d[e][t] <= 100 * x[e][t];
+        
+    // Conflicting signals cannot be active at the same time
+    forall(e1 in Lanes, e2 in Lanes : C[e1][e2] == 1, t in Time)
+        x[e1][t] + x[e2][t] <= 1;
+}
+
+
+execute {
+    var lastClearTime = -1;
+    
+    for (var t = T - 1; t > 0; t--) {  // Stepping backwards from last time step
+        var queueEmpty = true;
+        
+        for (var e = 0; e < E; e++) {
+            if (q[e][t] > 0) {  // Iterate over queues to check all are empty
+                queueEmpty = false;
+                break;
+            }
+        }
+        
+        if (queueEmpty) {  
+            lastClearTime = t;
+        } else {  
+            break;  // Stop searching once a non-empty queue is found
+        }
+    }
+
+    writeln("Last time step where all queues were empty: ", lastClearTime);
+}

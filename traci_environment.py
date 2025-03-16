@@ -1,13 +1,13 @@
-# import libsumo as traci
-import traci
+import libsumo as traci
+# import traci
 from sumolib import checkBinary
 import random
 from write_routes import generate_routes
 from copy import copy
 from base3experimentaiton import get_idx_to_end_phase, get_idx_to_start_phase, get_idx_of_green_phase, get_array_of_green_lights
 from hardcoded_arrivals import hc_arrivals
-GREEN_TIME = 30
-YELLOW_TIME = 6
+GREEN_TIME = 15
+YELLOW_TIME = 5
 
 MAX_VEH_WAIT = 2000
 MAX_PED_WAIT = 905

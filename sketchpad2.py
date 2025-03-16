@@ -16,6 +16,7 @@
 #     "WPed": {"W_N", "W_E", "W_S"},
 #     "SPed": {"S_N", "S_E", "S_W"}
 # }
+
 conflicting_routes = {
     "N_E": {"E_S", "E_W", "S_E", "S_N", "W_E", "W_N"},
     "N_S": {"E_S", "E_W", "S_W", "W_E", "W_N", "W_S"},
@@ -28,7 +29,7 @@ conflicting_routes = {
     "W_N": {"N_S", "N_E", "E_N", "E_W", "S_N", "S_W"},
     "S_N": {"N_W", "E_W", "E_S", "E_N", "W_N", "W_E"},
     "S_W": {"W_N", "W_E", "N_W", "N_S", "E_W", "E_S"},
-    "S_E": {"N_E", "W_E"},
+    "S_E": {"N_E", "W_E"}
 }
 
 route_indexes = dict()
@@ -39,7 +40,7 @@ for key in conflicting_routes.keys():
 
 conflict_matrix = []
 for route, conflicts in conflicting_routes.items():
-    base_list = [0] * 16
+    base_list = [0] * 12
     for conflict in conflicts:
         index = route_indexes[conflict]
         base_list[index] = 1

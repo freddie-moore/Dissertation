@@ -39,7 +39,7 @@ else:
 from sumolib import checkBinary  # noqa
 import traci  # noqa
 
-traci_env = TraciEnvironment("sumo-gui", {i for i in range(0,36)}, True)
+traci_env = TraciEnvironment("sumo", {i for i in range(0,36)}, True)
 state, info = traci_env.reset()
 n_actions = traci_env.get_n_actions()
 n_observations = len(state)
@@ -94,7 +94,10 @@ def run():
         _, _, _, _, step_count = traci_env.run_phase(phase)
 
     print(f"Execution finished, total time : {step_count}")
-    print(traci_env.get_metrics())
+    metrics = traci_env.get_metrics().values()
+
+    for metric in metrics:
+        print(metric)
     traci.close()
     sys.stdout.flush()
 

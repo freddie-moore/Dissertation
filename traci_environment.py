@@ -1,5 +1,5 @@
-import libsumo as traci
-# import traci
+# import libsumo as traci
+import traci
 from sumolib import checkBinary
 import random
 from write_routes import generate_routes
@@ -194,8 +194,8 @@ class TraciEnvironment:
         state.extend(self.normalize_array(self.get_queue_lengths()))
         state.extend(self.get_phases_array())
         # state.extend(self.normalize_array(self.get_emv_numbers()))
-        # state.extend(self.normalize_array(self.get_emv_distances()))
-        # state.extend(self.normalize_array(self.get_pedestrian_wait_times(traci.person.getIDList())))
+        state.extend(self.normalize_array(self.get_emv_distances()))
+        state.extend(self.normalize_array(self.get_pedestrian_wait_times(traci.person.getIDList())))
         # state.extend(self.normalize_array(self.get_future_arrivals()))
         # state.extend(self.normalize_array(self.get_emv_waiting_times_by_lane()))
 

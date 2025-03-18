@@ -43,19 +43,19 @@ def generate_routes(iteration_count):
             <route id="ws" edges="wi so"/>
         """)
         
-        # for id in pedestrian_routes:
-        #     routes.write(f"""
-        #     <personFlow id="p_{id}" begin="0" end="{n}" period="50">
-        #         <walk route="{id}"/>
-        #     </personFlow>
-        #                  """)
+        for id in pedestrian_routes:
+            routes.write(f"""
+            <personFlow id="p_{id}" begin="0" end="{n}" period="50">
+                <walk route="{id}"/>
+            </personFlow>
+                         """)
             
         type1_id = 0
         emv_id = 0
         for i, arrival_time in enumerate(arrival_times):
             route = random.choice(route_ids)
             routes_taken.append(route)
-            if random.random() > 1:
+            if random.random() > 0.98:
                 emv_id += 1
                 routes.write(f"<vehicle id=\"emv_{emv_id}\" type=\"rescue\" route=\"{route}\" depart=\"{arrival_time}\" />\n")
             else:
@@ -63,7 +63,6 @@ def generate_routes(iteration_count):
                 routes.write(f"<vehicle id=\"type1_{type1_id}\" type=\"type1\" route=\"{route}\" depart=\"{arrival_time}\" />\n")
             
         routes.write("</routes>")
-
         return zip(arrival_times, routes_taken), emv_id, arrival_rate
 
 

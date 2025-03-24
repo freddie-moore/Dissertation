@@ -1,5 +1,5 @@
-import libsumo as traci
-# import traci
+# import libsumo as traci
+import traci
 from sumolib import checkBinary
 import random
 from write_routes import generate_routes
@@ -26,6 +26,8 @@ class TraciEnvironment:
 
         self.all_pedestrian_wait_times = dict()
         self.emv_wait_times = dict()
+        self.veh_wait_times = dict()
+
         self.collect_metrics = collect_metrics
         sumoBinary = checkBinary(binary)
         self.max_veh = float('-inf')
@@ -34,6 +36,7 @@ class TraciEnvironment:
         self.min_ped = float('+inf')
         self.v_start_times = dict()
         self.v_travel_times = dict()
+        
         self.user_defined_edges = ["ni", "ei", "si", "wi"]
         self.params = [ 
              "-c", "test.sumocfg", 
@@ -44,24 +47,31 @@ class TraciEnvironment:
         if sumoBinary == 'sumo-gui':
             self.params.append("--start")
 
-        if not self.collect_metrics:
-            self.arrivals, emv_count, self.arrival_rate = generate_routes(iteration_count=self.iteration_count)
-            self.emv_ids = {f"emv_{i}" for i in range(0,emv_count)}
-        else:
-            self.emv_ids = {0}
-            self.arrival_rate = 0
-            self.arrivals = hc_arrivals
+        # if not self.collect_metrics:
+        self.arrivals, emv_count, self.arrival_rate = generate_routes(iteration_count=self.iteration_count)
+        self.emv_ids = {f"emv_{i}" for i in range(0,emv_count)}
+        # else:
+        #     self.emv_ids = {0}
+        #     self.arrival_rate = 0
+        #     self.arrivals = hc_arrivals
         traci.start([sumoBinary, *self.params])
         traci.trafficlight.setPhase("0", 11)
         
 
     def update_travel_times(self):
+        
+
         for v in traci.simulation.getDepartedIDList():
             self.v_start_times[v] = self.step_count
 
         for v in traci.simulation.getArrivedIDList():
             self.v_travel_times[v] = self.step_count - self.v_start_times[v]
             del self.v_start_times[v]
+
+    def update_wait_times(self):
+        self.update_pedestrian_wait_times()
+        self.update_emv_wait_times()
+        self.update_vehicle_wait_times()
 
     def get_queue_lengths_by_edge(self, edge_id):
         waiting_times = []
@@ -231,13 +241,20 @@ class TraciEnvironment:
             else:
                 self.all_pedestrian_wait_times[ped_id] = traci.person.getWaitingTime(ped_id)
         
-    def update_emv_wait_times(self, current_vehicles_in_sim):
-        cur_emvs = self.get_emvs_in_sim(current_vehicles_in_sim)
+    def update_emv_wait_times(self):
+        cur_emvs = self.get_emvs_in_sim(set(traci.vehicle.getIDList()))
         for vid in cur_emvs:
             if vid in self.emv_wait_times.keys():
                 self.emv_wait_times[vid] = max(self.emv_wait_times[vid], traci.vehicle.getWaitingTime(vid))
             else:
                 self.emv_wait_times[vid] = traci.vehicle.getWaitingTime(vid)
+    
+    def update_vehicle_wait_times(self):
+        for vid in set(traci.vehicle.getIDList()):
+            if vid in self.veh_wait_times.keys():
+                self.veh_wait_times[vid] = max(self.veh_wait_times[vid], traci.vehicle.getWaitingTime(vid))
+            else:
+                self.veh_wait_times[vid] = traci.vehicle.getWaitingTime(vid)
 
     def get_pedestrian_wait_times(self, current_persons_in_sim):
         crossings = [':0_c0', ':0_c1', ':0_c2', ':0_c3']
@@ -289,7 +306,8 @@ class TraciEnvironment:
             for i in range(0, YELLOW_TIME):
                 self.step_count += 1
                 traci.simulationStep(self.step_count)
-                self.update_travel_times()
+                # self.update_travel_times()
+                self.update_wait_times()
 
     
         # Start next phase
@@ -302,7 +320,8 @@ class TraciEnvironment:
             for i in range(0, YELLOW_TIME):
                 self.step_count += 1
                 traci.simulationStep(self.step_count)
-                self.update_travel_times()
+                self.update_wait_times()
+                # self.update_travel_times()
 
         # Green phase
         green_phase_idx = get_idx_of_green_phase(new_phase)
@@ -314,7 +333,7 @@ class TraciEnvironment:
             for i in range(0, GREEN_TIME):
                 self.step_count += 1
                 traci.simulationStep(self.step_count)
-                self.update_travel_times()
+                self.update_wait_times()
 
         self.current_phase = new_phase
         # get_array_of_green_lights(self.current_phase, True)
@@ -335,8 +354,7 @@ class TraciEnvironment:
         peds_in_sim = traci.person.getIDList()
         
         # plot emv metrics
-        self.update_emv_wait_times(all_vehicles_in_sim)
-        self.update_pedestrian_wait_times()
+        # self.update_emv_wait_times(all_vehicles_in_sim)
 
         # calculate waiting time for vehicles left in simulation after running phase
         rem_vehicles = set(reg_vehicles_in_sim).intersection(init_vehicles)
@@ -361,6 +379,9 @@ class TraciEnvironment:
         else:
             return 0
 
+    def get_wait_times(self):
+        return self.veh_wait_times, self.emv_wait_times, self.all_pedestrian_wait_times
+    
     def get_avg_emv_wait(self):
         if self.emv_wait_times:
             return sum(self.emv_wait_times.values()) / len(self.emv_wait_times)
@@ -394,7 +415,7 @@ class TraciEnvironment:
         return wait
 
     def get_metrics(self):
-        return self.v_travel_times
+        return self.v_travel_times, self.all_pedestrian_wait_times
     
     def reset(self):
         self.step_count = 0
@@ -402,15 +423,16 @@ class TraciEnvironment:
         self.iteration_count += 1
         self.red_timings = [0] * self.get_n_actions()
         self.all_pedestrian_wait_times = dict()
+        self.veh_wait_times = dict()
         self.emv_wait_times = dict()
         self.crossing_active_timings = [0] * 4
-        if not self.collect_metrics:
-            self.arrivals, emv_count, self.arrival_rate = generate_routes(self.iteration_count)
-            self.emv_ids = {f"emv_{i}" for i in range(0,emv_count)} 
-        else:
-            self.arrivals = hc_arrivals
-            self.emv_ids = {0}
-            self.arrival_rate = 0
+        # if not self.collect_metrics:
+        self.arrivals, emv_count, self.arrival_rate = generate_routes(self.iteration_count)
+        self.emv_ids = {f"emv_{i}" for i in range(0,emv_count)} 
+        # else:
+        #     self.arrivals = hc_arrivals
+        #     self.emv_ids = {0}
+        #     self.arrival_rate = 0
         traci.load(self.params)
         traci.trafficlight.setPhase("0", 11)
         return self.get_state(), None

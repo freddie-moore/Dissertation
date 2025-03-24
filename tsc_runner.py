@@ -64,7 +64,7 @@ class SimpleController():
 class RLController():
     def __init__(self):
         self.model = DQN(n_observations, n_actions).to(device)
-        self.model.load_state_dict(torch.load(r"final_models\basic_cipher\model.pth", map_location=device))
+        self.model.load_state_dict(torch.load(r"final_models\cipher\model.pth", map_location=device))
         self.model.eval()
 
 
@@ -94,10 +94,18 @@ def run():
         _, _, _, _, step_count = traci_env.run_phase(phase)
 
     print(f"Execution finished, total time : {step_count}")
-    metrics = traci_env.get_metrics().values()
+    
+    veh, emv, ped = traci_env.get_wait_times()
 
-    for metric in metrics:
+    for metric in veh.values():
         print(metric)
+    print("--")
+    for metric in emv.values():
+        print(metric)
+    print("--")
+    for metric in ped.values():
+        print(metric)
+    print("--")
     traci.close()
     sys.stdout.flush()
 

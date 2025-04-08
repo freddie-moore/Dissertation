@@ -1,4 +1,26 @@
 from all_phases_base3 import all_phases_base3
+import traci
+
+YELLOW_TIME = 5
+GREEN_TIME = 15
+
+def run_tls_phase(current_phase, new_phase, step_count):
+    end_phase_idx = get_idx_to_end_phase(current_phase, new_phase)
+    traci.trafficlight.setPhase("0", end_phase_idx)
+    step_count += YELLOW_TIME
+    traci.simulationStep(step_count)
+
+    start_phase_idx = get_idx_to_start_phase(current_phase, new_phase)
+    traci.trafficlight.setPhase("0", start_phase_idx)
+    step_count += YELLOW_TIME
+    traci.simulationStep(step_count)
+
+    green_phase_idx = get_idx_of_green_phase(new_phase)
+    traci.trafficlight.setPhase("0", green_phase_idx)
+    step_count += GREEN_TIME
+    traci.simulationStep(step_count)
+
+    return step_count
 
 def base3_to_decimal(phase):
     """

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;TSC Optim&apos; to &apos;ModelB&apos;" description="Rename resource &apos;TSC Optim&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/TSC Optim" name="ModelB" stamp="1740753238044" updateReferences="true"/>
-</session>

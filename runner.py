@@ -1,10 +1,10 @@
 import sys
 import argparse
-from traci_environment import TraciEnvironment
-from TrafficLightController import TrafficLightController
-from TrafficRouteGenerator import TrafficRouteGenerator
+from traciEnvironment import TraciEnvironment
+from trafficLightController import TrafficLightController
+from trafficRouteGenerator import TrafficRouteGenerator
 from Controllers import FixedTimeController, RLController
-from Utilities import str2bool
+from utilities import str2bool
 import traci
 
 def parse_args():

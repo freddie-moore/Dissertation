@@ -2,7 +2,7 @@
 import traci
 from sumolib import checkBinary
 import random
-from Utilities import normalize_array
+from utilities import normalize_array
 
 # Hardcoded durations for the green and yellow timings of a phase
 GREEN_TIME = 15
@@ -230,7 +230,10 @@ class TraciEnvironment:
         return self.average_dictionary(self.veh_wait_times), self.average_dictionary(self.emv_wait_times), self.average_dictionary(self.pedestrian_wait_times)
     
     def average_dictionary(self, dict):
-        return sum(dict.values()) / len(dict.values())
+        if len(dict.values()) > 0:
+            return sum(dict.values()) / len(dict.values())
+        else:
+            return 0
     
     def update_pedestrian_wait_times(self):
         for ped_id in traci.person.getIDList():

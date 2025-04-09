@@ -7,12 +7,12 @@ import torch.nn as nn
 import torch.optim as optim
 from itertools import count
 
-from traci_environment import TraciEnvironment
+from traciEnvironment import TraciEnvironment
 from model import DQN
 from memory import ReplayMemory, Transition
-from Utilities import plot_durations, str2bool
-from TrafficRouteGenerator import TrafficRouteGenerator
-from TrafficLightController import TrafficLightController
+from utilities import plot_durations, str2bool
+from trafficRouteGenerator import TrafficRouteGenerator
+from trafficLightController import TrafficLightController
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Train DQN for SUMO Traffic Signal Control")

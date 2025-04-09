@@ -2,7 +2,7 @@
 import traci
 from sumolib import checkBinary
 import random
-from utilities import normalize_array
+from utilities import normalize_array, average_dictionary
 
 # Hardcoded durations for the green and yellow timings of a phase
 GREEN_TIME = 15
@@ -69,16 +69,6 @@ class TraciEnvironment:
                 queue_lengths.append(traci.lane.getLastStepVehicleNumber(f"{edge_id}_{i}"))
 
         return queue_lengths
-    
-    # Returns an array representing the current total waiting time for each lane
-    def get_waiting_times(self, edge_id):
-        waiting_times = []
-        # start from 1 to exclude u-turn lane
-        for i in range(1,4):
-            for edge_id in self.user_defined_edges:
-                waiting_times.append(traci.lane.getWaitingTime(f"{edge_id}_{i}"))
-
-        return waiting_times
     
     # Returns an array representing the distance of the nearest EMV from each direction, to the junction centrepoint
     def get_emv_distances(self):
@@ -227,13 +217,7 @@ class TraciEnvironment:
         self.update_pedestrian_wait_times()
 
     def get_metrics(self):
-        return self.average_dictionary(self.veh_wait_times), self.average_dictionary(self.emv_wait_times), self.average_dictionary(self.pedestrian_wait_times)
-    
-    def average_dictionary(self, dict):
-        if len(dict.values()) > 0:
-            return sum(dict.values()) / len(dict.values())
-        else:
-            return 0
+        return average_dictionary(self.veh_wait_times), average_dictionary(self.emv_wait_times), average_dictionary(self.pedestrian_wait_times)
     
     def update_pedestrian_wait_times(self):
         for ped_id in traci.person.getIDList():

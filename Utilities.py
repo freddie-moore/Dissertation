@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import torch
+from exceptions import InvalidInputException
 
 # Utility function to plot metrics
 def plot_durations(y_values, y_title, title):
@@ -29,12 +30,14 @@ def plot_durations(y_values, y_title, title):
         plt.savefig(y_title)
         plt.pause(0.001)
 
+# Normalize an array using L1 normalization
 def normalize_array(arr):
     total = sum(arr)
     if total != 0:
         return [val / total for val in arr]
     return arr[:]
 
+# Convert a string to a boolean
 def str2bool(v):
     if isinstance(v, bool):
         return v
@@ -42,3 +45,12 @@ def str2bool(v):
         return True
     if v.lower() == "false":
         return False
+    else:
+        raise InvalidInputException
+
+# Return the numerical mean of all values across a dictionary
+def average_dictionary(dict):
+    if len(dict.values()) > 0:
+        return sum(dict.values()) / len(dict.values())
+    else:
+        return 0

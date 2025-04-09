@@ -109,7 +109,7 @@ class TestTrafficLightController:
         
        # Calculated expected result
         expected = []
-        for idx, val in enumerate(base3_repr):
+        for _, val in enumerate(base3_repr):
             if val == 2:
                 expected.append(1)
             else:

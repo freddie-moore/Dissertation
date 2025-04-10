@@ -36,7 +36,6 @@ def write_data_file(initial_q, initial_emv_q, A_slice, emv_A_slice, K):
 
 # Rolling horizon loop
 cur_t = 0
-queue_tracking = []
 while cur_t < Total_T:
     # Extract A_slice for current horizon (pad with zeros if beyond Total_T)
     A_slice = []
@@ -55,20 +54,14 @@ while cur_t < Total_T:
     
     # Run OPL model (ensure oplrun is in your PATH or provide full path)
     subprocess.run(["oplrun", "model.mod", "data.dat"], check=True)
-    
-    # Read queue lengths from solution.txt
-    with open("solution.txt", "r") as f:
-        lines = f.readlines()
-        for t in range(K):
-            q_t = [float(val) for val in lines[0].split()]
-            all_q.append(q_t)
-        for t in range(K):
-            emv_q_t = [float(val) for val in lines[1].split()]
-            all_emv_q.append(emv_q_t)
 
-    # for time_step in range(len(all_q)):
-    #     queue_tracking.append(sum(all_q[time_step]) + sum(all_emv_q[time_step]))
-    
+    with open("log.txt", "r") as f:
+        lines = [line.strip() for line in f if line.strip()]
+
+    final_line = lines[-1].split(" ")
+    q_prev = final_line[0:E]
+    emv_q_prev = final_line[E:E+C]
+
     # Advance time
     cur_t += K
     print(f"Completed iteration at time {cur_t}")
@@ -81,8 +74,6 @@ with open("log.txt", 'r') as file:
     # Reverse iterate over the lines
     for i in range(len(lines) - 1, -1, -1):
         line = lines[i].strip()
-        if all(value == '0' for value in line.split()):
-            print("Ans" , i)
+        if not all(value == '0' for value in line.split()):
+            print("Simulation finished at time" , 5*(i+1))
             break
-
-    

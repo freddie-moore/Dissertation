@@ -47,7 +47,7 @@ def extract_vehicle_data(file_path=r"C:\Users\fredd\OneDrive\Documents\Dissertat
 
     ## writing pedestrian data
     interval = 50
-    stop = min(400, time_steps)
+    stop = 100
     ped_arrivals = [0] * time_steps
     # Need to write based on interval and stop
     for i in range(0, stop, interval):

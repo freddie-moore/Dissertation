@@ -1,7 +1,7 @@
 // Parameters
 int lambda = 5; // Discretized time step interval
-int T = 20;     // Planning horizon (e.g., 20 time steps of 5 seconds each)
-int K = ...;      // Control horizon (e.g., 5 time steps)
+int T = 20;     // Planning horizon
+int K = ...;      // Control horizon
 int E = 16;     // Number of lanes
 float GREEN_Y = 0.48 * lambda;    // Fraction of a vehicle that can leave per time step
 float YELLOW_Y = 0.5 * GREEN_Y;   // Yellow phase allows half the flow of green
@@ -16,7 +16,7 @@ range PedLanes = E-4..E-1;
 float initial_q[Lanes] = ...;        // Initial queue lengths for all lanes
 float initial_emv_q[CarLanes] = ...; // Initial emergency vehicle queue lengths
 int A[Lanes][Time] = ...;            // Arrivals for the current horizon
-int emv_A[CarLanes][Time] = ...;   // Uncomment if emergency arrivals are time-dependent
+int emv_A[CarLanes][Time] = ...;
 
 // Conflict matrix: C[i][j] = 1 means signals i and j conflict
 int C[Lanes][Lanes] = [[0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0], [0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1], [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0], [1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0], [1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1], [0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], [1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0], [1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0], [0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1], [0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1], [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1], [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0]];
@@ -80,57 +80,15 @@ subject to {
 
 // Output queue lengths at t=K
 execute {
-    var f = new IloOplOutputFile("solution.txt");
-    for(var e in Lanes) {
-        f.write(q[e][K] + " ");
-    }
-    f.writeln();
-    for(var e in CarLanes) {
-        f.write(emv_q[e][K] + " ");
-    }
-    f.writeln();
-    f.close();
-
     var logFile = new IloOplOutputFile("log.txt", "a");
-    for(var t in Time) {
+    for (var t = 0; t < K; t++) {
         for(var e in Lanes) {
             logFile.write(q[e][t] + " ");
         }
-        logFile.write("\n")
+        for(var e in CarLanes) {
+            logFile.write(emv_q[e][t] + " ");
+        }
+        logFile.writeln()
     }
-    logFile.writeln();
     logFile.close();
-}
-
-
-execute {
-    var f = new IloOplOutputFile("queue_lengths.txt", "w");
-    
-    var lastZeroT = -1; // Default to -1 if no such timestep exists
-    
-    for (var t = T-1; t >= 0; t--) {
-        var allZero = 1;
-        
-        for (var e in Lanes) {
-            if (q[e][t] > 0.0001) { // Small tolerance for floating-point precision
-                allZero = 0;
-                break;
-            }
-        }
-        
-        for (var e in CarLanes) {
-            if (emv_q[e][t] > 0.0001) {
-                allZero = 0;
-                break;
-            }
-        }
-        
-        if (allZero) {
-            lastZeroT = t;
-            break;
-        }
-    }
-    
-    f.writeln(lastZeroT);
-    f.close();
 }

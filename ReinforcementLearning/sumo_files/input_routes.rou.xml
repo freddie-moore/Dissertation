@@ -1,0 +1,84 @@
+<routes>
+            <vType id="type1" accel="0.8" decel="4.5" sigma="0.5" length="5" maxSpeed="70"/>
+            <vType id="rescue" vClass="emergency" speedFactor="1.5" guiShape="emergency">
+                <param key="has.bluelight.device" value="true"/>
+            </vType>
+            <route id="ne" edges="ni eo"/>
+            <route id="ns" edges="ni so"/>
+            <route id="nw" edges="ni wo"/>
+            <route id="en" edges="ei no"/>
+            <route id="es" edges="ei so"/>
+            <route id="ew" edges="ei wo"/>
+            <route id="sn" edges="si no"/>
+            <route id="se" edges="si eo"/>
+            <route id="sw" edges="si wo"/>
+            <route id="wn" edges="wi no"/>
+            <route id="we" edges="wi eo"/>
+            <route id="ws" edges="wi so"/>
+        
+            <personFlow id="p_ns" begin="0" end="100" period="50">
+                <walk route="ns"/>
+            </personFlow>
+                         
+            <personFlow id="p_sn" begin="0" end="100" period="50">
+                <walk route="sn"/>
+            </personFlow>
+                         
+            <personFlow id="p_ew" begin="0" end="100" period="50">
+                <walk route="ew"/>
+            </personFlow>
+                         
+            <personFlow id="p_we" begin="0" end="100" period="50">
+                <walk route="we"/>
+            </personFlow>
+                         <vehicle id="type1_1" type="type1" route="es" depart="0.44847074488992916" />
+<vehicle id="type1_2" type="type1" route="nw" depart="3.7837899515168725" />
+<vehicle id="type1_3" type="type1" route="se" depart="5.043634176578444" />
+<vehicle id="type1_4" type="type1" route="ne" depart="10.598240307772283" />
+<vehicle id="type1_5" type="type1" route="ne" depart="11.090527868264818" />
+<vehicle id="type1_6" type="type1" route="wn" depart="13.832505700042574" />
+<vehicle id="type1_7" type="type1" route="sw" depart="14.311146216143605" />
+<vehicle id="type1_8" type="type1" route="sw" depart="15.047969092524824" />
+<vehicle id="type1_9" type="type1" route="ns" depart="16.323205867908754" />
+<vehicle id="type1_10" type="type1" route="ws" depart="16.980096373756528" />
+<vehicle id="type1_11" type="type1" route="we" depart="17.008831246154116" />
+<vehicle id="type1_12" type="type1" route="ws" depart="17.10769777326401" />
+<vehicle id="type1_13" type="type1" route="ws" depart="17.4858764693464" />
+<vehicle id="type1_14" type="type1" route="sw" depart="17.77236346391899" />
+<vehicle id="type1_15" type="type1" route="ew" depart="20.568400719880447" />
+<vehicle id="type1_16" type="type1" route="we" depart="20.842805771551866" />
+<vehicle id="type1_17" type="type1" route="sn" depart="21.05722374339758" />
+<vehicle id="type1_18" type="type1" route="es" depart="21.49173465032172" />
+<vehicle id="type1_19" type="type1" route="we" depart="23.361979808476878" />
+<vehicle id="type1_20" type="type1" route="ew" depart="24.120967406034076" />
+<vehicle id="type1_21" type="type1" route="ws" depart="24.395368489939973" />
+<vehicle id="type1_22" type="type1" route="sw" depart="25.24745311392987" />
+<vehicle id="type1_23" type="type1" route="es" depart="26.19559617836681" />
+<vehicle id="type1_24" type="type1" route="ns" depart="26.274611453447637" />
+<vehicle id="type1_25" type="type1" route="we" depart="27.260546129754182" />
+<vehicle id="type1_26" type="type1" route="en" depart="28.236125776186718" />
+<vehicle id="type1_27" type="type1" route="wn" depart="30.91486122636189" />
+<vehicle id="type1_28" type="type1" route="es" depart="34.0264764000067" />
+<vehicle id="type1_29" type="type1" route="es" depart="36.49390667599347" />
+<vehicle id="type1_30" type="type1" route="sw" depart="41.579404916011725" />
+<vehicle id="type1_31" type="type1" route="sw" depart="41.70383271779071" />
+<vehicle id="type1_32" type="type1" route="en" depart="43.145307204429095" />
+<vehicle id="type1_33" type="type1" route="en" depart="45.347788732270956" />
+<vehicle id="type1_34" type="type1" route="ew" depart="47.48609445876928" />
+<vehicle id="type1_35" type="type1" route="ns" depart="51.09861000662168" />
+<vehicle id="type1_36" type="type1" route="ws" depart="51.87174163936213" />
+<vehicle id="type1_37" type="type1" route="ws" depart="56.33139107898896" />
+<vehicle id="type1_38" type="type1" route="sw" depart="57.55470671483903" />
+<vehicle id="type1_39" type="type1" route="sn" depart="60.664676306602146" />
+<vehicle id="type1_40" type="type1" route="se" depart="60.949276896036885" />
+<vehicle id="type1_41" type="type1" route="ns" depart="68.61757176736583" />
+<vehicle id="type1_42" type="type1" route="wn" depart="70.44733097231868" />
+<vehicle id="type1_43" type="type1" route="wn" depart="71.13974236794209" />
+<vehicle id="type1_44" type="type1" route="sw" depart="74.85626331789874" />
+<vehicle id="type1_45" type="type1" route="nw" depart="76.32687727484382" />
+<vehicle id="type1_46" type="type1" route="we" depart="76.52668715358472" />
+<vehicle id="type1_47" type="type1" route="ew" depart="77.86357760094792" />
+<vehicle id="type1_48" type="type1" route="en" depart="82.23656605537748" />
+<vehicle id="type1_49" type="type1" route="wn" depart="84.59108300775503" />
+<vehicle id="type1_50" type="type1" route="se" depart="87.97544086349859" />
+</routes>

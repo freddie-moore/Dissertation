@@ -6,8 +6,8 @@ from unittest.mock import MagicMock, patch, call
 import traci
 from sumolib import checkBinary
 
-from utilities import normalize_array
-from traciEnvironment import TraciEnvironment
+from ..utilities import normalize_array
+from ..traciEnvironment import TraciEnvironment
 
 
 class TestTraciEnvironment:
@@ -80,7 +80,8 @@ class TestTraciEnvironment:
             show_gui=True,
             actions=actions,
             route_generator=mock_route_generator,
-            light_controller=mock_light_controller
+            light_controller=mock_light_controller,
+            training=False
         )
         
         # Initialize attributes that would normally be set in reset_simulation
@@ -90,7 +91,7 @@ class TestTraciEnvironment:
         env.step_count = 0
         env.emv_ids = {"emv_0", "emv_1"}
         
-        if env.collect_metrics:
+        if not env.training:
             env.pedestrian_wait_times = {}
             env.emv_wait_times = {}
             env.veh_wait_times = {}
@@ -113,8 +114,8 @@ class TestTraciEnvironment:
         assert env.step_count == 0
         assert env.emv_ids == {"emv_0", "emv_1"}
         
-        # Verify metrics dictionaries are initialized if collect_metrics is True
-        if env.collect_metrics:
+        # Verify metrics dictionaries are initialized if training is False
+        if not env.training:
             assert isinstance(env.pedestrian_wait_times, dict)
             assert isinstance(env.emv_wait_times, dict)
             assert isinstance(env.veh_wait_times, dict)

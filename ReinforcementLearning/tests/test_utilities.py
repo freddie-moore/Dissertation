@@ -1,6 +1,6 @@
 import pytest
-from utilities import normalize_array, str2bool, average_dictionary
-from exceptions import InvalidInputException
+from ..utilities import normalize_array, str2bool, average_dictionary
+from ..exceptions import InvalidInputException
 
 # Test array normalization
 def test_normalize_array():

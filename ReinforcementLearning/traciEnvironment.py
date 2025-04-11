@@ -2,7 +2,7 @@
 import traci
 from sumolib import checkBinary
 import random
-from utilities import normalize_array, average_dictionary
+from .utilities import normalize_array, average_dictionary
 
 # Hardcoded durations for the green and yellow timings of a phase
 GREEN_TIME = 15

@@ -1,11 +1,11 @@
 import pytest
-from trafficLightController import TrafficLightController
+from ..trafficLightController import TrafficLightController
 
 class TestTrafficLightController:
     @pytest.fixture
     def controller(self):
         # Create a controller with standard timing settings
-        return TrafficLightController(yellow_time=5, green_time=15)
+        return TrafficLightController(yellow_time=5, green_time=15, training=False)
     
     # Test controller initialisation
     def test_initialization(self, controller):

@@ -9,14 +9,14 @@ GREEN_TIME = 15
 YELLOW_TIME = 5
 
 class TraciEnvironment:
-    def __init__(self, show_gui, actions, route_generator, light_controller, collect_metrics=True):
+    def __init__(self, show_gui, actions, route_generator, light_controller, training):
         self.actions = actions
         self.iteration_count = 0
         self.route_generator = route_generator
         self.traffic_light_controller = light_controller
         self.user_defined_edges = ["ni", "ei", "si", "wi"]
         self.crossing_ids = [':0_c0', ':0_c1', ':0_c2', ':0_c3']
-        self.collect_metrics = collect_metrics
+        self.training = training
 
         if show_gui:
             binary = "sumo-gui"
@@ -46,7 +46,7 @@ class TraciEnvironment:
         self.step_count = 0
 
         # metric tracking dictionaries
-        if self.collect_metrics:
+        if not self.training:
             self.pedestrian_wait_times = dict()
             self.emv_wait_times = dict()
             self.veh_wait_times = dict()

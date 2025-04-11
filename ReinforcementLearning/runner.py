@@ -34,8 +34,8 @@ def main():
 
     # Instantiate environment wrapper and helper classes
     route_generator = TrafficRouteGenerator(args.num_cars, args.arrival_rate, args.ped_stop, args.interval)
-    light_controller = TrafficLightController(args.yellow_time, args.green_time)
-    traci_env = TraciEnvironment(True, {i for i in range(0,36)}, route_generator, light_controller)
+    light_controller = TrafficLightController(args.yellow_time, args.green_time, False)
+    traci_env = TraciEnvironment(args.gui, {i for i in range(0,36)}, route_generator, light_controller, False)
 
     # Select controller
     if args.controller == 'fixed':
@@ -51,9 +51,12 @@ def main():
         phase = controller.get_phase(state)
         _, _, terminated, truncated, step_count = traci_env.run_phase(phase)
 
+    light_controller.save_actual_arrivals()
     print(f"Execution finished, total time : {step_count}")
+
     traci.close()
     sys.stdout.flush()
+
 
 if __name__ == "__main__":
     main()

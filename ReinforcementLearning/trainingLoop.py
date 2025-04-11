@@ -54,8 +54,8 @@ def main():
 
     # Environment setup
     route_generator = TrafficRouteGenerator(args.num_cars, args.arrival_rate)
-    light_controller = TrafficLightController(args.yellow_time, args.green_time)
-    env = TraciEnvironment(args.gui, {i for i in range(0,36)}, route_generator, light_controller)
+    light_controller = TrafficLightController(args.yellow_time, args.green_time, True)
+    env = TraciEnvironment(args.gui, {i for i in range(0,36)}, route_generator, light_controller, True)
 
     # Device
     device = torch.device("cuda" if torch.cuda.is_available() else

@@ -49,7 +49,7 @@ def main():
     while not (terminated or truncated):
         state = traci_env.get_state()
         phase = controller.get_phase(state)
-        _, _, terminated, truncated, step_count = traci_env.run_phase(phase)
+        _, _, terminated, truncated, step_count = traci_env.run_action(phase)
 
     light_controller.save_actual_arrivals()
     print(f"Execution finished, total time : {step_count}")

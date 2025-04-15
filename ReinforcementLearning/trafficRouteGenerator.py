@@ -19,20 +19,13 @@ class TrafficRouteGenerator:
         self.ped_stop = ped_stop
         self.interval = interval
         self.output_file = r"C:\Users\fredd\OneDrive\Documents\Dissertation\Dissertation\ReinforcementLearning\sumo_files\input_routes.rou.xml"
-
-    
-    def set_seed(self, iteration_count=None):
-        """Set random seed based on iteration count"""
-        if iteration_count is not None:
-            random.seed(iteration_count % 10)
-        return self
             
     def generate_arrival_times(self):
-        """Generate arrival times using exponential distribution"""
+        # Generate arrival times according to a Poisson distribution
         return np.cumsum(np.random.exponential(1 / self.arrival_rate, size=self.num_cars))
     
     def write_route_definitions(self, file):
-        """Write route definitions to file"""
+        # Write route paths to file
         file.write("""<routes>
             <vType id="type1" accel="0.8" decel="4.5" sigma="0.5" length="5" maxSpeed="70"/>
             <vType id="rescue" vClass="emergency" speedFactor="1.5" guiShape="emergency">
@@ -53,7 +46,7 @@ class TrafficRouteGenerator:
         """)
     
     def write_pedestrian_flows(self, file):
-        """Write pedestrian flow definitions to file"""
+        # Write pedestrian arrival definitions
         for id in self.pedestrian_routes:
             file.write(f"""
             <personFlow id="p_{id}" begin="0" end="{self.ped_stop}" period="{self.interval}">
@@ -62,7 +55,7 @@ class TrafficRouteGenerator:
                          """)
     
     def write_vehicle_definitions(self, file, arrival_times):
-        """Write vehicle definitions to file and return emergency vehicle count"""
+        # Write vehicle definitions to file and return emergency vehicle count for traci_env
         type1_id = 0
         emv_id = 0
         routes_taken = []

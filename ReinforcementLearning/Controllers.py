@@ -1,10 +1,18 @@
 import torch
 from model import DQN
 
-# This class is a simple fixed time controller that will alternate between phases in a cyclical structure
-class FixedTimeController():
+# Abstract base controller
+class BaseController():
     def __init__(self, env):
         self.traci_env = env
+
+    def get_phase(self, state):
+        pass
+
+# This class is a simple fixed time controller that will alternate between phases in a cyclical structure
+class FixedTimeController(BaseController):
+    def __init__(self, env):
+        super().__init__(env)
         self.num_phases = self.traci_env.get_n_actions()
         self.i = 0
 
@@ -14,16 +22,16 @@ class FixedTimeController():
         
 
 # This class is a reinforcement learning based controller that will select the best next phase according to a learned policy
-class RLController():
+class RLController(BaseController):
     def __init__(self, env, model_path):
+        super().__init__(env)
+        
         # Set device
         self.device = torch.device(
             "cuda" if torch.cuda.is_available() else
             "mps" if torch.backends.mps.is_available() else
             "cpu"
         )
-
-        self.traci_env = env
 
         # Create the model and load weights
         state, info = self.traci_env.reset_simulation()

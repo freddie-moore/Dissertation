@@ -133,34 +133,34 @@ class TraciEnvironment:
     
         return vehicles_in_sim, emv_vehicles_in_sim, peds_in_sim
     
-    def run_phase(self, new_phase):
-        # get initial simulation actors
+    def run_action(self, new_phase):
+        # Get initial simulation actors
         init_vehicles, init_emvs, init_peds_in_sim = self.get_actors_in_sim()
 
-        # calculate waiting times
+        # Calculate waiting times
         initial_wait = self.get_total_waiting_time(init_vehicles)
         initial_emv_wait = self.get_total_waiting_time(init_emvs)
         initial_ped_wait = self.get_total_pedestrian_waiting_time(init_peds_in_sim)
         
-        # transition into and run the models selected phase
+        # Transition into and run the models selected phase
         self.step_count = self.traffic_light_controller.run_tls_phase(self.current_phase, new_phase, self.step_count)
         self.current_phase = new_phase
 
         self.update_metrics()
 
-        # check for collisions
+        # Check for collisions
         collisions_penalty = self.calculate_collision_penalty()
         done = traci.simulation.getMinExpectedNumber() == 0
 
-        # get updated simulation actors
+        # Get updated simulation actors
         reg_vehicles_in_sim, emv_vehicles_in_sim, peds_in_sim = self.get_actors_in_sim()
 
-        # calculate waiting time for vehicles left in simulation after running phase
+        # Calculate waiting time for vehicles left in simulation after running phase
         rem_vehicles = set(reg_vehicles_in_sim).intersection(init_vehicles)
         rem_emv_vehicles = set(emv_vehicles_in_sim).intersection(init_emvs)
         rem_peds = set(peds_in_sim).intersection(init_peds_in_sim)
 
-        # calculate wait times
+        # Calculate wait times
         remaining_wait = self.get_total_waiting_time(rem_vehicles)
         remaining_emv_wait = self.get_total_waiting_time(rem_emv_vehicles)
         remaining_ped_wait = self.get_total_pedestrian_waiting_time(rem_peds)

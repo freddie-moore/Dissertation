@@ -86,10 +86,6 @@ def main():
     record = float('+inf')
 
     def select_action(state):
-        # debug statemetn
-        if torch.isnan(state).any():
-            print(state)
-
         nonlocal steps_done
         sample = random.random()
         eps_threshold = args.eps_end + (args.eps_start - args.eps_end) * math.exp(-1. * steps_done / args.eps_decay)
@@ -136,7 +132,7 @@ def main():
 
         for t in count():
             action = select_action(state)
-            observation, reward, terminated, truncated, env_time = env.run_phase(action.item())
+            observation, reward, terminated, truncated, env_time = env.run_action(action.item())
 
             reward = torch.tensor([reward], device=device)
             done = terminated or truncated
@@ -162,6 +158,8 @@ def main():
                 if env_time < record:
                     policy_net.save()
                     record = env_time
+
+            if done:
                 break
 
     print("Record:", record)

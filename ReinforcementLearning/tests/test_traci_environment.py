@@ -49,7 +49,7 @@ class TestTraciEnvironment:
     @pytest.fixture
     def mock_route_generator(self):
         mock = MagicMock()
-        mock.generate_routes.return_value = (2, None) # Simulating 2 emvs
+        mock.generate_routes.return_value = (2, None)
         return mock
 
     @pytest.fixture

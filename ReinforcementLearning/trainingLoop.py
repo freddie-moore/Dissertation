@@ -87,8 +87,8 @@ def main():
 
     def select_action(state):
         # debug statemetn
-        if None in state:
-            print(f"Error {state}")
+        if torch.isnan(state).any():
+            print(state)
 
         nonlocal steps_done
         sample = random.random()

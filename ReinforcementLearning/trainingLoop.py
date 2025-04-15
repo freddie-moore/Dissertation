@@ -48,7 +48,7 @@ def parse_args():
                         help="the update rate of the target network (default: 0.005)")
     parser.add_argument("--lr", type=float, default=1e-4,
                         help="the learning rate of the AdamW optimizer (default: 1e-4)")
-    parser.add_argument("--episodes", type=int, default=5000,
+    parser.add_argument("--episodes", type=int, default=3000,
                         help="the number of episodes to train the agent for")
 
     return parser.parse_args()
@@ -86,6 +86,10 @@ def main():
     record = float('+inf')
 
     def select_action(state):
+        # debug statemetn
+        if None in state:
+            print(f"Error {state}")
+
         nonlocal steps_done
         sample = random.random()
         eps_threshold = args.eps_end + (args.eps_start - args.eps_end) * math.exp(-1. * steps_done / args.eps_decay)

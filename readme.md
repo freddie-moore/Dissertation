@@ -84,4 +84,4 @@ pytest .\tests\
 - `test_traci_environment.py`: Tests for the SUMO environment integration.
 - `test_traffic_light_controller.py`: Tests for the traffic light controller logic.
 - `test_utilities.py`: Tests for utility functions.
-Ensure all dependencies are installed and SUMO is configured before running tests.
+

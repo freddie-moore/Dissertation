@@ -1,15 +1,3 @@
-Write readme
-* Detail repo
-* Detail how to install the requirements.txt
-* Detail how to train the model
-* Detail how to run the model on validation data 
-* Detail how to run the LDO model on same validation data 
-* Detail how to run tests
-
-Prepare supplementary material
-    * hangzhou dataset
-    * cityflow_to_sumo parser
-    
 Set up access to GPU cluster
     Retrain model
     Prepare libraries

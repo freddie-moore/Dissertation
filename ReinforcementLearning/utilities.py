@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import torch
-from .exceptions import InvalidInputException
+from exceptions import InvalidInputException
 
 # Utility function to plot metrics
 def plot_durations(y_values, y_title, title):
@@ -27,7 +27,7 @@ def plot_durations(y_values, y_title, title):
             fontsize=10,
             color='red'
         )
-        plt.savefig(y_title)
+        plt.savefig(f"training_metrics/{y_title}")
         plt.pause(0.001)
 
 # Normalize an array using L1 normalization

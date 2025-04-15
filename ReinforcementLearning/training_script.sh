@@ -9,4 +9,4 @@ source /usr2/share/gpu.sbatch
 # Generate a random port in the range 1024-65535
 PORT=$((1024 + RANDOM % 64511))
 
-torchrun --nproc_per_node=1 --master_port=$PORT rl_main.py 
+torchrun --nproc_per_node=1 --master_port=$PORT trainingLoop.py

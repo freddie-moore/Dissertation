@@ -26,8 +26,12 @@ def parse_args():
                         help="Number of cars to simulate (default: 400)")
     parser.add_argument('--arrival-rate', type=float, default=0.5,
                         help="Mean inter-arrival rate between cars (default: 0.5)")
-    parser.add_argument("--gui", type=str2bool, default=True,
+    parser.add_argument("--gui", type=str2bool, default=False,
                         help="Whether the simulation is run with an accompanying GUI (default: True)")
+    parser.add_argument("--ped-stop", type=int, default=200,
+                        help="How many time steps to simulate pedestrian arrivals for")
+    parser.add_argument("--interval", type=int, default=50,
+                        help="The time interval between each pedestrian arrival")
 
     # DQN Hyperparams
     parser.add_argument("--batch-size", type=int, default=128,
@@ -53,7 +57,7 @@ def main():
     args = parse_args()
 
     # Environment setup
-    route_generator = TrafficRouteGenerator(args.num_cars, args.arrival_rate)
+    route_generator = TrafficRouteGenerator(args.num_cars, args.arrival_rate, args.ped_stop, args.interval)
     light_controller = TrafficLightController(args.yellow_time, args.green_time, True)
     env = TraciEnvironment(args.gui, {i for i in range(0,36)}, route_generator, light_controller, True)
 
@@ -143,9 +147,6 @@ def main():
             for key in policy_net.state_dict():
                 target_net.state_dict()[key] = \
                     policy_net.state_dict()[key] * args.tau + target_net.state_dict()[key] * (1 - args.tau)
-
-            if terminated or truncated:
-                episode_durations.append(env_time)
 
             if terminated:
                 veh_waits, emv_waits, ped_waits = env.get_metrics()

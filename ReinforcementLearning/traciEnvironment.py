@@ -2,7 +2,7 @@
 import traci
 from sumolib import checkBinary
 import random
-from .utilities import normalize_array, average_dictionary
+from utilities import normalize_array, average_dictionary
 
 # Hardcoded durations for the green and yellow timings of a phase
 GREEN_TIME = 15
@@ -46,10 +46,9 @@ class TraciEnvironment:
         self.step_count = 0
 
         # metric tracking dictionaries
-        if not self.training:
-            self.pedestrian_wait_times = dict()
-            self.emv_wait_times = dict()
-            self.veh_wait_times = dict()
+        self.pedestrian_wait_times = dict()
+        self.emv_wait_times = dict()
+        self.veh_wait_times = dict()
 
         # Generate a new set of routes
         emv_count, _ = self.route_generator.generate_routes()
@@ -146,6 +145,7 @@ class TraciEnvironment:
         # transition into and run the models selected phase
         self.step_count = self.traffic_light_controller.run_tls_phase(self.current_phase, new_phase, self.step_count)
         self.current_phase = new_phase
+
         self.update_metrics()
 
         # check for collisions

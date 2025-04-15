@@ -22,7 +22,8 @@ class TrafficLightController:
         end_phase_idx = self.get_idx_to_end_phase(current_model_action, next_model_action)
         traci.trafficlight.setPhase("0", end_phase_idx)
         for i in range(0, self.YELLOW_TIME):
-            self.update_actual_arrivals()
+            if not self.training:
+                self.update_actual_arrivals()
             step_count += 1
             traci.simulationStep(step_count)
 
@@ -30,7 +31,8 @@ class TrafficLightController:
         start_phase_idx = self.get_idx_to_start_phase(current_model_action, next_model_action)
         traci.trafficlight.setPhase("0", start_phase_idx)
         for i in range(0, self.YELLOW_TIME):
-            self.update_actual_arrivals()
+            if not self.training:
+                self.update_actual_arrivals()
             step_count += 1
             traci.simulationStep(step_count)
 
@@ -38,7 +40,8 @@ class TrafficLightController:
         green_phase_idx = self.get_idx_of_green_phase(next_model_action)
         traci.trafficlight.setPhase("0", green_phase_idx)
         for i in range(0, self.GREEN_TIME):
-            self.update_actual_arrivals()
+            if not self.training:
+                self.update_actual_arrivals()
             step_count += 1
             traci.simulationStep(step_count)
 

@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import torch
-from exceptions import InvalidInputException
+from .exceptions import InvalidInputException
 
 # Utility function to plot metrics
 def plot_durations(y_values, y_title, title):

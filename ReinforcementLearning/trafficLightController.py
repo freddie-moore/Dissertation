@@ -137,6 +137,5 @@ class TrafficLightController:
             self.actual_depart_times[id] = (traci.vehicle.getDeparture(id), traci.vehicle.getRouteID(id))
 
     def save_actual_arrivals(self):
-        print(self.actual_depart_times)
         with open("../LinearOptimization/saved_departures.pkl", "wb") as f:
             pickle.dump(self.actual_depart_times, f)

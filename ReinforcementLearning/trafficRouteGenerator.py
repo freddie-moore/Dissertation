@@ -1,6 +1,8 @@
 import random
 import numpy as np
 
+random.seed(5)
+
 class TrafficRouteGenerator:
     def __init__(self, num_cars, arrival_rate, ped_stop, interval):
         # Define route probabilities
@@ -24,6 +26,9 @@ class TrafficRouteGenerator:
         # Generate arrival times according to a Poisson distribution
         return np.cumsum(np.random.exponential(1 / self.arrival_rate, size=self.num_cars))
     
+    def set_seed(self, seed):
+        random.seed(seed)
+
     def write_route_definitions(self, file):
         # Write route paths to file
         file.write("""<routes>
